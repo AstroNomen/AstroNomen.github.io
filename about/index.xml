@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>DAIII</title>
-    <link>https://daiii.github.io/</link>
-    <description>Recent content on DAIII</description>
+    <title>Abouts on DAIII</title>
+    <link>https://daiii.github.io/about/</link>
+    <description>Recent content in Abouts on DAIII</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 14 Dec 2022 18:52:38 +0100</lastBuildDate><atom:link href="https://daiii.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 14 Dec 2022 18:52:38 +0100</lastBuildDate><atom:link href="https://daiii.github.io/about/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About</title>
       <link>https://daiii.github.io/about/about/</link>
