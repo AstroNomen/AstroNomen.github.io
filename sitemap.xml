@@ -2,16 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://daiii.github.io/about/about/</loc>
-    <lastmod>2022-12-14T18:52:38+01:00</lastmod>
-  </url><url>
     <loc>https://daiii.github.io/about/</loc>
     <lastmod>2022-12-14T18:52:38+01:00</lastmod>
   </url><url>
-    <loc>https://daiii.github.io/</loc>
-    <lastmod>2022-12-14T18:52:38+01:00</lastmod>
-  </url><url>
     <loc>https://daiii.github.io/categories/</loc>
+  </url><url>
+    <loc>https://daiii.github.io/</loc>
   </url><url>
     <loc>https://daiii.github.io/tags/</loc>
   </url>
