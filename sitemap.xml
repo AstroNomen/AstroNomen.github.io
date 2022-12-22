@@ -2,20 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://daiii.github.io/categories/</loc>
+    <lastmod>2022-12-22T17:01:18+01:00</lastmod>
+  </url><url>
     <loc>https://daiii.github.io/</loc>
     <lastmod>2022-12-22T17:01:18+01:00</lastmod>
   </url><url>
-    <loc>https://daiii.github.io/posts/lc-actuator/</loc>
+    <loc>https://daiii.github.io/tags/liquid-crystal/</loc>
     <lastmod>2022-12-22T17:01:18+01:00</lastmod>
   </url><url>
-    <loc>https://daiii.github.io/posts/</loc>
+    <loc>https://daiii.github.io/review/lc-actuator/</loc>
+    <lastmod>2022-12-22T17:01:18+01:00</lastmod>
+  </url><url>
+    <loc>https://daiii.github.io/categories/review/</loc>
+    <lastmod>2022-12-22T17:01:18+01:00</lastmod>
+  </url><url>
+    <loc>https://daiii.github.io/review/</loc>
+    <lastmod>2022-12-22T17:01:18+01:00</lastmod>
+  </url><url>
+    <loc>https://daiii.github.io/tags/</loc>
     <lastmod>2022-12-22T17:01:18+01:00</lastmod>
   </url><url>
     <loc>https://daiii.github.io/about/</loc>
     <lastmod>2022-12-14T18:52:38+01:00</lastmod>
-  </url><url>
-    <loc>https://daiii.github.io/categories/</loc>
-  </url><url>
-    <loc>https://daiii.github.io/tags/</loc>
   </url>
 </urlset>

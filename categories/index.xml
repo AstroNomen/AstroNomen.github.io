@@ -5,6 +5,16 @@
     <link>https://daiii.github.io/categories/</link>
     <description>Recent content in Categories on DAIII</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://daiii.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Thu, 22 Dec 2022 17:01:18 +0100</lastBuildDate><atom:link href="https://daiii.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Review</title>
+      <link>https://daiii.github.io/categories/review/</link>
+      <pubDate>Thu, 22 Dec 2022 17:01:18 +0100</pubDate>
+      
+      <guid>https://daiii.github.io/categories/review/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
