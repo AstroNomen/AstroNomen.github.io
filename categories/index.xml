@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on DAIII</title>
-    <link>https://daiii.github.io/categories/</link>
+    <link>https://astronomen.github.io/categories/</link>
     <description>Recent content in Categories on DAIII</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 22 Dec 2022 17:00:00 +0000</lastBuildDate><atom:link href="https://daiii.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Dec 2022 17:00:00 +0000</lastBuildDate><atom:link href="https://astronomen.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Review</title>
-      <link>https://daiii.github.io/categories/review/</link>
+      <link>https://astronomen.github.io/categories/review/</link>
       <pubDate>Thu, 22 Dec 2022 17:00:00 +0000</pubDate>
       
-      <guid>https://daiii.github.io/categories/review/</guid>
+      <guid>https://astronomen.github.io/categories/review/</guid>
       <description></description>
     </item>
     
