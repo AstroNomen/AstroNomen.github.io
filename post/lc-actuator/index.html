@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="AkiDAY">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://astronomen.github.io/img/carina_nebula_orig.jpg">
+    <meta property="twitter:image" content="https://astronomen.github.io/img/carina_nebula_orig.jpg" />
+    
+
+    
+    <meta name="title" content="Liquid Crystal Actuator and Ink-jet Print" />
+    <meta property="og:title" content="Liquid Crystal Actuator and Ink-jet Print" />
+    <meta property="twitter:title" content="Liquid Crystal Actuator and Ink-jet Print" />
+    
+
+    
+    <meta name="description" content="Ink-jet Printing used in producing Liquid Crystal Actuator">
+    <meta property="og:description" content="Ink-jet Printing used in producing Liquid Crystal Actuator" />
+    <meta property="twitter:description" content="Ink-jet Printing used in producing Liquid Crystal Actuator" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Blog, photonics, academic">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>Liquid Crystal Actuator and Ink-jet Print | A Personal Website</title>
+
+    <link rel="canonical" href="/post/lc-actuator/">
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.15.1/css/all.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    <script src="/js/lazysizes.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">AkiDAY</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/review">review</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/archive/">ARCHIVE</a></li>
+                    
+                        <li><a href="/notes/">NOTES</a></li>
+                    
+                        <li><a href="/about/">ABOUT</a></li>
+                    
+
+                    
+		    <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/carina_nebula_orig.jpg')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/liquid-crystal" title="Liquid Crystal">
+                            Liquid Crystal
+                        </a>
+                        
+                    </div>
+                    <h1>Liquid Crystal Actuator and Ink-jet Print</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                    AkiDAY
+                             
+                            on 
+                            Thursday, December 22, 2022
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <p>This is my literature review of  <em><strong>Printed artificial cilia from liquid-crystal network actuators modularly driven by light</strong></em> , which is written by <em>Casper L. van Oosten, Cees W. M. Bastiaansen</em> and <em>Dirk J. Broer</em> on <strong>Nature Materials</strong>.</p>
+<h1 id="introduction-of-basic-concepts">Introduction of Basic Concepts</h1>
+<h2 id="liquid-crystals">Liquid Crystals</h2>
+<p>Liquid crystals (LC) are materials with anisotropy, the position of molecules can be randomly arranged, which means it can flow like a liquid, but the molecules are fixed oriented. Typically, liquid crystals are divided into thermotropic, lyotropic and metallotropic. Liquid crystals have properties like electric properties, elastic properties and optical properties. For example, by varying the temperature of the materials, phases of thermotropic crystals are changed following. Similarly, by changing the conditions like temperature and concentration of molecules in liquids, lyotropic can be formed.</p>
+<h2 id="liquid-crystalline-polymers">Liquid Crystalline Polymers</h2>
+<p>Polymers are materials being fantastic for micromechanical systems (MEMS) and lab-on-a-chip systems. However, there are still several challenges for large-scale manufacturing. On the one hand, it&rsquo;s tough to process polymer actuators for microstructuring, which leads to a more complicated production. On the other hand, when the actuators are electrically addressed, its inevitable to produce in an extreme manufacturing environment, like high temperature, acid or basic conditions. Liquid crystal polymer is a thermoplastic polymer material with useful physical properties. What it&rsquo;s different from most polymers is that there are rigid and flexible monomers linking to each other. Thus, if the orientation of the molecules is formed, even liquid crystal polymer is cooled down from high temperature, the structure is also unchanged. Based on the theory that liquid crystal polymer has a reversible structure with electrical, thermal, mechanical and chemical properties, its an advantaged material to act as a polymer actuator. For the mechanical extension measurement, the stretching leads to a large manufacturing environment which is impossible for a microscale condition, so the strain processing way will not be a solution.</p>
+<h2 id="stimuli-responsive-liquid-crystal-polymers">Stimuli-Responsive Liquid Crystal Polymers</h2>
+<p>Stimuli-responsive polymers are a kind of material being responsive to physical or chemical conditions of the environment, like temperature, mechanical force, light, PH and electric and magnetic fields. Nowadays, stimuli-responsive polymers play a crucial role in applications like sensing, controlled drug delivery, artificial muscles and actuators.
+Liquid crystals are attractive for stimuli-responsive polymer materials because of their self-assembly properties. The shape of liquid crystals will change responding to stimuli which we mainly discuss light here. Nowadays, there a lot of advancements developed in stimuli-responsive liquid crystal polymers such as soft robotics, deployable soft actuating devices, responsive pigments and sensors.</p>
+<h1 id="experimental--methods-review">Experimental &amp; Methods Review</h1>
+<p>In this section, we will talk about the experiment part in the literature, and methods they used in the study. The researchers used many monomer materials to form photoactive actuators, tried methods to fabricate devices, explained the mechanism of those polymers through the characterization experiment of the microstructure, and demonstrate their responsiveness.</p>
+<h2 id="materials">Materials</h2>
+<p>The monomer materials used in this study to form the actuators are C6M, C6BP, C6BPN, A3MA and DR1A, besides, PS16 are also used in the experiment as the surfactant (Fig.3). Among them, A3MA and DR1A are two photoactive monomers, and C6M, C6BP and C6BPN are used to bulid the host matrix. Then to obtain the desired alignment at the air interface, they used the surfactant PS16 in the study. Monomers C6M, C6BP and C6BPN should be mixed in the weight ratio 2:3:1, these were provided by Merck. Monomer A3MA was bought from Syncom and DR1A was obtained from Aldrich. The choice of the concentration of the azobenzene monomers should be careful. It is determined by the extinction length d for non-polarized light at the peak absorption wavelengths of the dye, the measurement in DR1A and A3MA polymer film samples should be made when the samples are in planar uniaxial alignment and with known concentration and thickness. To calculate the extinction length d, the natural base definition of extinction length d as fellow is used:</p>
+
+
+                
+
+                
+                <hr>
+                <ul class="pager">
+                    
+                    
+                    <li class="next">
+                        <a href="/post/test-post/" data-toggle="tooltip" data-placement="top" title="Test Post">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+                
+
+                
+
+
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+                <section>
+                    <hr>
+                    <h5>FRIENDS</h5>
+                    <ul class="list-inline">
+                        
+                        <li><a target="_blank" href="https://www.autumnus.cn">My Blog in Chinese</a></li>
+                        
+                    </ul>
+                </section>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">                  
+                    
+                    <li>
+                        <a href="mailto:ph.ddzf@gmail.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/AstroNomen">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="AkiDAY" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; AkiDAY 2023
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+
+</body>
+</html>
