@@ -46,5 +46,14 @@ The head figure of website is taken by the Near-Infrared Camera (NIRCam) on NASA
       <description></description>
     </item>
     
+    <item>
+      <title>Posts Archive</title>
+      <link>https://astronomen.github.io/archive/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://astronomen.github.io/archive/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
