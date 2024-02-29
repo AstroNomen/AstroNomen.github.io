@@ -15,15 +15,15 @@
     
 
     
-    <meta name="title" content="" />
-    <meta property="og:title" content="" />
-    <meta property="twitter:title" content="" />
+    <meta name="title" content="Ultra Violet C Irradiation Grating Coupler Design" />
+    <meta property="og:title" content="Ultra Violet C Irradiation Grating Coupler Design" />
+    <meta property="twitter:title" content="Ultra Violet C Irradiation Grating Coupler Design" />
     
 
     
-    <meta name="description" content="Zhifan (Charles) Dai, Master of Photonics Engineering @University Ghent, archiving my personal academic collection and works">
-    <meta property="og:description" content="Zhifan (Charles) Dai, Master of Photonics Engineering @University Ghent, archiving my personal academic collection and works" />
-    <meta property="twitter:description" content="Zhifan (Charles) Dai, Master of Photonics Engineering @University Ghent, archiving my personal academic collection and works" />
+    <meta name="description" content="A design scheme for grating couplers based on Silica, target work wavelength at 266nm.">
+    <meta property="og:description" content="A design scheme for grating couplers based on Silica, target work wavelength at 266nm." />
+    <meta property="twitter:description" content="A design scheme for grating couplers based on Silica, target work wavelength at 266nm." />
     
 
     
@@ -34,9 +34,9 @@
     <meta name="keyword"  content="Blog, Photonics, Academic">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>Tags | Personal Academic Website</title>
+    <title>Ultra Violet C Irradiation Grating Coupler Design | Personal Academic Website</title>
 
-    <link rel="canonical" href="/tags/">
+    <link rel="canonical" href="/post/uvcgrating/">
 
     
     
@@ -171,14 +171,49 @@
 
 
 
-<header class="intro-header" style="background-image: url('/img/carina_nebula_orig.jpg')">
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/carina_nebula_orig.jpg')
+    }
+</style>
+
+<header class="intro-header" >
+
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading">
-                    <h1>AkiDAY </h1>
-                    
-		    <span class="subheading">Study Something Shining</span>
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/grating-design" title="Grating Design">
+                            Grating Design
+                        </a>
+                        
+                        <a class="tag" href="/tags/lumerical" title="Lumerical">
+                            Lumerical
+                        </a>
+                        
+                        <a class="tag" href="/tags/simulation" title="Simulation">
+                            Simulation
+                        </a>
+                        
+                    </div>
+                    <h1>Ultra Violet C Irradiation Grating Coupler Design</h1>
+                    <h2 class="subheading">Simulation and Design</h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                     &#34;Charles&#34;
+                             
+                            on 
+                            Thursday, June 1, 2023
+                            
+                            
+                            
+                            
+                    </span>
                 </div>
             </div>
         </div>
@@ -191,19 +226,95 @@
 <article>
     <div class="container">
         <div class="row">
+
             
             <div class="
                 col-lg-8 col-lg-offset-2
                 col-md-10 col-md-offset-1
                 post-container">
 
-         	
+                
+                <h1 id="introduction">Introduction</h1>
+<p>Ultraviolet (UV) irradiation is defined as a type of electromagnetic radiation, with a wavelength (100–400nm) shorter than that of visible light (400–700nm), but longer than x-rays (&lt;100 nm)[1]. Ultra Violet C irradiation (UVC) ranges from 100 to 280nm in wavelength. UV irradiation is divided into four distinct spectral areas including vacuum UV (100–200 nm), UVC (200–280 nm), UVB (280–315 nm) and UVA (315–400 nm)[2].</p>
+<p>Due to its power to damage the genetic material (DNA and RNA) of microorganisms, which can prevent them from producing, UVC irradiation is widely used in disinfection and sterilization. Besides, a variety of molecules exhibit autofluorescence with UV light excitation. So UVC is widely used in the field of medicine and biology[3].</p>
+<p>Because of UVC&rsquo;s excellent bioluminescent properties, it can be used in medical and biological sensing. Meanwhile, UVC has a short wavelength, which means it can have a good resolution in optical imaging[4].</p>
+<hr>
+<p>This paper starts with the application of this direction. Efficient collection of information carrying UVC light means related devices can be miniaturized and integrated. To be applied to around the wavelength with 266 nm, a design scheme for grating couplers based on the SiO2 is presented in this paper.</p>
+<p>The paper starts with an introduction to the approach we used for our simulation. Next, we proposed the calculation for the initial parameter during the design. Then we move to the simulation, analyze the result, try to improve it and verify the improved proposals. Finally, we will have a conclusion about the whole project.</p>
+<h1 id="fdtd">FDTD</h1>
+<p>To design a photonic device, we are required to understand how light will propagate in the structure. Considering reflections, interference, scattering and radiation, interaction between multiple modes, changes in the mode profile and so on variations of light, we need an approach to solve how the light will propagate in our design.</p>
+<p>In this project, we mainly use the Lumerical to help us do the simulation. To be more specific, it is the finite difference time domain (FDTD) method that we used for the simulation. So we will talk about the FDTD method first in this chapter[5].</p>
+<p>FDTD or so-called Yee&rsquo;s method is a general and rigorous approach to solving how waves propagate. It is a typical numerical method for solving the electromagnetic wave equation in the time domain, by applying finite difference approximations to the related system of differential equations. This grid-based differential numerical modelling method is based on Maxwell equations or the scalar Helmholtz equation[6].</p>
+<p>FDTD is a grid-based differential numerical modelling method. To easily calculate, this method will discretize the physical quantities of the nanostructure we want to simulate. Such discretization can be uniform or non-uniform mesh, which makes it can adjust the precision of mesh, and then adjust the computing resources and computing speed. Normally speaking, the higher the mesh accuracy, the smaller the basic cells and more accurate results, but at the expense of much more time for calculating. Besides, free discretization can make the simulation more accurate, since we can set more meshed in the interface or structure we are interested in[7].</p>
+<p>FDTD is widely used in silicon photonics because following benefits:</p>
+<ul>
+<li>Convenient for large-scale simulations.</li>
+<li>Reliable for broadband and transient simulations.</li>
+<li>Accurate, robust, and mature which was proven in various fields.</li>
+<li>Easy to debug.</li>
+<li>Great for researching electromagnetics behaviors</li>
+</ul>
+<h1 id="grating-design">Grating Design</h1>
+<p>A grating coupler is a kind of periodic structure, which can diffract light between the waveguide and free space. Due to that, it can be used as an I/O component, whose goal is to couple light between free space or fibre and waveguide[8]. To get a better coupling efficiency, and couple light as much as possible, we need to adjust the relevant parameters of the grating coupler according to the demand calculation[9].</p>
+<h2 id="parameter-calculation">Parameter calculation</h2>
+<p>
+  <figure>
+    <img src="https://raw.githubusercontent.com/AstroNomen/ENBlogPic/imgen/20230601/scheme.png" alt="Cross-section scheme of the grating coupler">
+    <center><figcaption>Fig.1: Cross-section scheme of the grating coupler</figcaption></center>
+  </figure>
+
+</p>
+<p>The figure above shows the cross-section schematic of a grating coupler. Such a grating coupler usually consists of a silicon waveguide core, a top cladding using oxide or air, a bottom cladding using buried oxide as the substrate, and a silicon substrate.</p>
+<p>Considering the situation that an arbitrary wave propagates in a uniform medium, it can be seen as a set of plane waves which propagate independently without power exchange. The plane waves will be diffracted when the medium has a periodic structure. Such periodic structure leads to very specific coupling between certain plane waves of the set (or between specific directions), which is described by the so-called Bragg condition. Hence, we can couple an incident light (usually guided by a fibre) propagate through the waveguide, and use the light to convey information to achieve our goals.</p>
+<p>Bragg condition relates to the k-vector of the incident plane wave and the k-vectors of the diffraction orders. Therefore, we can use a k-vector diagram as a handy tool to easily graphically depict the relationship between the k-vectors, and calculate the parameters which influence the coupling efficiency.</p>
+<p>There are several important grating coupler parameters showed in Figure1 determine the coupling efficiency[10]:</p>
+<ul>
+<li>Λ is the period of the grating</li>
+<li>D is the etch depth of the grating</li>
+<li>Duty cycle, or fill factor, is the etch width divided by the period</li>
+<li>θ is the angle between surface normal and the propagation direction of incident light</li>
+</ul>
+<p>To design a waveguide grating coupler, we need to simulate different situations with different parameters, and select the optimal parameters from them. In our project, the light beam we want to couple will incident at an angle of 10° from the surface normal. The center wavelength is around <strong>266nm</strong>. At the meantime, the material we used to build the grating coupler is Silica((SiO_2)). Through these target demands and known quantities, we can draw such k-diagram as follows:</p>
+
+
+                
+
+                
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/lc-actuator/" data-toggle="tooltip" data-placement="top" title="Liquid Crystal Actuator and Ink-jet Print">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                </ul>
+                
+
                 
 
 
 
-
             </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
             
             <div class="
                 col-lg-8 col-lg-offset-2
@@ -309,7 +420,7 @@
             
            
                    <li>
-                       <a href='/tags/index.xml' rel="alternate" type="application/rss+xml" title="AkiDAY" >
+                       <a href='' rel="alternate" type="application/rss+xml" title="AkiDAY" >
                            <span class="fa-stack fa-lg">
                                <i class="fas fa-circle fa-stack-2x"></i>
                                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>

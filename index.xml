@@ -6,7 +6,17 @@
     <description>Recent content on AkiDAY</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 22 Dec 2022 17:00:00 +0100</lastBuildDate><atom:link href="https://astronomen.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 01 Jun 2023 12:00:00 +0100</lastBuildDate><atom:link href="https://astronomen.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ultra Violet C Irradiation Grating Coupler Design</title>
+      <link>https://astronomen.github.io/post/uvcgrating/</link>
+      <pubDate>Thu, 01 Jun 2023 12:00:00 +0100</pubDate>
+      
+      <guid>https://astronomen.github.io/post/uvcgrating/</guid>
+      <description>Introduction Ultraviolet (UV) irradiation is defined as a type of electromagnetic radiation, with a wavelength (100–400nm) shorter than that of visible light (400–700nm), but longer than x-rays (&amp;lt;100 nm)[1]. Ultra Violet C irradiation (UVC) ranges from 100 to 280nm in wavelength. UV irradiation is divided into four distinct spectral areas including vacuum UV (100–200 nm), UVC (200–280 nm), UVB (280–315 nm) and UVA (315–400 nm)[2].
+Due to its power to damage the genetic material (DNA and RNA) of microorganisms, which can prevent them from producing, UVC irradiation is widely used in disinfection and sterilization.</description>
+    </item>
+    
     <item>
       <title>Liquid Crystal Actuator and Ink-jet Print</title>
       <link>https://astronomen.github.io/post/lc-actuator/</link>
