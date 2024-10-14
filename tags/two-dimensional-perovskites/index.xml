@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Two-dimensional Perovskites on AkiDAY</title>
+    <link>https://astronomen.github.io/tags/two-dimensional-perovskites/</link>
+    <description>Recent content in Two-dimensional Perovskites on AkiDAY</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 07 Jun 2024 12:00:00 +0100</lastBuildDate><atom:link href="https://astronomen.github.io/tags/two-dimensional-perovskites/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Phonon Coherence and Polaritons of Excitons</title>
+      <link>https://astronomen.github.io/post/phonon_coherence_exciton/</link>
+      <pubDate>Fri, 07 Jun 2024 12:00:00 +0100</pubDate>
+      
+      <guid>https://astronomen.github.io/post/phonon_coherence_exciton/</guid>
+      <description>&amp;lsquo;Phonon coherences reveal the polaronic character of excitons in two-dimensional lead halide perovskites&amp;rsquo;
+Introduction Hybrid organic-inorganic metal halide perovskites have become an interesting area in materials science owing to their unique optical and electronic characteristics, and have been widely used in the preparation of optoelectronic devices such as solar cells[1]. The distinct lattice structures of these quantum well-like derivatives result in unique behaviour. To elucidate the peculiar nature of these materials, Félix Thouin and his colleagues delve into the interaction between excitons and phonons in 2D lead halide perovskites, providing significant insights into their polaronic nature and the resultant impact on their optoelectronic properties in the paper I reviewed, which confer both structural flexibility and remarkable electronic characteristics.</description>
+    </item>
+    
+  </channel>
+</rss>
