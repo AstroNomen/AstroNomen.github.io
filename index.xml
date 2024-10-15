@@ -8,6 +8,15 @@
     <language>en-us</language>
     <lastBuildDate>Fri, 07 Jun 2024 12:00:00 +0100</lastBuildDate><atom:link href="https://astronomen.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Recent Trends in Astrocomb</title>
+      <link>https://astronomen.github.io/post/astrocomb/</link>
+      <pubDate>Sun, 24 Dec 2023 16:00:00 +0100</pubDate>
+      
+      <guid>https://astronomen.github.io/post/astrocomb/</guid>
+      <description>Abstract—The motion of star systems will cause a Doppler shift on the spectrum, providing valuable insights into the dynamics and characteristics of celestial objects. Astronomical deep space exploration necessitates the use of high-precision astronomical spectrographs to analyze the subtle variations in Doppler shift observed in stellar absorption lines. Astrocombs serve as essential tools for the precision calibration of astronomical spectrographs, playing a crucial role in advancing the fields of cosmology and exoplanet research.</description>
+    </item>
+    
+    <item>
       <title>Phonon Coherence and Polaritons of Excitons</title>
       <link>https://astronomen.github.io/post/phonon_coherence_exciton/</link>
       <pubDate>Fri, 07 Jun 2024 12:00:00 +0100</pubDate>
@@ -15,15 +24,6 @@
       <guid>https://astronomen.github.io/post/phonon_coherence_exciton/</guid>
       <description>This paper is the review of Phonon coherences reveal the polaronic character of excitons in two-dimensional lead halide perovskites, which is written by Thouin, F., Valverde-Chávez, D.A., Quarti, C. et al. on Nature Materials. 18, 349–356 (2019). https://doi.org/10.1038/s41563-018-0262-7
 Introduction Hybrid organic-inorganic metal halide perovskites have become an interesting area in materials science owing to their unique optical and electronic characteristics, and have been widely used in the preparation of optoelectronic devices such as solar cells[1].</description>
-    </item>
-    
-    <item>
-      <title>Recent Trends in Astrocomb</title>
-      <link>https://astronomen.github.io/post/astrocomb/</link>
-      <pubDate>Sun, 24 Dec 2023 16:00:00 +0100</pubDate>
-      
-      <guid>https://astronomen.github.io/post/astrocomb/</guid>
-      <description>Abstract—The motion of star systems will cause a Doppler shift on the spectrum, providing valuable insights into the dynamics and characteristics of celestial objects. Astronomical deep space exploration necessitates the use of high-precision astronomical spectrographs to analyze the subtle variations in Doppler shift observed in stellar absorption lines. Astrocombs serve as essential tools for the precision calibration of astronomical spectrographs, playing a crucial role in advancing the fields of cosmology and exoplanet research.</description>
     </item>
     
     <item>

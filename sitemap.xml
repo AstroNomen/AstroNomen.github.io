@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://astronomen.github.io/post/astrocomb/</loc>
+    <lastmod>2023-12-24T16:00:00+01:00</lastmod>
+  </url><url>
     <loc>https://astronomen.github.io/</loc>
     <lastmod>2024-06-07T12:00:00+01:00</lastmod>
   </url><url>
@@ -36,9 +39,6 @@
     <lastmod>2023-12-24T16:00:00+01:00</lastmod>
   </url><url>
     <loc>https://astronomen.github.io/tags/literature-review/</loc>
-    <lastmod>2023-12-24T16:00:00+01:00</lastmod>
-  </url><url>
-    <loc>https://astronomen.github.io/post/astrocomb/</loc>
     <lastmod>2023-12-24T16:00:00+01:00</lastmod>
   </url><url>
     <loc>https://astronomen.github.io/tags/grating-design/</loc>
