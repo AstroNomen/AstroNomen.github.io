@@ -2,7 +2,6 @@
 <html lang="en-us">
 <head>
     <meta charset="utf-8">
-    <meta name="google-site-verification" content="BX9cls8yfAmrqsSVcJ8ImFbdWHAoct0CuHQXulDdsbw" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -51,7 +50,7 @@
     <link rel="stylesheet" href="/css/zanshang.css">
 
     
-    <link href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.15.1/css/all.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/css/font-awesome.all.min.css">
 
     
     
@@ -71,22 +70,9 @@
     
     
 
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
-
-    
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
-
-    
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
-
-  <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        renderMathInElement(document.body);
-      });
-  </script>
-
 </head>
+
+
 
 
 
@@ -110,30 +96,29 @@
         <div id="huxblog_navbar">
             <div class="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
                     
                         
                         <li>
-                            <a href="/categories/research">research</a>
+                            <a href="/categories/research/">research</a>
                         </li>
                         
                         <li>
-                            <a href="/categories/review">review</a>
+                            <a href="/categories/review/">review</a>
                         </li>
                         
                     
                     
 		    
-                        <li><a href="/archive/">ARCHIVE</a></li>
+                        <li><a href="/archive//">ARCHIVE</a></li>
                     
-                        <li><a href="/about/">ABOUT</a></li>
+                        <li><a href="/about//">ABOUT</a></li>
                     
-
-                    
-		    <li>
+		            <li>
                         <a href="/search"><i class="fa fa-search"></i></a>
-		    </li>
-                    
+		           </li>
                 </ul>
             </div>
         </div>
@@ -199,6 +184,7 @@
             col-xs-12
             post-container
         ">
+        
             
 <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment.min.js"></script>
@@ -308,6 +294,7 @@ search.start();
 }
 </style>
 
+        
        	</div>
         
 
@@ -452,7 +439,7 @@ search.start();
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <ul class="list-inline text-center">                  
+                <ul class="list-inline text-center">
                     
                     <li>
                         <a href="mailto:Zhifan.Dai@outlook.com">
@@ -513,14 +500,8 @@ search.start();
             
              </ul>
 		<p class="copyright text-muted">
-                    Copyright &copy; 2024 AkiDAY · Charles
-                    <br>
-                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
-                    <iframe
-                        style="margin-left: 2px; margin-bottom:-5px;"
-                        frameborder="0" scrolling="0" width="100px" height="20px"
-                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
-                    </iframe>
+                    Copyright &copy; AkiDAY 2024
+                    
                 </p>
             </div>
         </div>
@@ -566,9 +547,6 @@ search.start();
         if($nav) FastClick.attach($nav);
     })
 </script>
-
-
-
 
 
 
