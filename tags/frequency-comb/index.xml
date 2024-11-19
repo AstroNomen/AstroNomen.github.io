@@ -4,17 +4,16 @@
     <title>Frequency Comb on AkiDAY</title>
     <link>https://astronomen.github.io/tags/frequency-comb/</link>
     <description>Recent content in Frequency Comb on AkiDAY</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 24 Dec 2023 16:00:00 +0100</lastBuildDate><atom:link href="https://astronomen.github.io/tags/frequency-comb/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 24 Dec 2023 16:00:00 +0100</lastBuildDate>
+    <atom:link href="https://astronomen.github.io/tags/frequency-comb/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Recent Trends in Astrocomb</title>
       <link>https://astronomen.github.io/post/astrocomb/</link>
       <pubDate>Sun, 24 Dec 2023 16:00:00 +0100</pubDate>
-      
       <guid>https://astronomen.github.io/post/astrocomb/</guid>
-      <description>Abstract—The motion of star systems will cause a Doppler shift on the spectrum, providing valuable insights into the dynamics and characteristics of celestial objects. Astronomical deep space exploration necessitates the use of high-precision astronomical spectrographs to analyze the subtle variations in Doppler shift observed in stellar absorption lines. Astrocombs serve as essential tools for the precision calibration of astronomical spectrographs, playing a crucial role in advancing the fields of cosmology and exoplanet research.</description>
+      <description>&lt;p&gt;&lt;em&gt;&lt;!-- raw HTML omitted --&gt;&lt;strong&gt;Abstract&lt;/strong&gt;&lt;!-- raw HTML omitted --&gt;—The motion of star systems will cause a Doppler shift on the spectrum, providing valuable insights into the dynamics and characteristics of celestial objects. Astronomical deep space exploration necessitates the use of high-precision astronomical spectrographs to analyze the subtle variations in Doppler shift observed in stellar absorption lines. Astrocombs serve as essential tools for the precision calibration of astronomical spectrographs, playing a crucial role in advancing the fields of cosmology and exoplanet research. As technological fabrication processes undergo continual enhancement, astrocombs undergo iteration. Here we provide a brief overview of astrocombs.&lt;/em&gt;&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -4,26 +4,16 @@
     <title>Categories on AkiDAY</title>
     <link>https://astronomen.github.io/categories/</link>
     <description>Recent content in Categories on AkiDAY</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 07 Jun 2024 12:00:00 +0100</lastBuildDate><atom:link href="https://astronomen.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Review</title>
-      <link>https://astronomen.github.io/categories/review/</link>
-      <pubDate>Fri, 07 Jun 2024 12:00:00 +0100</pubDate>
-      
-      <guid>https://astronomen.github.io/categories/review/</guid>
-      <description></description>
-    </item>
-    
+    <lastBuildDate>Thu, 01 Jun 2023 12:00:00 +0100</lastBuildDate>
+    <atom:link href="https://astronomen.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Research</title>
       <link>https://astronomen.github.io/categories/research/</link>
       <pubDate>Thu, 01 Jun 2023 12:00:00 +0100</pubDate>
-      
       <guid>https://astronomen.github.io/categories/research/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

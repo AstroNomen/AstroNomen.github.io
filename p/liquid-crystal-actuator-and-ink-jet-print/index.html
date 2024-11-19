@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Ink-jet Printing used in producing Liquid Crystal Actuator. This is a literature review of  'Printed artificial cilia from liquid-crystal network actuators modularly driven by light' ">
+<title>Liquid Crystal Actuator and Ink-jet Print</title>
+
+<link rel='canonical' href='http://localhost:1313/p/liquid-crystal-actuator-and-ink-jet-print/'>
+
+<link rel="stylesheet" href="/scss/style.min.b9c8156d464c343bdacaf14a871581fb94cbbdb9dd5cbce4ba017361187cc930.css"><meta property='og:title' content="Liquid Crystal Actuator and Ink-jet Print">
+<meta property='og:description' content="Ink-jet Printing used in producing Liquid Crystal Actuator. This is a literature review of  'Printed artificial cilia from liquid-crystal network actuators modularly driven by light' ">
+<meta property='og:url' content='http://localhost:1313/p/liquid-crystal-actuator-and-ink-jet-print/'>
+<meta property='og:site_name' content='Example Site'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Photonics' /><meta property='article:tag' content='Liquid Crystal' /><meta property='article:tag' content='Ink-jet Printing' /><meta property='article:published_time' content='2022-12-22T17:00:00&#43;01:00'/><meta property='article:modified_time' content='2022-12-22T17:00:00&#43;01:00'/>
+<meta name="twitter:title" content="Liquid Crystal Actuator and Ink-jet Print">
+<meta name="twitter:description" content="Ink-jet Printing used in producing Liquid Crystal Actuator. This is a literature review of  'Printed artificial cilia from liquid-crystal network actuators modularly driven by light' ">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu13739649187745961479.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Example Site</a></h1>
+            <h2 class="site-description">Example description</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/CaiJimmy/hugo-theme-stack'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="http://localhost:1313/" selected>English</option>
+                                
+                                    <option value="http://localhost:1313/zh-cn/" >中文</option>
+                                
+                                    <option value="http://localhost:1313/ar/" >عربي</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#liquid-crystals">Liquid Crystals</a></li>
+    <li><a href="#liquid-crystalline-polymers">Liquid Crystalline Polymers</a></li>
+    <li><a href="#stimuli-responsive-liquid-crystal-polymers">Stimuli-Responsive Liquid Crystal Polymers</a></li>
+  </ol>
+
+  <ol>
+    <li><a href="#materials">Materials</a></li>
+    <li><a href="#sample-and-experiment-preparation">Sample and experiment preparation</a></li>
+    <li><a href="#characterization-of-the-microstructures">Characterization of the microstructures</a></li>
+    <li><a href="#macrostructure">Macrostructure</a></li>
+    <li><a href="#characterization-of-the-response">Characterization of the response</a></li>
+  </ol>
+
+  <ol>
+    <li><a href="#inkjet-printing-technology">Inkjet Printing Technology</a></li>
+    <li><a href="#artificial-cilia-driven-by-light">Artificial Cilia Driven by Light</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/review/" >
+                
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/liquid-crystal-actuator-and-ink-jet-print/">Liquid Crystal Actuator and Ink-jet Print</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            Ink-jet Printing used in producing Liquid Crystal Actuator. This is a literature review of  &#39;Printed artificial cilia from liquid-crystal network actuators modularly driven by light&#39; 
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Dec 22, 2022</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    12 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>This paper is collaborated between me and my colleague Songyu Yao. This is our literature review of  <em><strong>Printed artificial cilia from liquid-crystal network actuators modularly driven by light</strong></em>, which is written by <em>Casper L. van Oosten, Cees W. M. Bastiaansen</em> and <em>Dirk J. Broer</em> on <strong>Nature Materials</strong>.</p>
+<hr>
+<h1 id="introduction-of-basic-concepts">Introduction of Basic Concepts
+</h1><h2 id="liquid-crystals">Liquid Crystals
+</h2><p>Liquid crystals (LC) are materials with anisotropy, the position of molecules can be randomly arranged, which means it can flow like a liquid, but the molecules are fixed oriented. Typically, liquid crystals are divided into thermotropic, lyotropic and metallotropic.</p>
+<p>Liquid crystals have properties like electric properties, elastic properties and optical properties. For example, by varying the temperature of the materials, the phases of thermotropic crystals are changed. Similarly, by changing the conditions like temperature and concentration of molecules in liquids, lyotropic can be formed.</p>
+<p><img src="https://raw.githubusercontent.com/AstroNomen/ENBlogPic/imgen/20221222/20221222fig1.jpg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Liquid crystals and properties"
+	
+	
+></p>
+<h2 id="liquid-crystalline-polymers">Liquid Crystalline Polymers
+</h2><p>Polymers are fantastic materials for micromechanical systems (MEMS) and lab-on-a-chip systems. However, there are still several challenges for large-scale manufacturing. On the one hand, it&rsquo;s tough to process polymer actuators for microstructuring, which leads to a more complicated production. On the other hand, when the actuators are electrically addressed, production in an extreme manufacturing environment, like high temperature, acid or basic conditions is inevitable.</p>
+<p>Liquid crystal polymer is a thermoplastic polymer material with useful physical properties. What it&rsquo;s different from most polymers is that there are rigid and flexible monomers linking to each other. Thus, if the orientation of the molecules is formed, even if the liquid crystal polymer is cooled down from high temperature, the structure is also unchanged.</p>
+<p>Based on the theory that liquid crystal polymer has a reversible structure with electrical, thermal, mechanical and chemical properties, it is an advantaged material to act as a polymer actuator. For the mechanical extension measurement, the stretching leads to a large manufacturing environment which is impossible for a microscale condition, so the strain processing way will not be a solution.</p>
+<h2 id="stimuli-responsive-liquid-crystal-polymers">Stimuli-Responsive Liquid Crystal Polymers
+</h2><p>Stimuli-responsive polymers are a kind of material that is responsive to physical or chemical conditions of the environment, like temperature, mechanical force, light, PH and electric and magnetic fields. Nowadays, stimuli-responsive polymers play a crucial role in applications like sensing, controlled drug delivery, artificial muscles and actuators.</p>
+<p><img src="https://raw.githubusercontent.com/AstroNomen/ENBlogPic/imgen/20221222/20221222fig2.jpg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Stimuli-responsive liquid crystal polymers properties"
+	
+	
+></p>
+<p>Liquid crystals are attractive for stimuli-responsive polymer materials because of their self-assembly properties. The shape of liquid crystals will change in response to stimuli which we mainly discuss light here. Nowadays, there are a lot of advancements developed in stimuli-responsive liquid crystal polymers such as soft robotics, deployable soft actuating devices, responsive pigments and sensors.</p>
+<h1 id="experimental--methods-review">Experimental &amp; Methods Review
+</h1><p>In this section, we will talk about the experiment part in the literature, and the methods they used in the study. The researchers used many monomer materials to form photoactive actuators, tried methods to fabricate devices, explained the mechanism of those polymers through the characterization experiment of the microstructure, and demonstrated their responsiveness.</p>
+<h2 id="materials">Materials
+</h2><p><img src="https://raw.githubusercontent.com/AstroNomen/ENBlogPic/imgen/20221222/materials.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Materials used in the study to form actuators"
+	
+	
+></p>
+<p>The monomer materials used in this study to form the actuators are C6M, C6BP, C6BPN, A3MA and DR1A, besides, PS16 are also used in the experiment as the surfactant (Fig.3). Among them, A3MA and DR1A are two photoactive monomers, and C6M, C6BP and C6BPN are used to build the host matrix. Then to obtain the desired alignment at the air interface, they used the surfactant PS16 in the study.</p>
+<p>Monomers C6M, C6BP and C6BPN should be mixed in the weight ratio 2:3:1, these were provided by Merck. Monomer A3MA was bought from Syncom and DR1A was obtained from Aldrich.</p>
+$$
+I/I_o = e^{-x/d}
+$$<p>The dye concentrations in the final monomeric mixtures were then set to 5.6 µm (DR1A polymer) and 5.75 µm (A3MA polymer), to ensure a deep penetration of light into the 10-µm-thick actuators.</p>
+<p>The surfactant PS16, 2-(N-ethyl Perfluorooctane Sulfonamido) ethyl acrylate obtained from Acros was added in 0.5 wt% to the mix, and Irgacure 819 (Ciba) was added in 0.5 wt% as a photoinitiator. At last, the system was dissolved in a 1:1 weight ratio with dichloroethane (Biosolve).</p>
+<h2 id="sample-and-experiment-preparation">Sample and experiment preparation
+</h2><p>All experiments in the study were carried out on glass substrates of 30×30 mm, before using them researchers needed to make sure that they were cleaned in ethanol and dried. The production of the actuator is based on the PVA release layer, which is soluble in water but not in the solvents used for the processing of the polyimide or the liquid-crystal monomers.</p>
+<p>Because of the existence of surface free energy, under unforced conditions, the mix of liquid-crystal monomers will minimize its surface free energy, which leads to an alignment perpendicular to the air interface. That&rsquo;s why researchers added a small amount of surfactant PS16 to overcome it, by adding this to the reactive monomeric mix, they can gain plane alignment at the air interface. And then they give the molecular alignment at the bottom surface a slight pre-tilt from the surface normal, to make sure the directionality of the alignment at the air interface is introduced.</p>
+<p>In the specific details of the operation, researchers used spin-coating technology to fabricate the macroscopic system. They first worked on a glass substrate and coated it with polyimide (grade 5300; Nissan Chemicals) to produce the macroscopic flaps.</p>
+<p>To obtain the desired pre-tilt, the polyimide should be manually buffed. Then under a spin-coated on at 2,000 r.p.m. for 30 s, the monomeric mix will form a 10-µm-thick monodomain alignment. After spin-coating, the samples should evaporate the solvent, this process will happen at 37 ℃ for 60 s  and then they can photopolymerized punder nitrogen blanketing. Finally, strips were cut from the A3MA and DR1A polymer with a razor blade and glued together.</p>
+<p><img src="https://raw.githubusercontent.com/AstroNomen/ENBlogPic/imgen/20221222/inkjet.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Inkjet"
+	
+	
+></p>
+<p>The figure above shows the steps of the most important process to microstructure the actuators. This is the inkjet printing technology, which allows variations of the material composition in the plane of the substrate in a single processing step. Compared to other micropatterning techniques such as lithography which requires many more steps to achieve the same, inkjet printing makes large-scale manufacture possible\cite{liu2021light}. The monomeric liquid-crystal mix containing one of the two dyes was deposited on the substrate, by using a commercial inkjet printer. It takes 4 steps to finish the production of the modular cilia in the study :</p>
+<ul>
+<li>a.
+Structured deposition of the PVA release layer. Regular PVA cannot be photopatterned directly, the desired structure is obtained by a lift-off process, using the Ma-N 490 photoresist (Microresist) to pattern the negative image.</li>
+<li>b.
+The second step is about the alignment material, polyimide (grade 5300; Nissan Chemicals)and its spin-coating, curing and buffing of the polyimide alignment layer.</li>
+<li>c.
+This is the inkjet print key step. Inkjet deposition of the monomer mixes containing DR1A (3) and A3MA (4) and curing. During this step, the samples need to be cured under nitrogen blanketing at 37 ℃ for 5 min. Using visible light for A3MA polymer and ultraviolet light for DR1A polymer to finish the deposition. In this literature, they used a commercial Fuji Dimatix printer to print the monomeric mix. And this nozzle was heated to 50 ℃, which can help to evaporate the solvent and the liquid-crystal monomers self-assembled into the splayed orientation.</li>
+<li>d.
+Dissolving the sacrificial PVA release layer in water so that the cilia were partially released from the substrate.</li>
+</ul>
+<h2 id="characterization-of-the-microstructures">Characterization of the microstructures
+</h2><p>To analyze the working mechanism of the actuators, their microstructures need to be characterized and studied. In the literature, different methods were used for different structural parameters to get a characterization of those liquid-crystalline units. To measure the height of the microstructures, the researchers used a Fogale Nanotech Zoomsurfer 3D interferometer. Then crossed polarizers to check visually the alignment of the liquid-crystal polymer, and confirmed by using microscopy. For the scanning electron micrographs, they were made on a Philips XL30 FEG ESEM at 10 kV under high vacuum, after coating the sample with a 25 nm gold layer.</p>
+<p><img src="https://raw.githubusercontent.com/AstroNomen/ENBlogPic/imgen/20221222/splay-bend.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Gradual orientational change of liquid-crystalline units as the thickness changes of the film."
+	
+	
+></p>
+<p>After breaking the sample, inspect the fracture surface by using the scanning electron microscopy method, it&rsquo;s very easy to observe the visible alignment in Fig.5b. To facilitate understanding, I have drawn schematic arrows on the figure showing the orientation in which the liquid-crystalline units have changed. Its structural features follow schematic the in Fig.5a. It presents a splay–bend configuration, as the thickness of the film changes, the liquid-crystalline units undergo a gradual orientational change from perpendicular to the substrate at the bottom, to parallel at the top, causing the bottom the film to expand and the top to contract. On one hand, that&rsquo;s why you can see the alignment of the liquid-crystalline formed an arc from bottom to top in Fig.5b. On the other hand, this explains the meaning of the arrows in Fig.5a: the expansion at the bottom of the film and the contract at the top. Both the bending direction and the bend axis of the film are dictated by the splayed molecular alignment, so this structure can make the direction of the response independent from the direction of the incident light. Besides, it can help control the self-assembly of the liquid crystals so that creating an upward-bending (rather than a downward-bending) splayed actuator is possible.</p>
+<h2 id="macrostructure">Macrostructure
+</h2><p>In this section, we will discuss the macrostructure of the actuator and how it works. The group in the literature is dedicated to producing artificial cilia that are driven by light for use as mixers or pumps in microfluidic systems. The reason why actuators driven by light can help them do that is when the light makes a change, the actuator makes a flapping, asymmetric motion, causing an effective flow in the surrounding fluid,  with a backward stroke different from the forward stroke. Liquid-crystal azobenzene is the key to achieving that since the light absorption can change the spacial structure of azobenzene, which in turn leads to macroscopic deformations. However, a single dye makes it difficult to initiate large deformations as the actuator has small dimensions. That&rsquo;s why two dyes were introduced by the study group.</p>
+<p><img src="https://raw.githubusercontent.com/AstroNomen/ENBlogPic/imgen/20221222/actuator.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="The two dye liquid-crystal azobenzene actuators."
+	
+	
+></p>
+<p>The actuator has the structure shown in Fig.6d. The yellow part is the A3MA dyed polymer part mounted at the bottom, while the red part is the DR1A polymer part mounted at the top. Different peak absorption wavelength of light makes it form 4 positions work conditions shown in Fig.6c and Fig.6e, which can be realised by selecting the colour composition of light:</p>
+<ol>
+<li>When the light is off, no one can absorb the light so the actuators are flat in the dark.</li>
+<li>Only in ultraviolet light conditions, the yellow A3MA dyed part of the actuator bend, while the red DR1A part absorbs (causing its peak absorption at 360 nm) which makes it activated to remain in the unbent transposition.
+\item</li>
+<li>When both ultraviolet and visible light are used, both yellow(A3MA) and red(DR1A) parts bend, which makes the hole flap bend.</li>
+<li>Finally comes to the only visible light used condition. This time, only the red DR1A part of the flap bends. At the same time, cis-A3MA (with peak absorption at 440nm) absorbs and is stimulated to the flat, trans-dominated state.</li>
+</ol>
+<p>These four positions can be switched between each other by changing the light colour, which can produce a cilia-like motion driven, stimulated, and responded to light.</p>
+<h2 id="characterization-of-the-response">Characterization of the response
+</h2><p>As the actuator is driven by the light. The light source should be chosen carefully when trying to characterize the response of the actuator to light.</p>
+<p><img src="https://raw.githubusercontent.com/AstroNomen/ENBlogPic/imgen/20221222/response.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Response of the microstructured cilia to different light"
+	
+	
+></p>
+<p>In this study, the light source used for generating Fig.7 was an Oriel 300 W broad-spectrum Hg(Xe) lamp and an EXFO Omnicure S2000 lamp. To select the desired wavelengths, filters used were necessary. An Andover 011FG09-50 filter to select ultraviolet wavelengths 280–390 nm, for the selection of the wavelengths 455 nm and up a Newport FSQ-GG455 filter is used. The intensities of light also play an important role in the stimulation. For the ultraviolet with the Andover filter, it is 9 \(mW/cm^2\), for the visible light with the Newport filter, it is 4 \(mW/cm^2\) and 20 \(mW/cm^2\) and 5 \(mW/cm^2\) for the ultraviolet and visible light without the filter, respectively.</p>
+<p>Finally, the research group get a characterization of the response to light. It shows that A3MA and DR1A polymers can respond to different colour wavelengths of light, which verifies that the A3MA and DR1A polymers can be addressed independently and the actuators are possible.</p>
+<h1 id="conclusion">Conclusion
+</h1><h2 id="inkjet-printing-technology">Inkjet Printing Technology
+</h2><p>One of the creative points of the new processing approach is using inkjet printing by photopolymerization. It is a material-conserving deposition technique, consisting of a solute dissolved in the solvent. For many other micropatterning techniques, several steps of work are needed to vary the composition of the material on the substrate. The advantage of inkjet printing technology is that variation is easily achieved.</p>
+<p>The inkjet printer is used for monomeric liquid crystal mix disposition. Due to the condition that only one single mix can be printed at one time, we use the approach that monomers are cured after printing every separate colour.</p>
+<p>As what literature says, inkjet printing of actuators is an essential technology. It simplifies the method of processing on the microscale and provides the possibility for fast polymer microdevices fabrication.</p>
+<h2 id="artificial-cilia-driven-by-light">Artificial Cilia Driven by Light
+</h2><p>Another important point of this research is the artificial cilia produced by inkjet printing. It&rsquo;s an imitation of the structure and behaviour of paramecia. To achieve asymmetric motion, A3MA and DR1A two dyes are used by varying the colour composition of the light. The mechanism is when the artificial cilia are illuminated by only ultraviolet light, only visible light, both ultraviolet light and visible light or no light, two dyes will transit into trans-cis isomerization and show flat and bent states.</p>
+<p>In the experimental session, it shows that regarding the same intensity, the response of A3MA to ultraviolet light is much bigger than DR1A to visible light. By changing the different colours of the light, two dyes can be addressed independently, and the response is verified that is wavelength specific. Actuation with light successfully solves the problem of extreme driving conditions.</p>
+<hr>
+<h1 id="references">References
+</h1><p>[1] Joey Kloos, Niki Joosten, Albert Schenning, and Kitty Nijmeijer. Self-assembling liquid crystals as building blocks to design nanoporous membranes suitable for molecular separations. <em>Journal of Mem brane Science</em>, 620:118849, 2021.</p>
+<p>[2] Sunqian Liu, Xiaoling Liao, Laurens T de Haan, Yuxin You, Huapeng Ye, Guofu Zhou, and Dong Yuan. Light-deformable dynamic surface fabricated by ink-jet printing. <em>Soft Matter</em>, 17(3):748–757, 2021.</p>
+<p>[3] Sean JD Lugger, Simon JA Houben, Yari Foelen, Michael G Debije, Albert PHJ Schenning, and Dirk J Mulder. Hydrogen-bonded supramolecular liquid crystal polymers: Smart materials with stimuli responsive, self-healing, and recyclable properties. <em>Chemical Reviews</em>, 122(5):4946–4975, 2021.</p>
+<p>[4] M.L.N. Madhu MohanandKaushikPal. 8- liquid crystalline light modulation mechanism and shuttering applications. In Kaushik Pal and Sabu Thomas, editors, Functional Materials Processing for Switchable Device Modulation, <em>Woodhead Publishing Series in Electronic and Optical Materials</em>, pages 141–160. Woodhead Publishing, 2022.</p>
+<p>[5] G. R. Mitchell, F. J. Davis, and W. Guo. Strain-induced transitions in liquid-crystal elastomers. <em>Phys. Rev. Lett.</em>, 71:2947–2950, Nov 1993.</p>
+<p>[6] Madhusudan Singh, Hanna M Haverinen, Parul Dhagat, and Ghassan E Jabbour. Inkjet print ing—process and its applications. <em>Advanced materials</em>, 22(6):673–685, 2010.</p>
+<p>[7] Xuefeng Wang, Jonathan Engel, and Chang Liu. Liquid crystal polymer (lcp) for mems: processes and applications. <em>Journal of Micromechanics and Microengineering</em>, 13(5):628, 2003.</p>
+<p>[8] Menglian Wei, Yongfeng Gao, Xue Li, and Michael J Serpe. Stimuli-responsive polymers and their applications. <em>Polymer Chemistry</em>, 8(1):127–143, 2017.</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/photonics/">Photonics</a>
+        
+            <a href="/tags/liquid-crystal/">Liquid Crystal</a>
+        
+            <a href="/tags/ink-jet-printing/">Ink-Jet Printing</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">Related content</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/recent-trends-in-astrocomb/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Recent Trends in Astrocomb</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/phonon-coherence-and-polaritons-of-excitons/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Phonon Coherence and Polaritons of Excitons</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2024 Charles
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.29.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.5394a875c2ea3accd090c3a8e648d6d78ceaf6a8752f53508f275f715de884a6.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
