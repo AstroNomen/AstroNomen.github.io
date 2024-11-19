@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Photonics on AkiDAY</title>
-    <link>https://astronomen.github.io/tags/photonics/</link>
+    <link>http://localhost:1313/tags/photonics/</link>
     <description>Recent content in Photonics on AkiDAY</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 24 Dec 2023 16:00:00 +0100</lastBuildDate>
-    <atom:link href="https://astronomen.github.io/tags/photonics/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/photonics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Recent Trends in Astrocomb</title>
-      <link>https://astronomen.github.io/post/astrocomb/</link>
+      <link>http://localhost:1313/post/astrocomb/</link>
       <pubDate>Sun, 24 Dec 2023 16:00:00 +0100</pubDate>
-      <guid>https://astronomen.github.io/post/astrocomb/</guid>
+      <guid>http://localhost:1313/post/astrocomb/</guid>
       <description>&lt;p&gt;&lt;em&gt;&lt;!-- raw HTML omitted --&gt;&lt;strong&gt;Abstract&lt;/strong&gt;&lt;!-- raw HTML omitted --&gt;—The motion of star systems will cause a Doppler shift on the spectrum, providing valuable insights into the dynamics and characteristics of celestial objects. Astronomical deep space exploration necessitates the use of high-precision astronomical spectrographs to analyze the subtle variations in Doppler shift observed in stellar absorption lines. Astrocombs serve as essential tools for the precision calibration of astronomical spectrographs, playing a crucial role in advancing the fields of cosmology and exoplanet research. As technological fabrication processes undergo continual enhancement, astrocombs undergo iteration. Here we provide a brief overview of astrocombs.&lt;/em&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Ultra Violet C Irradiation Grating Coupler Design</title>
-      <link>https://astronomen.github.io/post/uvcgrating/</link>
+      <link>http://localhost:1313/post/uvcgrating/</link>
       <pubDate>Thu, 01 Jun 2023 12:00:00 +0100</pubDate>
-      <guid>https://astronomen.github.io/post/uvcgrating/</guid>
+      <guid>http://localhost:1313/post/uvcgrating/</guid>
       <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;&#xA;&lt;p&gt;Ultraviolet (UV) irradiation is defined as a type of electromagnetic radiation, with a wavelength (100–400nm) shorter than that of visible light (400–700nm), but longer than x-rays (&amp;lt;100 nm)[1]. Ultra Violet C irradiation (UVC) ranges from 100 to 280nm in wavelength. UV irradiation is divided into four distinct spectral areas including vacuum UV (100–200 nm), UVC (200–280 nm), UVB (280–315 nm) and UVA (315–400 nm)[2].&lt;/p&gt;&#xA;&lt;p&gt;Due to its power to damage the genetic material (DNA and RNA) of microorganisms, which can prevent them from producing, UVC irradiation is widely used in disinfection and sterilization. Besides, a variety of molecules exhibit autofluorescence with UV light excitation. So UVC is widely used in the field of medicine and biology[3].&lt;/p&gt;</description>
     </item>
     <item>
       <title>Liquid Crystal Actuator and Ink-jet Print</title>
-      <link>https://astronomen.github.io/post/lc-actuator/</link>
+      <link>http://localhost:1313/post/lc-actuator/</link>
       <pubDate>Thu, 22 Dec 2022 17:00:00 +0100</pubDate>
-      <guid>https://astronomen.github.io/post/lc-actuator/</guid>
+      <guid>http://localhost:1313/post/lc-actuator/</guid>
       <description>&lt;p&gt;This paper is collaborated between me and my colleague Songyu Yao. This is our literature review of  &lt;em&gt;&lt;strong&gt;Printed artificial cilia from liquid-crystal network actuators modularly driven by light&lt;/strong&gt;&lt;/em&gt;, which is written by &lt;em&gt;Casper L. van Oosten, Cees W. M. Bastiaansen&lt;/em&gt; and &lt;em&gt;Dirk J. Broer&lt;/em&gt; on &lt;strong&gt;Nature Materials&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h1 id=&#34;introduction-of-basic-concepts&#34;&gt;Introduction of Basic Concepts&lt;/h1&gt;&#xA;&lt;h2 id=&#34;liquid-crystals&#34;&gt;Liquid Crystals&lt;/h2&gt;&#xA;&lt;p&gt;Liquid crystals (LC) are materials with anisotropy, the position of molecules can be randomly arranged, which means it can flow like a liquid, but the molecules are fixed oriented. Typically, liquid crystals are divided into thermotropic, lyotropic and metallotropic.&lt;/p&gt;</description>
     </item>
   </channel>
