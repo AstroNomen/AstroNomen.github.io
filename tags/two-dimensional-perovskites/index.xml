@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Two-Dimensional Perovskites on AkiDAY</title>
-    <link>http://localhost:1313/tags/two-dimensional-perovskites/</link>
+    <link>https://astronomen.github.io/tags/two-dimensional-perovskites/</link>
     <description>Recent content in Two-Dimensional Perovskites on AkiDAY</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 07 Jun 2024 12:00:00 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/two-dimensional-perovskites/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://astronomen.github.io/tags/two-dimensional-perovskites/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Phonon Coherence and Polaritons of Excitons</title>
-      <link>http://localhost:1313/post/phonon_coherence_exciton/</link>
+      <link>https://astronomen.github.io/post/phonon_coherence_exciton/</link>
       <pubDate>Fri, 07 Jun 2024 12:00:00 +0100</pubDate>
-      <guid>http://localhost:1313/post/phonon_coherence_exciton/</guid>
+      <guid>https://astronomen.github.io/post/phonon_coherence_exciton/</guid>
       <description>&lt;p&gt;This paper is the review of  &lt;em&gt;&lt;strong&gt;Phonon coherences reveal the polaronic character of excitons in two-dimensional lead halide perovskites&lt;/strong&gt;&lt;/em&gt;, which is written by &lt;em&gt;Thouin, F., Valverde-Chávez, D.A., Quarti, C.&lt;/em&gt; &lt;em&gt;et al.&lt;/em&gt; on &lt;strong&gt;Nature Materials&lt;/strong&gt;. 18, 349–356 (2019).  &lt;a href=&#34;https://doi.org/10.1038/s41563-018-0262-7&#34;&gt;https://doi.org/10.1038/s41563-018-0262-7&lt;/a&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;&#xA;&lt;p&gt;Hybrid organic-inorganic metal halide perovskites have become an interesting area in materials science owing to their unique optical and electronic characteristics, and have been widely used in the preparation of optoelectronic devices such as solar cells[1]. The distinct lattice structures of these quantum well-like derivatives result in unique behaviour. To elucidate the peculiar nature of these materials,  Félix Thouin and his colleagues delve into the interaction between excitons and phonons in 2D lead halide perovskites, providing significant insights into their polaronic nature and the resultant impact on their optoelectronic properties in the paper I reviewed, which confer both structural flexibility and remarkable electronic characteristics. This review will offer a detailed discussion of the computational and experimental results presented in their publication, alongside a broader introduction to the topic. In two-dimensional lead halide perovskites, strongly bound, stable excitons typically exist at room temperature within the lattice and exhibit lower binding energies[2]. These lower binding energies result in the coexistence of multiple excitons with distinct lattice couplings, introducing dynamic disorder effects. Such unique coupling facilitates the formation of biexcitons, which has profound implications for developing light-emitting devices. What distinguishes these excitons from those in non-ionic semiconductor quantum wells is their rich spectral structure, which depends on the degree of lattice distortion imposed by the organic cationic ligands. To differentiate various excitons, the reviewed paper implemented high-resolution resonant impulsive stimulated Raman spectroscopy (RISRS)[3][4], as resonance Raman spectroscopy serves as a direct optical probe of polaronic effects on the nature of excitons[5].&lt;/p&gt;</description>
     </item>
   </channel>
