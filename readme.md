@@ -1,4 +1,4 @@
-<img src="https://github.com/AstroNomen/AstroNomen.github.io/blob/main/static/img/icon.png?raw=true" alt="Logo" width="360px">
+<img src="https://github.com/AstroNomen/AstroNomen.github.io/blob/main/static/img/icon.png?raw=true" alt="Logo" width="180px">
 
 # AkiDAY
 
