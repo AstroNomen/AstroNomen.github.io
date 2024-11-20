@@ -1,9 +1,3 @@
-# 忽略无关报错
-ignoreLogs = ['warning-goldmark-raw-html']
-
-#指定输出路径
-publishDir = "D:/Website/HugoPublic"
-
 baseurl = "https://astronomen.github.io"
 title = "AkiDAY"
 theme = "hugo-theme-cleanwhite"
@@ -15,6 +9,13 @@ paginate = 5 #frontpage pagination
 hasCJKLanguage = true
 buildfuture = true
 homepage = "https://astronomen.github.io"
+
+# 忽略无关报错
+ignoreLogs = ['warning-goldmark-raw-html']
+
+#指定输出路径
+publishDir = "D:/Website/HugoPublic"
+
 
 [outputs]
 home = ["HTML", "RSS", "Algolia"]
