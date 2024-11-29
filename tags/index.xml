@@ -2,94 +2,94 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on AkiDAY</title>
-    <link>https://astronomen.github.io/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on AkiDAY</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 07 Jun 2024 12:00:00 +0100</lastBuildDate>
-    <atom:link href="https://astronomen.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Exciton</title>
-      <link>https://astronomen.github.io/tags/exciton/</link>
+      <link>http://localhost:1313/tags/exciton/</link>
       <pubDate>Fri, 07 Jun 2024 12:00:00 +0100</pubDate>
-      <guid>https://astronomen.github.io/tags/exciton/</guid>
+      <guid>http://localhost:1313/tags/exciton/</guid>
       <description></description>
     </item>
     <item>
       <title>Materials</title>
-      <link>https://astronomen.github.io/tags/materials/</link>
+      <link>http://localhost:1313/tags/materials/</link>
       <pubDate>Fri, 07 Jun 2024 12:00:00 +0100</pubDate>
-      <guid>https://astronomen.github.io/tags/materials/</guid>
+      <guid>http://localhost:1313/tags/materials/</guid>
       <description></description>
     </item>
     <item>
       <title>Phonon</title>
-      <link>https://astronomen.github.io/tags/phonon/</link>
+      <link>http://localhost:1313/tags/phonon/</link>
       <pubDate>Fri, 07 Jun 2024 12:00:00 +0100</pubDate>
-      <guid>https://astronomen.github.io/tags/phonon/</guid>
+      <guid>http://localhost:1313/tags/phonon/</guid>
       <description></description>
     </item>
     <item>
       <title>Two-Dimensional Perovskites</title>
-      <link>https://astronomen.github.io/tags/two-dimensional-perovskites/</link>
+      <link>http://localhost:1313/tags/two-dimensional-perovskites/</link>
       <pubDate>Fri, 07 Jun 2024 12:00:00 +0100</pubDate>
-      <guid>https://astronomen.github.io/tags/two-dimensional-perovskites/</guid>
+      <guid>http://localhost:1313/tags/two-dimensional-perovskites/</guid>
       <description></description>
     </item>
     <item>
       <title>Astrocomb</title>
-      <link>https://astronomen.github.io/tags/astrocomb/</link>
+      <link>http://localhost:1313/tags/astrocomb/</link>
       <pubDate>Sun, 24 Dec 2023 16:00:00 +0100</pubDate>
-      <guid>https://astronomen.github.io/tags/astrocomb/</guid>
+      <guid>http://localhost:1313/tags/astrocomb/</guid>
       <description></description>
     </item>
     <item>
       <title>Frequency Comb</title>
-      <link>https://astronomen.github.io/tags/frequency-comb/</link>
+      <link>http://localhost:1313/tags/frequency-comb/</link>
       <pubDate>Sun, 24 Dec 2023 16:00:00 +0100</pubDate>
-      <guid>https://astronomen.github.io/tags/frequency-comb/</guid>
+      <guid>http://localhost:1313/tags/frequency-comb/</guid>
       <description></description>
     </item>
     <item>
       <title>Photonics</title>
-      <link>https://astronomen.github.io/tags/photonics/</link>
+      <link>http://localhost:1313/tags/photonics/</link>
       <pubDate>Sun, 24 Dec 2023 16:00:00 +0100</pubDate>
-      <guid>https://astronomen.github.io/tags/photonics/</guid>
+      <guid>http://localhost:1313/tags/photonics/</guid>
       <description></description>
     </item>
     <item>
       <title>Lumerical</title>
-      <link>https://astronomen.github.io/tags/lumerical/</link>
+      <link>http://localhost:1313/tags/lumerical/</link>
       <pubDate>Thu, 01 Jun 2023 12:00:00 +0100</pubDate>
-      <guid>https://astronomen.github.io/tags/lumerical/</guid>
+      <guid>http://localhost:1313/tags/lumerical/</guid>
       <description></description>
     </item>
     <item>
       <title>PIC</title>
-      <link>https://astronomen.github.io/tags/pic/</link>
+      <link>http://localhost:1313/tags/pic/</link>
       <pubDate>Thu, 01 Jun 2023 12:00:00 +0100</pubDate>
-      <guid>https://astronomen.github.io/tags/pic/</guid>
+      <guid>http://localhost:1313/tags/pic/</guid>
       <description></description>
     </item>
     <item>
       <title>Simulation</title>
-      <link>https://astronomen.github.io/tags/simulation/</link>
+      <link>http://localhost:1313/tags/simulation/</link>
       <pubDate>Thu, 01 Jun 2023 12:00:00 +0100</pubDate>
-      <guid>https://astronomen.github.io/tags/simulation/</guid>
+      <guid>http://localhost:1313/tags/simulation/</guid>
       <description></description>
     </item>
     <item>
       <title>Ink-Jet Printing</title>
-      <link>https://astronomen.github.io/tags/ink-jet-printing/</link>
+      <link>http://localhost:1313/tags/ink-jet-printing/</link>
       <pubDate>Thu, 22 Dec 2022 17:00:00 +0100</pubDate>
-      <guid>https://astronomen.github.io/tags/ink-jet-printing/</guid>
+      <guid>http://localhost:1313/tags/ink-jet-printing/</guid>
       <description></description>
     </item>
     <item>
       <title>Liquid Crystal</title>
-      <link>https://astronomen.github.io/tags/liquid-crystal/</link>
+      <link>http://localhost:1313/tags/liquid-crystal/</link>
       <pubDate>Thu, 22 Dec 2022 17:00:00 +0100</pubDate>
-      <guid>https://astronomen.github.io/tags/liquid-crystal/</guid>
+      <guid>http://localhost:1313/tags/liquid-crystal/</guid>
       <description></description>
     </item>
   </channel>

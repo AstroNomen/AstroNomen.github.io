@@ -2,79 +2,79 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://astronomen.github.io/post/astrocomb/</loc>
+    <loc>http://localhost:1313/post/astrocomb/</loc>
     <lastmod>2023-12-24T16:00:00+01:00</lastmod>
   </url><url>
-    <loc>https://astronomen.github.io/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2024-06-07T12:00:00+01:00</lastmod>
   </url><url>
-    <loc>https://astronomen.github.io/categories/</loc>
+    <loc>http://localhost:1313/categories/</loc>
     <lastmod>2024-06-07T12:00:00+01:00</lastmod>
   </url><url>
-    <loc>https://astronomen.github.io/tags/exciton/</loc>
+    <loc>http://localhost:1313/tags/exciton/</loc>
     <lastmod>2024-06-07T12:00:00+01:00</lastmod>
   </url><url>
-    <loc>https://astronomen.github.io/tags/materials/</loc>
+    <loc>http://localhost:1313/tags/materials/</loc>
     <lastmod>2024-06-07T12:00:00+01:00</lastmod>
   </url><url>
-    <loc>https://astronomen.github.io/tags/phonon/</loc>
+    <loc>http://localhost:1313/tags/phonon/</loc>
     <lastmod>2024-06-07T12:00:00+01:00</lastmod>
   </url><url>
-    <loc>https://astronomen.github.io/post/phonon_coherence_exciton/</loc>
+    <loc>http://localhost:1313/post/phonon_coherence_exciton/</loc>
     <lastmod>2024-06-07T12:00:00+01:00</lastmod>
   </url><url>
-    <loc>https://astronomen.github.io/post/</loc>
+    <loc>http://localhost:1313/post/</loc>
     <lastmod>2024-06-07T12:00:00+01:00</lastmod>
   </url><url>
-    <loc>https://astronomen.github.io/categories/review/</loc>
+    <loc>http://localhost:1313/categories/review/</loc>
     <lastmod>2024-06-07T12:00:00+01:00</lastmod>
   </url><url>
-    <loc>https://astronomen.github.io/tags/</loc>
+    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2024-06-07T12:00:00+01:00</lastmod>
   </url><url>
-    <loc>https://astronomen.github.io/tags/two-dimensional-perovskites/</loc>
+    <loc>http://localhost:1313/tags/two-dimensional-perovskites/</loc>
     <lastmod>2024-06-07T12:00:00+01:00</lastmod>
   </url><url>
-    <loc>https://astronomen.github.io/tags/astrocomb/</loc>
+    <loc>http://localhost:1313/tags/astrocomb/</loc>
     <lastmod>2023-12-24T16:00:00+01:00</lastmod>
   </url><url>
-    <loc>https://astronomen.github.io/tags/frequency-comb/</loc>
+    <loc>http://localhost:1313/tags/frequency-comb/</loc>
     <lastmod>2023-12-24T16:00:00+01:00</lastmod>
   </url><url>
-    <loc>https://astronomen.github.io/tags/photonics/</loc>
+    <loc>http://localhost:1313/tags/photonics/</loc>
     <lastmod>2023-12-24T16:00:00+01:00</lastmod>
   </url><url>
-    <loc>https://astronomen.github.io/tags/lumerical/</loc>
+    <loc>http://localhost:1313/tags/lumerical/</loc>
     <lastmod>2023-06-01T12:00:00+01:00</lastmod>
   </url><url>
-    <loc>https://astronomen.github.io/tags/pic/</loc>
+    <loc>http://localhost:1313/tags/pic/</loc>
     <lastmod>2023-06-01T12:00:00+01:00</lastmod>
   </url><url>
-    <loc>https://astronomen.github.io/categories/research/</loc>
+    <loc>http://localhost:1313/categories/research/</loc>
     <lastmod>2023-06-01T12:00:00+01:00</lastmod>
   </url><url>
-    <loc>https://astronomen.github.io/tags/simulation/</loc>
+    <loc>http://localhost:1313/tags/simulation/</loc>
     <lastmod>2023-06-01T12:00:00+01:00</lastmod>
   </url><url>
-    <loc>https://astronomen.github.io/post/uvcgrating/</loc>
+    <loc>http://localhost:1313/post/uvcgrating/</loc>
     <lastmod>2023-06-01T12:00:00+01:00</lastmod>
   </url><url>
-    <loc>https://astronomen.github.io/tags/ink-jet-printing/</loc>
+    <loc>http://localhost:1313/tags/ink-jet-printing/</loc>
     <lastmod>2022-12-22T17:00:00+01:00</lastmod>
   </url><url>
-    <loc>https://astronomen.github.io/tags/liquid-crystal/</loc>
+    <loc>http://localhost:1313/tags/liquid-crystal/</loc>
     <lastmod>2022-12-22T17:00:00+01:00</lastmod>
   </url><url>
-    <loc>https://astronomen.github.io/post/lc-actuator/</loc>
+    <loc>http://localhost:1313/post/lc-actuator/</loc>
     <lastmod>2022-12-22T17:00:00+01:00</lastmod>
   </url><url>
-    <loc>https://astronomen.github.io/about/</loc>
+    <loc>http://localhost:1313/about/</loc>
     <lastmod>2022-12-14T18:00:00+01:00</lastmod>
   </url><url>
-    <loc>https://astronomen.github.io/search/placeholder/</loc>
+    <loc>http://localhost:1313/search/placeholder/</loc>
   </url><url>
-    <loc>https://astronomen.github.io/archive/</loc>
+    <loc>http://localhost:1313/archive/</loc>
   </url><url>
-    <loc>https://astronomen.github.io/search/</loc>
+    <loc>http://localhost:1313/search/</loc>
   </url>
 </urlset>
