@@ -4,9 +4,11 @@ author: "Charles"
 date: 2022-12-14T18:00:00+01:00
 ---
 
-Hello! Here is Zhifan (Charles) Dai. For convenience, you can just call me Zhifan, or my English name Charles directly. And now I am a master student of photonics engineering at University Ghent.
+Hello! Here is **Zhifan (Charles) Dai**. For convenience, you can just call me Zhifan, or my English name Charles directly. 
 
-Welcome to my personal blog website in English, where I archive my personal academic research collections and works.
+Now I am a master student of photonics engineering at University Ghent.
+
+Welcome to my research blog, where I archive my personal academic research collections and works.
 
 
 
