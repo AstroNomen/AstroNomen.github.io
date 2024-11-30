@@ -21,7 +21,7 @@ publishDir = "D:/Website/HugoPublic"
 home = ["HTML", "RSS", "Algolia"]
 
 [params]
-  header_image = "img/carina_nebula_orig.jpg"
+  header_image = "img/home-bg.jpg"
   SEOTitle = "Personal Research Blog"
   homepage = "https://astronomen.github.io"
   description = "Zhifan (Charles) Dai, Master of Photonics Engineering @University Ghent, archiving my personal research collection and works"
@@ -103,11 +103,11 @@ home = ["HTML", "RSS", "Algolia"]
   #git           = "full profile url for git user"
   
   [[params.friend_link]]
-  title = "My Blog in Chinese"
+  title = "Blog in Chinese"
   href =  "https://www.autumnus.cn"
 
   [[params.friend_link]]
-  title = "My Homepage"
+  title = "Homepage"
   href =  "https://autumnus.cn/en"
 
   [[params.bookmark_link]]
