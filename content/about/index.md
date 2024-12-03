@@ -8,7 +8,7 @@ Hello! Here is **Zhifan (Charles) Dai**. For convenience, you can just call me Z
 
 Now I am a master student of photonics engineering at University Ghent.
 
-Welcome to my research blog, where I archive my personal academic research collections and works. The title of this site, ***"SSS"***, stands for ***"Studying Shining Things"***, referring to the field of photonics that I am dedicating. I love this shiny science.
+Welcome to my research blog, where I archive my personal academic research collections and works. The title of this site, ***"SSS"***, stands for ***"Studying Something Shining"***, referring to the field of photonics that I am dedicating. I love this shiny science.
 
 
 
