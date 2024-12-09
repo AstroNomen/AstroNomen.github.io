@@ -108,7 +108,7 @@ home = ["HTML", "RSS", "Algolia"]
 
   [[params.friend_link]]
   title = "Homepage"
-  href =  "https://autumnus.cn/en"
+  href =  "https://akiday.com/en"
 
   [[params.bookmark_link]]
   title =  "Martin Fowler"
