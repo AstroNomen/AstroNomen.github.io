@@ -12,7 +12,7 @@ tags:
     - Simulation
 ---
 
-# Introduction
+## Introduction
 
 Ultraviolet (UV) irradiation is defined as a type of electromagnetic radiation, with a wavelength (100–400nm) shorter than that of visible light (400–700nm), but longer than x-rays (<100 nm)[1]. Ultra Violet C irradiation (UVC) ranges from 100 to 280nm in wavelength. UV irradiation is divided into four distinct spectral areas including vacuum UV (100–200 nm), UVC (200–280 nm), UVB (280–315 nm) and UVA (315–400 nm)[2]. 
 
@@ -32,7 +32,7 @@ The paper starts with an introduction to the approach we used for our simulation
 
 
 
-# FDTD
+## FDTD
 
 To design a photonic device, we are required to understand how light will propagate in the structure. Considering reflections, interference, scattering and radiation, interaction between multiple modes, changes in the mode profile and so on variations of light, we need an approach to solve how the light will propagate in our design. 
 
@@ -50,11 +50,11 @@ FDTD is widely used in silicon photonics because of the following benefits:
 - Easy to debug.
 - Great for researching electromagnetics behaviours
 
-# Grating Design
+## Grating Design
 
 A grating coupler is a kind of periodic structure, which can diffract light between the waveguide and free space. Due to that, it can be used as an I/O component, whose goal is to couple light between free space or fibre and waveguide[8]. To get a better coupling efficiency, and couple light as much as possible, we need to adjust the relevant parameters of the grating coupler according to the demand calculation[9].
 
-## Parameter calculation
+### Parameter calculation
 
 ![Cross-section scheme of the grating coupler](https://raw.githubusercontent.com/AstroNomen/ENBlogPic/imgen/20230601/scheme.png "Fig.1: Cross-section scheme of the grating coupler")
 
@@ -92,7 +92,7 @@ $$
 
 Substituting the values to calculate, we can get the period should be around 200nm.
 
-## Model Structure
+### Model Structure
 
 ![Model Structure](https://raw.githubusercontent.com/AstroNomen/ENBlogPic/imgen/20230601/structure.png "Fig.3: Model Structure")
 
@@ -100,11 +100,11 @@ In the Lumerical software, we build a structure like the figure above. For the i
 
 While building the simulation model, we found it is not wise to put a source with a specific angle directly, it will introduce incident position as a new variable and it needs a large source scale to cover the whole grating which will lead longer time for simulating. So we utilize the reversibility of the optical path to change our minds to simulate, we put a source as incident light from the left of the grating and put a monitor just above the whole structure. In this way, we can collect all the light coupling from the waveguide to air without considering the incident position, and determine the coupling efficiency of the grating coupler.
 
-# Simulation Result 
+## Simulation Result 
 
 In the last chapter, we calculate and get the period of the grating. However, there are still other parameters that influence the coupling efficiency of the grating coupler. In this chapter, we want to study the effect of etch depth on coupling efficiency in different conditions, which means we need to fix other variables that will influence the coupling efficiency. To perfect our design, we need to start with the determination of the duty cycle, which is another important grating coupler parameter.
 
-## Initial simulation
+### Initial simulation
 
 First, we run the initial simulation, this is the simulation that works for determining some important parameters and ensures the following simulation results are valuable for our design goals. In this simulation, we set the duty cycle as 50% and sweep the coupling efficiency at different etch depths. The result is shown as follows:
 
@@ -126,7 +126,7 @@ These phenomena all point to the same cause, in this etch depth, the effective i
 
 Back to the etch depth sweep Figure4, another point we cared about is the point which has the most coupling efficiency. When the etch depth is 128nm, we got 49.74% coupling efficiency which seems good. However, considering the fabrication, this parameter means that after the etching process, the remaining part of the grating is only 57nm thick. This is not a good thickness because of the stress in the material. The entire structure may collapse due to its stress concentration, and the grating will break up. To avoid that, we thickened the whole thickness of the grating to 300nm and did the following optimization design.
 
-## Parameter optimization 
+### Parameter optimization 
 
 Until now, we still haven’t got a proper value of the grating duty cycle. However, both changing the duty cycle and etch depth will change the coupling efficiency, which means that we need to sweep two parameters at the same time. Considering that we want to iterate as many times as possible in parameter optimization, a double sweep at the same time will cost extensive computing resources and time, a double sweep is not a good choice. 
 
@@ -140,7 +140,7 @@ First, we still fix the duty cycle as 50%, then start to sweep the etch depth fr
 
 From the figure, we can observe the trend of the coupling efficiency changed by the duty cycle very clearly. When the duty cycle is around 30%, the coupling efficiency is very close. So for the following design and simulation, considering the process precision, we will use 30% as the duty cycle of the grating.
 
-## Absorption of Si 
+### Absorption of Si 
 
 After determining the key parameters, we first did a simulation under a 30% duty cycle, 200nm period, 300nm grating thickness, and 10µm long to see how the etch depth influences the coupling efficiency.
 
@@ -160,7 +160,7 @@ Although it still has a little dip like our first simulation, there has been a h
 
 To confirm our conjecture, we build a cross-section view to monitor the electric field passing through the structure again. The figure we obtained is shown above. Si substrate works like a mirror, it’s obvious to see that the light is reflected back to the grating and coupled again. In this way, the coupling efficiency can be improved compared to the structure without Si substrate. As the Si doesn’t have 100% reflectivity, the light which doesn’t be reflected will be absorbed by the Si. That’s why we can see a dark range in the figure. That dark area indicates where the silicon substrate is located.
 
-## Grating Length
+### Grating Length
 
 In the last section, we study the grating length influence. Fixed the period, duty cycle, grating thickness and materials as same to previous work, just lengthened the grating coupler to 50µm. Then still do the sweep on the etch depth, the result we got is the figure as follows. 
 
@@ -170,7 +170,7 @@ Observe the curve, the shape is still similar to the previous simulation. The di
 
 Meanwhile, a longer grating coupler means more light can be coupled. That’s why we can find in some other parameters and the same etch depth at 150nm, a 50µm grating coupler has a coupling efficiency of 55.84%, which is much higher than the 40.46% of a 10µm grating coupler.
 
-# Conclusion 
+## Conclusion 
 
 During this research on Ultra Violet C Irradiation grating coupler, we can make the following conclusions:
 
@@ -182,7 +182,7 @@ During this research on Ultra Violet C Irradiation grating coupler, we can make 
 
 Generally speaking, we basically completed the design work under the requirements of the design objectives.
 
-# References
+## References
 
 [1] Susan Givens Bell. “Antibiotic resistance: is the end of an era near?” In: *Neonatal Network* 22.6 (2003), pp. 47–54.
 

@@ -18,9 +18,9 @@ This paper is collaborated between me and my colleague Songyu Yao. This is our l
 
 
 
-# Introduction of Basic Concepts
+## Introduction of Basic Concepts
 
-## Liquid Crystals
+### Liquid Crystals
 
 Liquid crystals (LC) are materials with anisotropy, the position of molecules can be randomly arranged, which means it can flow like a liquid, but the molecules are fixed oriented. Typically, liquid crystals are divided into thermotropic, lyotropic and metallotropic. 
 
@@ -28,7 +28,7 @@ Liquid crystals have properties like electric properties, elastic properties and
 
 ![Liquid crystals and properties](https://raw.githubusercontent.com/AstroNomen/ENBlogPic/imgen/20221222/20221222fig1.jpg  "Fig.1: Liquid crystals and properties")
 
-## Liquid Crystalline Polymers
+### Liquid Crystalline Polymers
 
 Polymers are fantastic materials for micromechanical systems (MEMS) and lab-on-a-chip systems. However, there are still several challenges for large-scale manufacturing. On the one hand, it's tough to process polymer actuators for microstructuring, which leads to a more complicated production. On the other hand, when the actuators are electrically addressed, production in an extreme manufacturing environment, like high temperature, acid or basic conditions is inevitable.
 
@@ -36,7 +36,7 @@ Liquid crystal polymer is a thermoplastic polymer material with useful physical 
 
 Based on the theory that liquid crystal polymer has a reversible structure with electrical, thermal, mechanical and chemical properties, it is an advantaged material to act as a polymer actuator. For the mechanical extension measurement, the stretching leads to a large manufacturing environment which is impossible for a microscale condition, so the strain processing way will not be a solution.
 
-## Stimuli-Responsive Liquid Crystal Polymers
+### Stimuli-Responsive Liquid Crystal Polymers
 
 Stimuli-responsive polymers are a kind of material that is responsive to physical or chemical conditions of the environment, like temperature, mechanical force, light, PH and electric and magnetic fields. Nowadays, stimuli-responsive polymers play a crucial role in applications like sensing, controlled drug delivery, artificial muscles and actuators.
 
@@ -44,10 +44,10 @@ Stimuli-responsive polymers are a kind of material that is responsive to physica
 
 Liquid crystals are attractive for stimuli-responsive polymer materials because of their self-assembly properties. The shape of liquid crystals will change in response to stimuli which we mainly discuss light here. Nowadays, there are a lot of advancements developed in stimuli-responsive liquid crystal polymers such as soft robotics, deployable soft actuating devices, responsive pigments and sensors.
 
-# Experimental & Methods Review 
+## Experimental & Methods Review 
 In this section, we will talk about the experiment part in the literature, and the methods they used in the study. The researchers used many monomer materials to form photoactive actuators, tried methods to fabricate devices, explained the mechanism of those polymers through the characterization experiment of the microstructure, and demonstrated their responsiveness.
 
-## Materials
+### Materials
 
 ![Materials used in the study to form actuators](https://raw.githubusercontent.com/AstroNomen/ENBlogPic/imgen/20221222/materials.png "Fig.3: Materials used in the study to form actuators")
 
@@ -64,7 +64,7 @@ The dye concentrations in the final monomeric mixtures were then set to 5.6 µm 
 
 The surfactant PS16, 2-(N-ethyl Perfluorooctane Sulfonamido) ethyl acrylate obtained from Acros was added in 0.5 wt% to the mix, and Irgacure 819 (Ciba) was added in 0.5 wt% as a photoinitiator. At last, the system was dissolved in a 1:1 weight ratio with dichloroethane (Biosolve).
 
-## Sample and experiment preparation
+### Sample and experiment preparation
 
 All experiments in the study were carried out on glass substrates of 30×30 mm, before using them researchers needed to make sure that they were cleaned in ethanol and dried. The production of the actuator is based on the PVA release layer, which is soluble in water but not in the solvents used for the processing of the polyimide or the liquid-crystal monomers.
 
@@ -89,14 +89,14 @@ The figure above shows the steps of the most important process to microstructure
 
 
 
-## Characterization of the microstructures
+### Characterization of the microstructures
 To analyze the working mechanism of the actuators, their microstructures need to be characterized and studied. In the literature, different methods were used for different structural parameters to get a characterization of those liquid-crystalline units. To measure the height of the microstructures, the researchers used a Fogale Nanotech Zoomsurfer 3D interferometer. Then crossed polarizers to check visually the alignment of the liquid-crystal polymer, and confirmed by using microscopy. For the scanning electron micrographs, they were made on a Philips XL30 FEG ESEM at 10 kV under high vacuum, after coating the sample with a 25 nm gold layer.
 
 ![Gradual orientational change of liquid-crystalline units as the thickness changes of the film.](https://raw.githubusercontent.com/AstroNomen/ENBlogPic/imgen/20221222/splay-bend.png "Fig.5: Gradual orientational change of liquid-crystalline units as the thickness changes of the film.") 
 
 After breaking the sample, inspect the fracture surface by using the scanning electron microscopy method, it's very easy to observe the visible alignment in Fig.5b. To facilitate understanding, I have drawn schematic arrows on the figure showing the orientation in which the liquid-crystalline units have changed. Its structural features follow schematic the in Fig.5a. It presents a splay–bend configuration, as the thickness of the film changes, the liquid-crystalline units undergo a gradual orientational change from perpendicular to the substrate at the bottom, to parallel at the top, causing the bottom the film to expand and the top to contract. On one hand, that's why you can see the alignment of the liquid-crystalline formed an arc from bottom to top in Fig.5b. On the other hand, this explains the meaning of the arrows in Fig.5a: the expansion at the bottom of the film and the contract at the top. Both the bending direction and the bend axis of the film are dictated by the splayed molecular alignment, so this structure can make the direction of the response independent from the direction of the incident light. Besides, it can help control the self-assembly of the liquid crystals so that creating an upward-bending (rather than a downward-bending) splayed actuator is possible. 
 
-##  Macrostructure
+###  Macrostructure
 
 In this section, we will discuss the macrostructure of the actuator and how it works. The group in the literature is dedicated to producing artificial cilia that are driven by light for use as mixers or pumps in microfluidic systems. The reason why actuators driven by light can help them do that is when the light makes a change, the actuator makes a flapping, asymmetric motion, causing an effective flow in the surrounding fluid,  with a backward stroke different from the forward stroke. Liquid-crystal azobenzene is the key to achieving that since the light absorption can change the spacial structure of azobenzene, which in turn leads to macroscopic deformations. However, a single dye makes it difficult to initiate large deformations as the actuator has small dimensions. That's why two dyes were introduced by the study group.
 
@@ -112,7 +112,7 @@ The actuator has the structure shown in Fig.6d. The yellow part is the A3MA dyed
 
 These four positions can be switched between each other by changing the light colour, which can produce a cilia-like motion driven, stimulated, and responded to light.
 
-##  Characterization of the response
+###  Characterization of the response
 
 As the actuator is driven by the light. The light source should be chosen carefully when trying to characterize the response of the actuator to light.
 
@@ -122,8 +122,8 @@ In this study, the light source used for generating Fig.7 was an Oriel 300 W bro
 
 Finally, the research group get a characterization of the response to light. It shows that A3MA and DR1A polymers can respond to different colour wavelengths of light, which verifies that the A3MA and DR1A polymers can be addressed independently and the actuators are possible.
 
-# Conclusion
-## Inkjet Printing Technology
+## Conclusion
+### Inkjet Printing Technology
 
 One of the creative points of the new processing approach is using inkjet printing by photopolymerization. It is a material-conserving deposition technique, consisting of a solute dissolved in the solvent. For many other micropatterning techniques, several steps of work are needed to vary the composition of the material on the substrate. The advantage of inkjet printing technology is that variation is easily achieved.
 
@@ -131,7 +131,7 @@ The inkjet printer is used for monomeric liquid crystal mix disposition. Due to 
 
 As what literature says, inkjet printing of actuators is an essential technology. It simplifies the method of processing on the microscale and provides the possibility for fast polymer microdevices fabrication.
 
-## Artificial Cilia Driven by Light
+### Artificial Cilia Driven by Light
 
 Another important point of this research is the artificial cilia produced by inkjet printing. It's an imitation of the structure and behaviour of paramecia. To achieve asymmetric motion, A3MA and DR1A two dyes are used by varying the colour composition of the light. The mechanism is when the artificial cilia are illuminated by only ultraviolet light, only visible light, both ultraviolet light and visible light or no light, two dyes will transit into trans-cis isomerization and show flat and bent states.
 
@@ -143,7 +143,7 @@ In the experimental session, it shows that regarding the same intensity, the res
 
 
 
-# References
+## References
 
  [1] Joey Kloos, Niki Joosten, Albert Schenning, and Kitty Nijmeijer. Self-assembling liquid crystals as building blocks to design nanoporous membranes suitable for molecular separations. *Journal of Mem brane Science*, 620:118849, 2021. 
 
