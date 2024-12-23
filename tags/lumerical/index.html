@@ -140,7 +140,7 @@
                     
                     
 		    
-                        <li><a href="/archive//">ARCHIVE</a></li>
+                        <li><a href="/archive//">TIMELINE</a></li>
                     
                         <li><a href="/about//">ABOUT</a></li>
                     
@@ -316,6 +316,16 @@
                
                
                
+               
+               
+                   <li>
+                       <a href='/tags/lumerical/index.xml' rel="alternate" type="application/rss+xml" title="SSS" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
                
                 </ul>
             </div>
@@ -527,7 +537,7 @@
             n = $(this).prop('tagName').toLowerCase();
             i = "#" + $(this).prop('id');
             t = $(this).text();
-            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            c = $('<a href="' + i + '" rel="nofollow" title="' + t + '">' + t + '</a>'); 
             l = $('<li class="' + n + '_nav"></li>').append(c);
             $(selector).append(l);
         });
