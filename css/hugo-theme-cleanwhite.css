@@ -96,14 +96,14 @@ article h2,
 article h3,
 article h4,
 article ol li{
-    font-family:serif
+    font-family:font-family:"Roboto Serif", "DejaVu Serif", "Liberation Serif","Times New Roman", serif
 }
 article p{
     font-size:18px;
     font-weight: 500
 }
 article figcaption{
-  font-family:"Roboto Serif", "DejaVu Serif", "Liberation Serif","Times New Roman", serif;font-size:16px;font-style: italic;font-weight: bold
+  font-size:14px;font-style: italic;font-weight: bold
 }
 blockquote{
     color:gray;
