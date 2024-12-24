@@ -45,7 +45,7 @@ home = ["HTML", "RSS", "Algolia"]
 
   # Sidebar settings
   sidebar_about_description = """
-  Zhifan (Charles) Dai, 
+  Zhifan (Charles) Dai<br>
   Master of Photonics Engineering @University Ghent
   """
   #sidebar_avatar = "img/avatar-zhaohuabing.jpg"      # use absolute URL, seeing it's used in both `/` and `/about/`
