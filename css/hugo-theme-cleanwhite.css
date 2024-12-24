@@ -52,6 +52,8 @@
     margin-bottom:20px
 }
 .sidebar-container .short-about p{
+    font-family:-apple-system, system-ui, BlinkMacSystemFont,"Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans CN", "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+    font-size:15px;
     margin-top:0;
     margin-bottom:20px
 }
