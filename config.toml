@@ -45,7 +45,7 @@ home = ["HTML", "RSS", "Algolia"]
 
   # Sidebar settings
   sidebar_about_description = """
-  Zhifan (Charles) Dai<br>
+  Zhifan (Charles) Dai,<br>
   Master of Photonics Engineering @University Ghent
   """
   #sidebar_avatar = "img/avatar-zhaohuabing.jpg"      # use absolute URL, seeing it's used in both `/` and `/about/`
@@ -67,8 +67,8 @@ home = ["HTML", "RSS", "Algolia"]
   reward = false
   # reward_guide = "" 
 
-  friends = true
-  bookmarks = false
+  friends = false
+  bookmarks = true
   about_me = true
 
   # Include any custom CSS and/or JS files, url or relative to /static folder
@@ -98,14 +98,18 @@ home = ["HTML", "RSS", "Algolia"]
   #keybase       = "full profile url in keybase"
   #xing          = "https://www.xing.com/profile/yourxingid"
   #git           = "full profile url for git user"
-  
-  [[params.friend_link]]
-  title = "Blog in Chinese"
-  href =  "https://www.autumnus.cn"
-
-  [[params.friend_link]]
-  title = "Homepage"
+ 
+  [[params.bookmark_link]]
+  title = "Bio"
   href =  "https://akiday.com/en"
+
+  [[params.bookmark_link]]
+  title = "Blog in Chinese"
+  href =  "https://blog.akiday.com"
+
+  #[[params.friend_link]]
+  #title = ""
+  #href =  ""
   
   [[params.addtional_menus]]
   title =  "TIMELINE"
@@ -128,9 +132,18 @@ vars = ["title", "summary", "date", "publishdate", "expirydate", "permalink"]
 params = ["categories", "tags"] 
 
 [markup]
+  defaultMarkdownHandler = "goldmark"
+  
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
   [markup.tableOfContents]
     endLevel = 2
     startLevel = 1
+
   [markup.highlight]
     style = "dracula"
+
+  
 

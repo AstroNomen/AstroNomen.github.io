@@ -26,7 +26,7 @@ Because of UVC's excellent bioluminescent properties, it can be used in medical 
 
 
 
-This paper starts with the application of this direction. Efficient collection of information carrying UVC light means related devices can be miniaturized and integrated. To be applied to around the wavelength with 266 nm, a design scheme for grating couplers based on the \\(SiO_2\\) is presented in this paper. 
+This paper starts with the application of this direction. Efficient collection of information carrying UVC light means related devices can be miniaturized and integrated. To be applied to around the wavelength with 266 nm, a design scheme for grating couplers based on the SiO<sub>2</sub> is presented in this paper. 
 
 The paper starts with an introduction to the approach we used for our simulation. Next, we proposed the calculation for the initial parameter during the design. Then we move to the simulation, analyze the result, try to improve it and verify the improved proposals. Finally, we will have a conclusion about the whole project.
 
@@ -71,7 +71,7 @@ There are several important grating coupler parameters shown in Figure1 to deter
 - The duty cycle, or fill factor, is the etch width divided by the period 
 - θ is the angle between the surface normal and the propagation direction of incident light
 
-To design a waveguide grating coupler, we need to simulate different situations with different parameters and select the optimal parameters from them. In our project, the light beam we want to couple will incident at an angle of 10° from the surface normal. The centre wavelength is around **266nm**. In the meantime, the material we used to build the grating coupler is Silica(\\(SiO_2\\)). Through these target demands and known quantities, we can draw such k-diagram as follows:
+To design a waveguide grating coupler, we need to simulate different situations with different parameters and select the optimal parameters from them. In our project, the light beam we want to couple will incident at an angle of 10° from the surface normal. The centre wavelength is around **266nm**. In the meantime, the material we used to build the grating coupler is Silica(SiO<sub>2</sub>). Through these target demands and known quantities, we can draw such k-diagram as follows:
 
 ![K-Diagram](https://raw.githubusercontent.com/AstroNomen/ENBlogPic/imgen/20230601/kdiagram.png "Fig.2: K-Diagram")
 
