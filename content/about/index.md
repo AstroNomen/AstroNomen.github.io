@@ -1,10 +1,11 @@
 ---
+layout: page
 title: "About"
 author: "Charles"
 date: 2022-12-14T18:00:00+01:00
 ---
 
-Hello! Here is **<ruby>Zhifan<rt>/ʈʂɨ fæn/</rt> (Charles)<rt></rt> Dai<rt>/daɪ/</ruby>**. For convenience, you can just call me Zhifan(/ʈʂɨ fæn/), or my English name Charles directly. 
+Hello there! Here is **<ruby>Zhifan<rt>/ʈʂɨ fæn/</rt> (Charles)<rt></rt> Dai<rt>/daɪ/</ruby>**. For convenience, you can just call me Zhifan(/ʈʂɨ˥˩ fæn˧˥/), or my English name Charles directly. 
 
 Now I am a master student of photonics engineering at University Ghent.
 
