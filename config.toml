@@ -27,6 +27,7 @@ home = ["HTML", "RSS", "Algolia"]
   description = "Zhifan (Charles) Dai, Master of Photonics Engineering @University Ghent, archiving my personal research collection and works"
   keyword = "Blog, Photonics, Academi, Research"
   slogan = "Study Something Shining"
+  upstreamAttribution = true
 
   image_404 = "img/404-bg.jpg"
   title_404 = "Seems nothing here :("
@@ -39,9 +40,9 @@ home = ["HTML", "RSS", "Algolia"]
 
   # algolia site search
   algolia_search = true
-  algolia_appId = ""
-  algolia_indexName = ""
-  algolia_apiKey = ""
+  algolia_appId = "UG6R0E13HQ"
+  algolia_indexName = "sss_blog_post"
+  algolia_apiKey = "eee6240993dc1d1cf469ab20db54f97f"
 
   # Sidebar settings
   sidebar_about_description = """
