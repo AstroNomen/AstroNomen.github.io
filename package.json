@@ -1,0 +1,15 @@
+{
+  "name": "sss",
+  "version": "1.0.0",
+  "description": "Personal Research Blog",
+  "main": "index.js",
+  "scripts": {
+    "algolia": "atomic-algolia"
+  },
+  "keywords": [],
+  "author": "Charles",
+  "license": "MPL-2.0",
+  "dependencies": {
+    "atomic-algolia": "^0.3.19"
+  }
+}
