@@ -24,7 +24,7 @@ home = ["HTML", "RSS", "Algolia"]
   header_image = "img/home-bg.jpg"
   SEOTitle = "Personal Research Blog"
   homepage = "https://astronomen.github.io"
-  description = "Zhifan (Charles) Dai, Master of Photonics Engineering @University Ghent, archiving my personal research collection and works"
+  description = "Zhi-Fan (Charles) Dai, Master of Photonics Engineering @Ghent University, archiving my personal research collection and works"
   keyword = "Blog, Photonics, Academi, Research"
   slogan = "Study Something Shining"
   upstreamAttribution = true
@@ -46,9 +46,9 @@ home = ["HTML", "RSS", "Algolia"]
 
   # Sidebar settings
   sidebar_about_description = """
-  Zhifan (Charles) Dai,<br>
+  Zhi-Fan (Charles) Dai,<br>
   Master of Photonics Engineering<br>
-  @University Ghent
+  @Ghent University
   """
   #sidebar_avatar = "img/avatar-zhaohuabing.jpg"      # use absolute URL, seeing it's used in both `/` and `/about/`
   sidebar_avatar = "img/profile.png"      # use absolute URL, seeing it's used in both `/` and `/about/`
@@ -69,7 +69,7 @@ home = ["HTML", "RSS", "Algolia"]
   reward = false
   # reward_guide = "" 
 
-  friends = false
+  friends = true
   bookmarks = true
   about_me = true
 
@@ -86,7 +86,7 @@ home = ["HTML", "RSS", "Algolia"]
   #facebook      = "full profile url in facebook"
   #googleplus    = "full profile url in googleplus"
   #twitter       = "full profile url in twitter"
-  linkedin       = "https://www.linkedin.com/in/zhifan-dai-958624248/d"
+  linkedin       = "https://www.linkedin.com/in/zhi-fan-dai-958624248/"
   #stackoverflow = "https://stackoverflow.com/users/yourstackoverflowid"
   #instagram     = "full profile url in instagram"
   github         = "https://github.com/AstroNomen"
@@ -109,9 +109,9 @@ home = ["HTML", "RSS", "Algolia"]
   title = "Blog in Chinese"
   href =  "https://blog.akiday.com"
 
-  #[[params.friend_link]]
-  #title = ""
-  #href =  ""
+  [[params.friend_link]]
+  title = "Chengyu Fu"
+  href =  "https://storm-lifter-278.notion.site/20fd9d7d2ac78016877af1808ecdaaf4?v=20fd9d7d2ac781e69c79000c5eac71bb"
   
   [[params.addtional_menus]]
   title =  "TIMELINE"
