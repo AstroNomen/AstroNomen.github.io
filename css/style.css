@@ -1,2723 +1,1335 @@
-/* your styles go here */
-@charset "UTF-8";
-/*
-Theme Name: Tracks
-Theme URI: https://www.competethemes.com/tracks/
-Author: Compete Themes
-Author URI: https://www.competethemes.com
-Description: A bold, beautiful, and responsive theme. Tracks is perfect for personal blogs, magazines, and photography websites. It includes a logo uploader, over 50+ social media icons, search bar, comment display controls, premium layouts, and more. Tracks has a dark, simple, and minimalist design that makes it great for publish both text and image based content. Use it for a travel blog, online newspaper, video site, or podcast. As a free theme, you can use Tracks for as many projects as you’d like. Preview Tracks now on desktop, tablets, and mobile devices with the interactive live demo: https://www.competethemes.com/demos/?theme=tracks
-Version: 1.59
-Tags: one-column, custom-logo, custom-menu, editor-style, featured-image-header, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, photography, portfolio
-Text Domain: tracks
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-
-Tracks WordPress Theme, Copyright 2017 Compete Themes
-Tracks is distributed under the terms of the GNU GPL
-*/
-/*===== Variables =====*/
-/* Theme Colors */
-.site-title, .toggle-navigation i {
-  font-size: 1.625em;
-  line-height: 1.85;
+/* 开启全局平滑滚动，让页面内的跳转像丝般顺滑 */
+html {
+  scroll-behavior: smooth;
 }
 
-.wp-caption-text, .excerpt-meta, .entry-meta, .more-link, .pagination, .further-reading span,
-.further-reading a,
-.entry-categories span,
-.entry-categories a,
-.entry-tags span,
-.entry-tags a, .author-meta .author span, .comments-number h2, .comment-author div, .design-credit, .singular-attachment .attachment-caption, .widget li, .menu-footer-items a, .menu-secondary-items a {
-  font-size: 0.813em;
-  line-height: 1.85;
+/* =========================================
+   全局 UI 组件字体 (Metro Sans-serif 基因)
+   让网站的“框架”极具现代感，而“正文”保留学术感
+   ========================================= */
+.site-header,
+.site-footer,
+.search-container,
+.mobile-nav-panel,
+.metro-tools-dock,
+.single-sidebar,    /* 目录侧边栏/抽屉 */
+input, button {
+  /* 涵盖 macOS, iOS, Windows, Android, Linux 的顶级原生字体 */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  
+  /* 优化英文字体显示：开启抗锯齿，关闭可能导致 UI 错位的连字 */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-variant-ligatures: none;
 }
 
-.entry-container, .comments {
-  padding: 0 5.55%;
-}
 
-.site-title, .menu-unset > ul a,
-.menu-primary-items a, .excerpt-meta, .entry-meta, .excerpt-title, .entry-title, .more-link, .pagination, .further-reading,
-.entry-categories,
-.entry-tags, .author-meta .author span, .comments-number h2, .comment-author .author-name, .site-footer h1, .design-credit, .widget-title, .widget li, .menu-footer-items a, .menu-secondary-items a {
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-weight: 700;
-}
-
-/* Social Media Brand Colors */
-/*===== Mixins =====*/
-/* grid stuff */
-/* Baseline Grid
-background-image: linear-gradient(#fff 23px, #00fffc 24px, #fff 0px);
-background-size: 1px 24px; /* this is a 24px baseline grid */
-/* Column Grid
-background-color: gray;
-background-image: linear-gradient(90deg, transparent 99%, rgba(255,255,255,.5) 0%);
-background-size: 11.1%; /* This is at 6-columns -> just change this # */
-/*===== Basic Styles =====*/
-/* apply a natural box layout model to all elements */
-*, *:before, *:after {
-  box-sizing: border-box;
-}
-
+/* 1. 全局排版：纯正的衬线字体，Metro 留白风格 */
 body {
-  height: 100%;
-  font-size: 100%;
+  /* 优先使用 Georgia 等英文衬线体，强制触发英文基线省略号 (...) */
+  font-family: Georgia, "Hoefler Text", "Palatino Linotype", "Book Antiqua", Palatino, serif;
   margin: 0;
   padding: 0;
-  font-family: "raleway", sans-serif;
-  line-height: 1.5;
-  color: #4d4d4d;
-  background: #222;
-  -webkit-font-smoothing: antialiased;
-  word-wrap: break-word;
-  -ms-word-wrap: break-word;
-}
-
-.overflow-container {
-  overflow: hidden;
-  position: relative;
-  height: auto;
-  min-height: 100%;
-}
-
-.main {
-  background: #222;
-  padding-bottom: 1.5em;
-  margin: 0 auto;
-}
-
-.loop-container:after {
-  content: ".";
-  display: block;
-  clear: both;
-  visibility: hidden;
-  line-height: 0;
-  height: 0;
-}
-
-p {
-  margin: 1.5em 0;
+  background-color: #fafafa; /* 纯白背景 */
+  color: #222222; /* 深灰近黑，适合长时间阅读 */
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased; /* 让文字渲染更清晰 */
 }
 
 a {
   text-decoration: none;
-  color: #222;
-  -webkit-transition: all 0.2s ease;
-  transition: all 0.2s ease;
-}
-a:link {
-  color: #222;
-}
-a:visited, a:hover, a:active, a:focus {
-  color: black;
+  color: inherit;
 }
 
-article a {
-  text-decoration: underline;
+/* 2. 单栏布局的主容器限制 */
+/* 修改全局主容器，放宽以容纳可能的侧边栏 */
+.site-main {
+  max-width: 760px; /* 极简的单栏宽度，你可以根据喜好微调 (700-800px 都是极佳的阅读宽度)*/
+  margin: 120px auto 60px; /* 顶部留出空间给 Header */
+  padding: 0 20px; /* 适配移动端，两边留白 */
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: "raleway", sans-serif;
-  margin: 0;
-  padding: 0;
-  font-weight: 400;
-}
-
-h1 {
-  font-size: 2.625em;
-  /* 42px / 16px */
-  line-height: 1.143;
-}
-
-h2 {
-  font-size: 2.25em;
-  /* 36px / 16px */
-  line-height: 1.34;
-}
-
-h3 {
-  font-size: 1.625em;
-  /* 26px / 16px */
-  line-height: 1.85;
-}
-
-h4 {
-  font-size: 1.313em;
-  /* 21px / 16px */
-  line-height: 1.143;
-}
-
-h5 {
-  font-size: 1.125em;
-  /* 18px / 16px */
-  line-height: 1.34;
-}
-
-h6 {
-  font-size: 1em;
-  line-height: 1.5;
-}
-
-ul,
-ol {
-  font-size: 1em;
-  padding: 0;
-  margin: 1.5em;
-}
-ul ul, ul ol,
-ol ul,
-ol ol {
-  margin: 0 1.5em;
-}
-
-ul ul,
-ol ol,
-ul ol,
-ol ul,
-li li {
-  font-size: 1em;
-}
-
-/* Markup styles */
-pre {
-  word-wrap: break-word;
-  -ms-word-wrap: break-word;
-  word-break: break-all;
-  white-space: pre-wrap;
-  padding: 0.75em;
-  background: #f5f5f5;
-}
-
-code {
-  padding: 0 0.375em;
-  background: #f5f5f5;
-}
-
-blockquote {
-  margin: 1.5em 0;
-  padding: 0 1.5em;
-  border-left: solid 0.75em #222;
-}
-blockquote cite {
-  display: block;
-  text-align: right;
-}
-
-hr {
-  margin: 0.69em 0;
-}
-
-/* Table styles */
-table {
-  border-spacing: 0;
-  border-collapse: collapse;
-  margin: 1.5em 0;
-}
-
-td {
-  padding: 0.5em 0.75em;
-  border: solid 1px #4d4d4d;
-  line-height: 1.5;
-}
-
-th {
-  padding: 0.5em 0.75em;
-  border: solid 1px #4d4d4d;
-  line-height: 1.5;
-}
-
-/* Images */
-.alignright,
-.alignleft,
-.aligncenter,
-.alignnone,
-.size-auto,
-.size-full,
-.size-large,
-.size-medium,
-.size-thumbnail {
-  height: auto;
-  line-height: 0;
-  max-width: 100%;
-  max-width: calc(100% - 48px);
-}
-.alignright img,
-.alignleft img,
-.aligncenter img,
-.alignnone img,
-.size-auto img,
-.size-full img,
-.size-large img,
-.size-medium img,
-.size-thumbnail img {
-  max-width: 100%;
-}
-
-.alignleft {
-  float: left;
-  margin: 0 1.5em 1.5em 0;
-}
-
-.alignright {
-  float: right;
-  margin: 0 0 1.5em 1.5em;
-}
-
-.aligncenter {
-  text-align: center;
-  margin: 1.5em auto;
-  display: block;
-  max-width: 100%;
-}
-
-.alignnone {
-  margin: 1.5em;
-}
-
-img {
-  height: auto;
-  line-height: 0;
-}
-
-.singular-attachment img {
-  max-width: 100%;
-}
-
-.wp-caption-text {
-  margin: 0;
-  color: #8c8c8c;
-}
-
-.wp-caption.aligncenter {
-  max-width: none;
-  margin: 0 auto;
-  width: auto !important;
-}
-
-/* Form styles */
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="number"],
-input[type="search"],
-input[type="tel"],
-input[type="url"],
-textarea {
-  padding: 0.8em;
-  width: 100%;
-  max-width: 27.75em;
-  min-height: 45px;
-  outline: solid 1px #000;
-  border: none;
-  font-family: "raleway", sans-serif;
-  font-size: 0.813em;
-  line-height: 1.85;
-  border-radius: 0;
-  -webkit-appearance: none;
-  -webkit-transition: all 0.2s ease;
-          transition: all 0.2s ease;
-}
-
-textarea {
-  max-width: 41.625em;
-  overflow: auto;
-}
-
-input[type="submit"] {
-  background: #222;
-  color: white;
-  max-width: 22.2em;
-  min-width: 11.1em;
-  padding: 0.8em;
-  min-height: 45px;
-  outline: none;
-  border: none;
-  font-family: "raleway", sans-serif;
-  font-size: 0.813em;
-  line-height: 1.85;
-  border-radius: 0;
-  -webkit-appearance: none;
-  -webkit-transition: all 0.2s ease;
-          transition: all 0.2s ease;
-}
-input[type="submit"]:hover, input[type="submit"]:active, input[type="submit"]:focus {
-  cursor: pointer;
-  background: black;
-}
-
-input[type="search"] {
-  margin-right: 1.5em;
-  padding-right: 0.375em;
-  /* so safari 'x' doesn't get cut off */
-}
-
-/* sticky */
-.excerpt.sticky .excerpt-container {
-  background: wheat;
-}
-
-/* ie image border fix */
-a img {
-  border: none;
-}
-
-.screen-reader-text {
-  position: absolute;
-  clip: rect(1px 1px 1px 1px);
-  /* IE6, IE7 */
-  clip: rect(1px, 1px, 1px, 1px);
-  overflow: hidden;
-  height: 1px;
-  width: 1px;
-}
-
-.skip-content {
-  position: absolute;
-  width: 100%;
-  background: #111;
-  color: #aaaaaa;
-  text-align: center;
-  padding: 0.375em;
-  top: -4.5em;
-  z-index: 19;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-.skip-content:active, .skip-content:focus {
-  top: 0;
-  color: #ffffff;
-}
-
-.search .sticky {
-  background: white;
-}
-
-.blog .main,
-.archive .main,
-.search .main {
-  width: 88.89%;
-  max-width: 1280px;
-}
-.blog #breadcrumbs,
-.archive #breadcrumbs,
-.search #breadcrumbs {
-  width: 100%;
-}
-
-.entry {
-  max-width: 1280px;
-}
-
-.infinite-loader,
-#infinite-handle {
-  clear: both;
-}
-
-#breadcrumbs {
-  margin: 1.5em auto;
-  width: 88.88%;
-  max-width: 1280px;
-  color: #aaaaaa;
-}
-#breadcrumbs a {
-  color: #fff;
-}
-
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: landscape) {
-  html {
-    -webkit-text-size-adjust: none;
-    /* none for no scaling */
-  }
-}
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
-  html {
-    -webkit-text-size-adjust: none;
-    /* none for no scaling */
-  }
-}
+/* 3. 顶部 Header 基础架构 */
 .site-header {
-  padding: 0.75em 5.55%;
-}
-.site-header .container {
-  margin: 0 auto;
-  max-width: 1280px;
-}
-.site-header:after {
-  content: ".";
-  display: block;
-  clear: both;
-  visibility: hidden;
-  line-height: 0;
-  height: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #fafafa; 
+  z-index: 1000;
+  /* 恢复 Header 整体的丝滑滑动动画 */
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), border-bottom 0.2s ease;
+  border-bottom: 1px solid transparent; 
 }
 
-.title-info {
-  float: left;
-  position: relative;
-  z-index: 29;
+/* 页面滚动时的细边框 */
+.site-header.scrolled {
+  border-bottom: 1px solid #eaeaea; 
+}
+
+/* 呼吸感：向上滑动隐藏 */
+.site-header.header-hidden {
+  transform: translateY(-100%);
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px; 
+  margin: 0 auto;
+  padding: 20px 40px; 
 }
 
 .site-title {
-  letter-spacing: 0.06em;
-  opacity: 0.6;
-  -webkit-transition: opacity 0.2s ease;
-          transition: opacity 0.2s ease;
-}
-.site-title span {
-  opacity: 0;
-  position: absolute;
-  top: -99em;
-}
-.site-title a {
-  color: white;
-}
-.site-title a:link, .site-title a:visited, .site-title a:hover, .site-title a:active, .site-title a:focus {
-  color: white;
-}
-.site-title img {
-  max-width: 5em;
-  max-height: 1.5em;
-}
-.site-title:hover, .site-title:active, .site-title:focus {
-  opacity: 1;
-}
-
-.toggle-navigation {
-  position: relative;
-  float: right;
-  z-index: 29;
-  border: none;
-  background: none;
-  font-size: 1em;
-  margin: 0;
-  padding: 0 0 0 1.5em;
-  color: white;
-  opacity: 0.6;
-  -webkit-transition: opacity 0.2s ease;
-          transition: opacity 0.2s ease;
-}
-.toggle-navigation:hover, .toggle-navigation:active, .toggle-navigation:focus {
-  opacity: 1;
-  cursor: pointer;
-  outline: none;
-}
-
-.menu-primary, .menu-primary-tracks {
-  -webkit-transform: translateZ(0);
-          transform: translateZ(0);
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  position: absolute;
-  top: 0;
-  padding-top: 6em;
-  left: 100%;
-  height: 100%;
-  width: 100%;
-  z-index: 19;
-  background-image: -webkit-linear-gradient(#222 26px, transparent 24px, transparent 24px);
-  background-image: linear-gradient(#222 26px, transparent 24px, transparent 24px);
-  background-size: 1px 48px;
-  /* this is a 24px baseline grid */
-  text-align: center;
-  -webkit-transition: all 0.3s ease-in-out;
-          transition: all 0.3s ease-in-out;
-}
-
-.menu-primary-tracks {
-  top: 1.5em;
-  left: -100%;
-  z-index: 19;
-}
-
-.site-header .site-description {
-  opacity: 0;
-  color: white;
-}
-
-.menu-unset > ul,
-.menu-primary-items {
-  list-style: none;
-  opacity: 0;
-}
-.menu-unset > ul a,
-.menu-primary-items a {
-  display: block;
-  color: white;
-  opacity: 0.6;
-  margin: 1.5em 0 0.75em 0;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-}
-.menu-unset > ul a:only-child,
-.menu-primary-items a:only-child {
-  margin: 1.5em 0;
-}
-.menu-unset > ul a:link, .menu-unset > ul a:visited,
-.menu-primary-items a:link,
-.menu-primary-items a:visited {
-  color: white;
-}
-.menu-unset > ul a:hover, .menu-unset > ul a:active, .menu-unset > ul a:focus,
-.menu-primary-items a:hover,
-.menu-primary-items a:active,
-.menu-primary-items a:focus {
-  opacity: 1;
-}
-.menu-unset > ul .sub-menu,
-.menu-unset > ul .children,
-.menu-primary-items .sub-menu,
-.menu-primary-items .children {
-  list-style: none;
-}
-.menu-unset > ul .sub-menu li a,
-.menu-unset > ul .children li a,
-.menu-primary-items .sub-menu li a,
-.menu-primary-items .children li a {
-  margin: 0.75em 0;
-  opacity: 0.4;
-}
-.menu-unset > ul .sub-menu li a:hover, .menu-unset > ul .sub-menu li a:active, .menu-unset > ul .sub-menu li a:focus,
-.menu-unset > ul .children li a:hover,
-.menu-unset > ul .children li a:active,
-.menu-unset > ul .children li a:focus,
-.menu-primary-items .sub-menu li a:hover,
-.menu-primary-items .sub-menu li a:active,
-.menu-primary-items .sub-menu li a:focus,
-.menu-primary-items .children li a:hover,
-.menu-primary-items .children li a:active,
-.menu-primary-items .children li a:focus {
-  opacity: 1;
-}
-
-.site-header.toggled .menu-unset > ul,
-.site-header.toggled .menu-primary-items,
-.site-header.toggled .site-description {
-  -webkit-transition: opacity 0.3s 0.3s ease;
-          transition: opacity 0.3s 0.3s ease;
-}
-.site-header.toggled .menu-primary, .site-header.toggled .menu-primary-tracks,
-.site-header.toggled .menu-primary-tracks {
-  left: 0;
-}
-.site-header.toggled .menu-unset > ul,
-.site-header.toggled .menu-primary-items {
-  opacity: 1;
-}
-.site-header.toggled .site-description {
-  opacity: 0.9;
-}
-
-/* 800px */
-@media all and (min-width: 50em) {
-  .site-header {
-    position: relative;
-    z-index: 2;
-    padding: 1.5em 5.55% 2.25em;
-    border-top: solid 0.75em #111;
-  }
-
-  .title-info {
-    margin-top: -0.75em;
-  }
-
-  .site-title img {
-    max-width: 8em;
-    max-height: 3em;
-  }
-
-  .toggle-navigation {
-    display: none;
-  }
-
-  .menu-primary, .menu-primary-tracks {
-    background: none;
-    position: static;
-    width: 100%;
-    height: auto;
-    padding: 0;
-    margin: 0;
-    text-align: right;
-    min-height: 37px;
-  }
-  .menu-primary .site-description, .menu-primary-tracks .site-description {
-    position: absolute;
-    left: 0;
-    opacity: 0.6;
-  }
-  .menu-primary .site-description + div, .menu-primary-tracks .site-description + div {
-    margin-bottom: 0.75em;
-  }
-
-  .ie9 .site-description {
-    left: 5.55%;
-  }
-
-  .menu-primary-tracks {
-    display: none;
-  }
-
-  .menu-unset > ul,
-  .menu-primary-items {
-    margin: 0 0 0 3em;
-    opacity: 1;
-    /* Tier 2 */
-    /* Tier 3 */
-  }
-  .menu-unset > ul li,
-  .menu-unset > ul a,
-  .menu-primary-items li,
-  .menu-primary-items a {
-    display: inline-block;
-  }
-  .menu-unset > ul li,
-  .menu-primary-items li {
-    position: relative;
-  }
-  .menu-unset > ul > li,
-  .menu-primary-items > li {
-    font-size: 0.813em;
-    line-height: 1.85;
-  }
-  .menu-unset > ul > li:after,
-  .menu-primary-items > li:after {
-    content: '/';
-    position: absolute;
-    right: -6px;
-    top: 0;
-    color: white;
-    opacity: 0.6;
-  }
-  .menu-unset > ul > li:last-child:after,
-  .menu-primary-items > li:last-child:after {
-    display: none;
-  }
-  .menu-unset > ul > li:last-child a,
-  .menu-primary-items > li:last-child a {
-    margin-right: 0;
-  }
-  .menu-unset > ul a,
-  .menu-primary-items a {
-    opacity: 0.6;
-    margin: 0 0.75em;
-  }
-  .menu-unset > ul a:only-child,
-  .menu-primary-items a:only-child {
-    margin: 0 0.75em;
-  }
-  .menu-unset > ul ul,
-  .menu-primary-items ul {
-    position: absolute;
-    top: -9999px;
-    opacity: 0;
-    left: -70%;
-    right: -70%;
-    min-width: 100%;
-    max-width: 220px;
-    margin: 0 auto;
-    background: #111;
-    text-align: center;
-    -webkit-transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
-            transition: opacity 0.3s ease, transform 0.3s ease;
-    -webkit-transform: scale(0.95);
-            transform: scale(0.95);
-  }
-  .menu-unset > ul ul li,
-  .menu-unset > ul ul a,
-  .menu-primary-items ul li,
-  .menu-primary-items ul a {
-    display: block;
-  }
-  .menu-unset > ul ul:hover,
-  .menu-primary-items ul:hover {
-    top: 24px;
-    opacity: 1;
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  .menu-unset > ul ul a,
-  .menu-primary-items ul a {
-    padding: 0 1.5em;
-  }
-  .menu-unset > ul ul li:first-child > a,
-  .menu-primary-items ul li:first-child > a {
-    padding-top: 0.75em;
-  }
-  .menu-unset > ul ul li:last-child > a,
-  .menu-primary-items ul li:last-child > a {
-    padding-bottom: 0.75em;
-  }
-  .menu-unset > ul a:hover + ul, .menu-unset > ul a:active + ul, .menu-unset > ul a:focus + ul,
-  .menu-primary-items a:hover + ul,
-  .menu-primary-items a:active + ul,
-  .menu-primary-items a:focus + ul {
-    top: 24px;
-    opacity: 1;
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  .menu-unset > ul ul ul,
-  .menu-primary-items ul ul {
-    left: auto;
-    right: 100%;
-  }
-  .menu-unset > ul ul ul:hover,
-  .menu-primary-items ul ul:hover {
-    top: -0.75em;
-  }
-  .menu-unset > ul ul a:hover + ul, .menu-unset > ul ul a:active + ul, .menu-unset > ul ul a:focus + ul,
-  .menu-primary-items ul a:hover + ul,
-  .menu-primary-items ul a:active + ul,
-  .menu-primary-items ul a:focus + ul {
-    top: -0.75em;
-  }
-}
-.excerpt-container {
-  padding: 0 5.55%;
-  position: relative;
-  z-index: 9;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-}
-
-.excerpt {
-  text-align: center;
-  background: white;
-  overflow: hidden;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  margin-bottom: 1.5em;
-}
-
-.featured-image {
-  position: relative;
-  height: 0;
-  padding-bottom: 50%;
-  background-position: 50%;
-  background-size: cover;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  -webkit-transition: -webkit-transform 0.3s ease;
-          transition: transform 0.3s ease;
-}
-
-.zoom .featured-image-link {
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-}
-.zoom .featured-image-link:hover .featured-image, .zoom .featured-image-link:active .featured-image, .zoom .featured-image-link:focus .featured-image {
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
-  -moz-transform: scale(1.05) rotate(0.02deg);
-}
-
-.excerpt-meta, .entry-meta {
-  color: #aaaaaa;
-  padding-top: 1.84502em;
-}
-.excerpt-meta a, .entry-meta a {
-  color: #aaaaaa;
-}
-.excerpt-meta a:link, .entry-meta a:link, .excerpt-meta a:visited, .entry-meta a:visited {
-  color: #aaaaaa;
-}
-.excerpt-meta a:hover, .entry-meta a:hover, .excerpt-meta a:active, .entry-meta a:active, .excerpt-meta a:focus, .entry-meta a:focus {
-  color: #222;
-}
-
-.excerpt-title, .entry-title {
-  letter-spacing: 0.04em;
-  font-size: 1.313em;
-  /* 21px / 16px */
-  line-height: 1.143;
-}
-.excerpt-title a, .entry-title a {
-  color: #4d4d4d;
-}
-.excerpt-title a:link, .entry-title a:link, .excerpt-title a:visited, .entry-title a:visited {
-  color: #4d4d4d;
-}
-.excerpt-title a:hover, .entry-title a:hover, .excerpt-title a:active, .entry-title a:active, .excerpt-title a:focus, .entry-title a:focus {
-  color: #222;
-}
-
-.excerpt-header, .entry-header {
-  position: relative;
-}
-.excerpt-header:after, .entry-header:after {
-  content: '';
-  position: absolute;
-  background: #4d4d4d;
-  width: 4.5em;
-  height: 0.375em;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  bottom: -1.5em;
-}
-
-.excerpt-content {
-  padding: 1.5em 0;
-}
-
-.more-link {
-  position: relative;
+  font-size: 1.25rem;
+  font-weight: 800; 
+  letter-spacing: 2px;
+  color: #111;
   text-decoration: none;
-  color: #4d4d4d;
-  clear: both;
+  text-transform: uppercase;
+  transition: color 0.3s ease, opacity 0.3s ease;
 }
-.more-link:link, .more-link:visited {
-  color: #4d4d4d;
+
+.site-title:hover, 
+.site-title a:hover {
+  color: var(--primary-color, #26a69a) !important; 
 }
-.more-link:hover, .more-link:active, .more-link:focus {
-  color: #222;
+
+/* 4. Metro 菜单区 */
+.nav-menu {
+  display: flex;
+  gap: 10px; 
+  align-items: center;
 }
-.more-link:hover:after, .more-link:active:after, .more-link:focus:after {
-  -webkit-transform: scaleX(1);
-          transform: scaleX(1);
+
+.nav-link {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #777; /* 默认更安静的灰色 */
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 8px 16px; 
+  background-color: transparent;
+  
+  /* 增加对 transform 和 box-shadow 的过渡，时间稍微延长到 0.2s 增加悬停的物理重量感 */
+  transition: background-color 0.2s ease, color 0.2s ease, text-shadow 0.2s ease, transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
-.more-link:after {
-  content: '';
+
+/* 🎯 Active 状态：安静的指示（只加粗、变黑，无背景） */
+.nav-link.active {
+  color: #111;
+  /* 使用 0.6px 阴影模拟无抖动加粗，非常精致 */
+  text-shadow: 0 0 0.6px #111, 0 0 0.6px #111; 
+}
+
+/* 🎯 Hover 状态：Metro 色块 + Material 悬浮升起 + 文字加粗反白 */
+.nav-link:hover {
+  color: #ffffff;
+  background-color: #1a1a1a; /* Metro 锐利黑块 */
+  
+  /* 文字变白并模拟加粗凸显 */
+  text-shadow: 0 0 0.6px #ffffff, 0 0 0.6px #ffffff; 
+  
+  /* Material 物理反馈：上浮 2px，并投下优雅的弥散阴影 */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); 
+}
+
+/* ================= 搜索组件容器 ================= */
+.search-container {
+  position: relative; /* 为输入框的绝对定位提供基准 */
+  display: flex;
+  align-items: center;
+  height: 36px; /* 🎯 核心1：强制锁死高度，确保图标和输入框绝对等高 */
+}
+
+/* 🎯 输入框：绝对定位向左展开，绝不推挤菜单！ */
+.search-input {
   position: absolute;
-  width: 1.5em;
-  height: 3px;
-  background: #4d4d4d;
-  bottom: -0.75em;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  -webkit-transition: all 0.2s ease;
-          transition: all 0.2s ease;
-  -webkit-transform: scaleX(0);
-          transform: scaleX(0);
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  right: 36px; /* 紧贴在按钮的左边缘 */
+  height: 100%;
+  width: 0;
+  opacity: 0;
+  padding: 0;
+  
+  /* 🎯 核心2：完美的无缝拼接边框 */
+  border: 2px solid transparent;
+  border-right: none; /* 去掉右边框，准备与按钮融合 */
+  box-sizing: border-box; /* 让边框计算在 36px 高度内 */
+  
+  background-color: transparent;
+  font-family: inherit;
+  font-size: 0.85rem;
+  color: #111;
+  font-weight: 500;
+  outline: none;
+  
+  /* 丝滑展开动画 */
+  transition: width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), 
+              opacity 0.2s ease,
+              padding 0.3s ease,
+              border-color 0.3s ease;
 }
 
-.pagination {
-  text-align: center;
-  padding: 1.5em;
-  margin-bottom: -1.5em;
-}
-.pagination a,
-.pagination span {
-  margin: 0 0.375em;
-  color: #8c8c8c;
-}
-.pagination a:link,
-.pagination a:visited {
-  color: #8c8c8c;
-}
-.pagination a:hover, .pagination:active, .pagination:focus {
-  color: #aaaaaa;
+/* 输入框展开状态 */
+.search-container.is-active .search-input {
+  width: 220px; /* 展开的宽度，你可以根据留白自由调整 */
+  opacity: 1;
+  padding: 0 12px;
+  border-color: #1a1a1a; 
+  background-color: #ffffff; 
 }
 
-.infinite-scroll .pagination {
+/* ================= 按钮与形变动画 ================= */
+.search-toggle-btn {
+  height: 36px;
+  width: 36px;
+  padding: 0; 
+  box-sizing: border-box; 
+  background: transparent;
+  border: 2px solid transparent; 
+  cursor: pointer;
+  color: #555;
+  
+  /* 必须设置为 relative，为了让内部的两个图标绝对居中重叠 */
+  position: relative; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2; 
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* 让两个图标绝对定位，完美重叠在按钮正中心 */
+.search-toggle-btn svg {
+  position: absolute;
+  /* 统一加入旋转和缩放的缓动动画 */
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.2s ease;
+}
+
+/* 🎯 默认状态：放大镜显示，X 缩小并旋转隐藏 */
+.icon-search {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+.icon-close {
+  opacity: 0;
+  transform: rotate(-90deg) scale(0.5); /* 初始状态是逆时针转了90度且缩小的 */
+}
+
+/* 🎯 展开状态：按钮变成 Metro 黑块，放大镜消失，X 旋转出现！ */
+.search-container.is-active .search-toggle-btn {
+  background-color: #1a1a1a;
+  border-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.search-container.is-active .icon-search {
+  opacity: 0;
+  transform: rotate(90deg) scale(0.5); /* 放大镜顺时针旋转缩小消失 */
+}
+.search-container.is-active .icon-close {
+  opacity: 1;
+  transform: rotate(0deg) scale(1); /* X 顺时针旋转放大，完美入场 */
+}
+
+/* 未展开时的 Hover 提示 */
+.search-container:not(.is-active) .search-toggle-btn:hover {
+  color: #111;
+}
+
+/* 移动端保护 */
+@media (max-width: 768px) {
+  .header-inner {
+    padding: 15px 20px;
+  }
+  .nav-menu {
+    display: none; 
+  }
+}
+
+/* ================= 搜索下拉结果面板 (光影重构) ================= */
+.search-results-panel {
   display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 500px; 
+  max-width: 90vw; 
+  margin-top: 12px;
+  background: #ffffff;
+  
+  /* 保留 Metro 的极简直角和硬朗边框 */
+  border: 2px solid #1a1a1a;
+  
+  /* 🎯 换成 Material 的无方向弥散悬浮阴影，极其高级 */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12); 
+  
+  z-index: 1001;
+  max-height: 500px; 
+  overflow-y: auto;
 }
 
-/* 600 */
-@media all and (min-width: 37.5em) {
-  .excerpt {
-    background: #111;
-    margin-bottom: 1.5em;
-  }
-  .excerpt:first-child {
-    padding-top: 0;
-  }
+/* 隐藏滚动条 */
+.search-results-panel::-webkit-scrollbar { display: none; }
 
-  .excerpt-container {
-    background: white;
-    padding: 0 6.2%;
-  }
+/* ================= 搜索结果列表项 ================= */
+.search-result-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 16px;
+  text-decoration: none;
+  border-bottom: 1px solid #f0f0f0;
+  
+  /* 必须加 relative，为了悬浮时能提升 z-index 盖住上下的边框 */
+  position: relative; 
+  transition: transform 0.25s cubic-bezier(0.25, 0.8, 0.25, 1), 
+              background-color 0.25s ease, 
+              box-shadow 0.25s ease,
+              border-color 0.25s ease;
+  gap: 20px;
+}
 
-  .pagination {
-    padding: 0.75em 1.5em 3em;
-  }
+/* 🎯 列表项 Hover：内部微悬浮感 (Material 风格) */
+.search-result-item:hover {
+  background-color: #ffffff; /* 保持纯白底色 */
+  transform: translateY(-2px); /* 微微浮起 */
+  
+  /* 极其轻柔的内部弥散阴影，绝不使用左右偏移 */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06); 
+  z-index: 2; /* 浮起时层级变高 */
+  
+  /* 悬浮时去掉底边框，让它看起来更像一张独立的卡片 */
+  border-bottom-color: transparent; 
+}
 
-  .excerpt-title, .entry-title {
-    font-size: 1.875em;
-    /* 30px */
-    line-height: 1.6;
+/* 标题样式保留 */
+.search-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; 
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex: 1;
+  transition: color 0.2s ease; /* 加入颜色过渡 */
+}
+
+/* 🎯 标题 Hover 变色：调用你的主题色 */
+.search-result-item:hover .search-title {
+  color: var(--primary-color, var(--accent-color, #F26522)); 
+}
+
+.search-date {
+  font-size: 0.8rem;
+  color: #888;
+  flex-shrink: 0; /* 防止日期被长标题挤压换行 */
+  margin-top: 4px; /* 稍微往下压一点，和第一行文字的视觉中心对齐 */
+}
+
+.search-empty {
+  padding: 15px 16px;
+  font-size: 0.9rem;
+  color: #888;
+  font-style: italic;
+}
+
+/* =========================================
+   首页顶部 Hero 区域 (Title & Slogan)
+   ========================================= */
+.home-hero {
+  padding: 60px 0 40px 0;
+  margin-bottom: 20px;
+}
+
+.hero-title {
+  /* 🎯 1. 绝对安全的保底：如果手写体加载失败，直接跌落回你最爱的顶刊衬线栈 */
+  font-family: 'Bonheur Royale', Georgia, "Hoefler Text", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-size: 4.8rem; /* 稍微再放大一点，压住全场 */
+  
+  /* 🎯 2. 找回试镜的粗细：强行开启浏览器的“伪加粗”算法 */
+  font-weight: 600; 
+  
+  margin: 0 0 10px 0;
+  
+  /* 🎯 3. 注入 Alex Brush 的舒展感：大幅拉开字母间距 */
+  letter-spacing: 6px; 
+  color: #111111;
+}
+
+.hero-slogan {
+  /* 🎯 同样的学术衬线保底 */
+  font-family: 'Bonheur Royale', Georgia, "Hoefler Text", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-size: 2.2rem; 
+  
+  /* Slogan 也可以稍微加粗，与 Title 呼应。如果觉得太粗可以改回 400 */
+  font-weight: 400; 
+  font-style: normal;
+  color: #666666;
+  margin: 0;
+  
+  /* 🎯 4. 舒展魔法 2.0：稍微拉开字母，并加大“单词与单词”之间的鸿沟 */
+  letter-spacing: 2px; 
+  word-spacing: 4px; 
+}
+
+/* =========================================
+   主页文章列表 (Post List) & Material Paper
+   ========================================= */
+
+.post-list {
+  display: flex;
+  flex-direction: column;
+  /* 移除 gap，因为我们将使用 padding 来控制间距 */
+}
+
+/* 1. 核心魔法：突破父容器限制，撑满屏幕宽度的文章区块 */
+.post-entry {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  box-sizing: border-box; /* 确保 padding 不会增加整体宽度 */
+  
+  /* 移动端默认的内边距 */
+  padding: 40px 20px; 
+  background-color: transparent; /* 默认透明，与你的 #fafafa 融为一体 */
+  
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), 
+              box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+              background-color 0.3s ease;
+}
+
+/* 屏幕大于 800px 时，通过计算将文字精确地推回中间的 760px 区域内 */
+@media (min-width: 800px) {
+  .post-entry {
+    padding-left: calc(50vw - 380px); /* 380px 是 760px 的一半 */
+    padding-right: calc(50vw - 380px);
   }
 }
-/* 900px */
-@media all and (min-width: 56.25em) {
-  .excerpt-container {
-    width: 50%;
-    padding: 0 5.55%;
-  }
 
-  .excerpt {
-    -webkit-transform: translateZ(0);
-            transform: translateZ(0);
-    /* fix weird chrome wiggle glitch */
-    position: relative;
-    clear: both;
-    padding: 0;
-    margin-bottom: 1.5em;
-    opacity: 0.8;
-  }
-  .excerpt .featured-image {
-    -webkit-transform: translateZ(0);
-            transform: translateZ(0);
-    /* fixes FF glitch where image focuses & unfocuses */
-    width: 50%;
-    width: calc(50% + 2px);
-    height: 100%;
-    padding-bottom: 0;
-    position: absolute;
-    right: -1px;
-  }
-  .excerpt:hover {
-    opacity: 1;
-  }
-
-  .excerpt.even .excerpt-container {
-    float: right;
-  }
-  .excerpt.even .featured-image {
-    right: auto;
-    left: -1px;
-  }
-  .excerpt.even:after {
-    content: ".";
-    display: block;
-    clear: both;
-    visibility: hidden;
-    line-height: 0;
-    height: 0;
-  }
-
-  .rtl .excerpt.odd .excerpt-container {
-    float: left;
-  }
-
-  .excerpt-meta, .entry-meta {
-    padding-top: 3.69004em;
-  }
-
-  .excerpt-content {
-    padding-bottom: 3em;
-  }
-
-  .full-without-featured:not(.has-post-thumbnail):not(.has-video):not(.has-featured-slider) .excerpt-container {
-    width: 100%;
-  }
+/* 全宽悬浮状态 */
+.post-entry:hover {
+  background-color: #ffffff; /* 悬浮时变成纯白纸带 */
+  transform: translateY(-2px);
+  z-index: 10;
+  position: relative;
+  /* 因为宽度是 100vw，左右的阴影被挤到了屏幕外面！只剩下完美的上下阴影 */
+  box-shadow: 0 15px 30px rgba(0,0,0,0.04), 0 -10px 20px rgba(0,0,0,0.02);
 }
-.entry {
-  background: white;
-  padding-bottom: 1.5em;
+
+/* 保持隐藏原生 a 标签的样式干扰 */
+.post-link-main {
+  display: block;
+}
+
+/* --- 2. 标题与副标题层级 --- */
+.entry-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #222222;
+  margin: 0 0 8px 0;
+  line-height: 1.3;
+  transition: color 0.3s ease;
+}
+
+.post-entry:hover .entry-title {
+  color: var(--primary-color); 
+}
+
+/* 需求3：副标题字号缩小 */
+.entry-subtitle {
+  font-size: 1.05rem; /* 从 1.15rem 降下来 */
+  font-weight: 400;
+  color: #666666;
+  margin: 0 0 12px 0;
 }
 
 .entry-meta {
-  text-align: center;
-}
-
-.entry-header {
-  text-align: center;
-}
-
-.entry-meta,
-.entry-header {
-  padding-left: 5.55%;
-  padding-right: 5.55%;
-}
-
-.entry-content {
-  margin: 3em 0;
-}
-.entry-content img.full-width {
-  position: relative;
-  max-width: none;
-  width: 113%;
-  left: -6.5%;
-}
-.entry-content iframe {
-  max-width: 100%;
-}
-.entry-content:after {
-  content: ".";
-  display: block;
-  clear: both;
-  visibility: hidden;
-  line-height: 0;
-  height: 0;
-}
-
-.further-reading span,
-.entry-categories span,
-.entry-tags span {
-  display: block;
-}
-.further-reading a,
-.entry-categories a,
-.entry-tags a {
-  font-weight: 400;
-  color: #8c8c8c;
-}
-.further-reading a:link, .further-reading a:visited,
-.entry-categories a:link,
-.entry-categories a:visited,
-.entry-tags a:link,
-.entry-tags a:visited {
-  color: #8c8c8c;
-}
-.further-reading a:hover, .further-reading a:active, .further-reading a:focus,
-.entry-categories a:hover,
-.entry-categories a:active,
-.entry-categories a:focus,
-.entry-tags a:hover,
-.entry-tags a:active,
-.entry-tags a:focus {
-  color: black;
-}
-
-.entry-categories a,
-.entry-tags a {
-  margin-right: 0.375em;
-}
-
-.entry-meta-bottom {
-  margin-bottom: 3em;
-}
-
-.author-meta {
-  background: #222;
-  color: white;
-  padding: 1.5em;
-  margin: 3em 0 0;
-}
-.author-meta a {
-  color: #8c8c8c;
-}
-.author-meta a:link, .author-meta a:visited {
-  color: #8c8c8c;
-}
-.author-meta a:hover, .author-meta a:active, .author-meta a:focus {
-  color: white;
-}
-.author-meta p {
-  clear: both;
-}
-.author-meta .author img {
-  float: left;
-  margin: 0 0.75em 1.5em 0;
-  width: 4.5em;
-  height: 4.5em;
-  border-radius: 50%;
-}
-.author-meta .author a {
-  font-weight: 400;
-  letter-spacing: 0.1em;
-  display: block;
-}
-.author-meta .bio a {
-  margin-right: 0.375em;
-  display: inline-block;
-}
-
-/* 600px */
-@media all and (min-width: 37.5em) {
-  .entry {
-    width: 88.88%;
-    margin: 0 auto;
-  }
-
-  .entry-container {
-    padding: 0 5.55%;
-  }
-
-  .further-reading p {
-    display: inline-block;
-    width: 50%;
-    vertical-align: top;
-    padding-right: 3em;
-  }
-  .further-reading .prev {
-    float: left;
-  }
-  .further-reading .next {
-    float: right;
-    text-align: right;
-    padding: 0 0 0 3em;
-  }
-  .further-reading:after {
-    content: ".";
-    display: block;
-    clear: both;
-    visibility: hidden;
-    line-height: 0;
-    height: 0;
-  }
-
-  .author-meta .author {
-    display: inline-block;
-  }
-  .author-meta .author img {
-    margin-bottom: 0;
-  }
-  .author-meta:after {
-    content: ".";
-    display: block;
-    clear: both;
-    visibility: hidden;
-    line-height: 0;
-    height: 0;
-  }
-
-  .bio {
-    float: right;
-    width: 50%;
-  }
-  .bio p {
-    margin-top: 0;
-  }
-}
-/* 700px */
-@media all and (min-width: 43.75em) {
-  .entry-container {
-    padding: 0 11.11%;
-  }
-
-  .entry-meta,
-  .entry-header {
-    padding-left: 5.55%;
-    padding-right: 5.55%;
-  }
-
-  .entry-content img.full-width {
-    width: 128.6%;
-    left: -14.3%;
-  }
-}
-/* 900px */
-@media all and (min-width: 56.25em) {
-  .entry .featured-image:after {
-    position: absolute;
-    content: '';
-    background: #222;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    opacity: 0.2;
-    -webkit-transition: opacity 0.2s ease;
-            transition: opacity 0.2s ease;
-  }
-  .entry .featured-image:hover:after {
-    opacity: 0;
-  }
-
-  .entry-container {
-    padding: 0 16.66%;
-  }
-
-  .entry-header h1 {
-    font-size: 4.25em;
-    line-height: 1.06;
-  }
-
-  .entry-meta {
-    font-size: 1em;
-    line-height: 1.5;
-    padding-top: 3em;
-    letter-spacing: 0.08em;
-  }
-
-  .entry-content {
-    margin-top: 4.5em;
-  }
-  .entry-content img.full-width {
-    width: 150%;
-    left: -25%;
-  }
-}
-/* 1100px */
-@media all and (min-width: 68.75em) {
-  .entry-meta,
-  .entry-header {
-    padding-left: 11.11%;
-    padding-right: 11.11%;
-  }
-
-  .entry-container {
-    padding: 0 19.435%;
-    position: relative;
-  }
-
-  .entry-content img.full-width {
-    width: 163.6%;
-    left: -31.8%;
-  }
-
-  .entry-meta-bottom.float .entry-tags,
-  .entry-meta-bottom.float .entry-categories {
-    position: absolute;
-    width: 16.66%;
-    left: 0;
-    top: 4.5em;
-    text-align: right;
-    padding-left: 5.55%;
-  }
-  .entry-meta-bottom.float .entry-tags a,
-  .entry-meta-bottom.float .entry-categories a {
-    font-weight: 700;
-    text-transform: none;
-    letter-spacing: 0;
-    display: block;
-    margin-right: 0;
-  }
-}
-/* 1200px */
-@media all and (min-width: 75em) {
-  .entry-container {
-    padding: 0 22.22%;
-  }
-
-  .entry-content img.full-width {
-    width: 179.9%;
-    left: -39.95%;
-  }
-}
-.comments {
-  background: white;
-  padding-bottom: 3em;
-  max-width: 1280px;
-}
-
-.comments-number {
-  padding: 1.5em 0;
-}
-
-.comment-list {
-  list-style: none;
-  margin: 0;
-}
-.comment-list ul {
-  list-style: none;
-  margin: 3em 0 1.5em 3em;
-}
-.comment-list article ul {
-  list-style: disc;
-}
-
-li.comment,
-li.pingback {
-  margin: 3em 0;
-}
-li.comment:first-child,
-li.pingback:first-child {
-  margin-top: 1.5em;
-}
-
-.comment-author {
-  /* contains everything but the avatar */
-}
-.comment-author img {
-  width: 4.5em;
-  height: 4.5em;
-  border-radius: 50%;
-  float: left;
-  margin: 0 0.75em 0 0;
-}
-.comment-author .author-name a {
-  text-decoration: none;
-  color: #4d4d4d;
-}
-.comment-author .author-name a:link, .comment-author .author-name a:visited {
-  color: #4d4d4d;
-}
-.comment-author .author-name a:hover, .comment-author .author-name a:active, .comment-author .author-name a:focus {
-  color: #222;
-}
-.comment-author:after {
-  content: ".";
-  display: block;
-  clear: both;
-  visibility: hidden;
-  line-height: 0;
-  height: 0;
-}
-
-.comment-reply-link,
-.comment-edit-link {
-  color: #4d4d4d;
-  text-decoration: none;
-}
-.comment-reply-link:link, .comment-reply-link:visited,
-.comment-edit-link:link,
-.comment-edit-link:visited {
-  color: #4d4d4d;
-}
-.comment-reply-link:hover, .comment-reply-link:active, .comment-reply-link:focus,
-.comment-edit-link:hover,
-.comment-edit-link:active,
-.comment-edit-link:focus {
-  color: black;
-}
-
-.comment-edit-link:before {
-  content: " / ";
-}
-
-.comment-content {
-  margin: 1.5em 0;
-}
-
-.bypostauthor > article .author-name:after {
-  content: ' (author)';
-  text-transform: none;
-  font-weight: 400;
-  letter-spacing: 0;
-}
-
-/* 600px */
-@media all and (min-width: 37.5em) {
-  .comments {
-    padding: 0 5.55% 3em;
-    width: 88.88%;
-    margin: 0 auto;
-  }
-
-  .comment-pagination p {
-    width: 50%;
-    display: inline-block;
-    vertical-align: top;
-    text-align: left;
-  }
-  .comment-pagination .next-comment {
-    text-align: right;
-  }
-}
-/* 700px */
-@media all and (min-width: 43.75em) {
-  .comments {
-    padding: 0 11.11% 3em;
-  }
-}
-/* 900px */
-@media all and (min-width: 56.25em) {
-  .comments {
-    padding: 0 16.66% 3em;
-  }
-}
-/* 1000px */
-@media all and (min-width: 62.5em) {
-  li.comment article,
-  li.pingback article {
-    line-height: 0;
-    /* this is messing up the vertical rhythm */
-  }
-  li.comment article:after,
-  li.pingback article:after {
-    content: ".";
-    display: block;
-    clear: both;
-    visibility: hidden;
-    line-height: 0;
-    height: 0;
-  }
-
-  .comment-author {
-    display: inline-block;
-    min-height: 4.5em;
-  }
-  .comment-author img {
-    float: none;
-  }
-  .comment-author div {
-    display: inline-block;
-    vertical-align: top;
-  }
-  .comment-author div div {
-    display: block;
-  }
-
-  .comment-content {
-    float: right;
-    width: 50%;
-    margin: 0;
-    line-height: 1.5;
-    /* after turning it off on article */
-  }
-  .comment-content p {
-    line-height: 1.5;
-  }
-  .comment-content p:first-child {
-    margin-top: 0;
-  }
-  .comment-content p:last-child {
-    margin-bottom: 0;
-  }
-}
-/* 1100px */
-@media all and (min-width: 68.75em) {
-  .comments {
-    padding: 0 19.435% 3em;
-  }
-}
-/* 1445px */
-@media all and (min-width: 1445px) {
-  .comments {
-    padding: 0 284px 3em;
-  }
-}
-.site-footer {
-  color: #8c8c8c;
-  text-align: center;
-  padding-top: 3em;
-  overflow: hidden;
-  clear: both;
-}
-.site-footer a {
-  color: #8c8c8c;
-}
-.site-footer h1 {
-  letter-spacing: 0.06em;
-  opacity: 0.4;
-  -webkit-transition: opacity 0.2s ease;
-          transition: opacity 0.2s ease;
-}
-.site-footer h1:hover, .site-footer h1:active, .site-footer h1:focus {
-  opacity: 0.9;
-}
-.site-footer p {
-  margin: 0 0 1.5em;
-  opacity: 0.6;
-}
-.site-footer .social-media-icons {
-  margin: 0.75em 0 1.5em;
-}
-.site-footer .social-media-icons a {
-  opacity: 0.4;
-}
-
-.sidebar-footer {
-  background: #1A1A1A;
-  margin-bottom: -48px;
-  padding: 1.5em 5.55%;
-}
-.sidebar-footer .widget {
-  margin: 3em 0;
-}
-.sidebar-footer .widget:first-child {
-  margin-top: 1.5em;
-}
-.sidebar-footer .widget a:hover, .sidebar-footer .widget a:active, .sidebar-footer .widget a:focus {
-  color: #ededed;
-}
-.sidebar-footer .widget-title {
-  margin-bottom: 12px;
-}
-
-.design-credit {
-  background: #111;
-  color: #8c8c8c;
-  padding: 0.75em 0;
-  margin-top: 48px;
-}
-.design-credit a {
-  color: #8c8c8c;
-}
-.design-credit a:link, .design-credit a:visited {
-  color: #8c8c8c;
-}
-.design-credit a:hover, .design-credit a:active, .design-credit a:focus {
-  color: #aaaaaa;
-}
-.design-credit p {
-  margin: 0;
-  opacity: 0.6;
-}
-
-.return-top {
-  display: none;
-}
-
-/* 600px */
-@media all and (min-width: 37.5em) {
-  .return-top {
-    display: block;
-    position: fixed;
-    bottom: -4em;
-    right: 0;
-    width: 5.55%;
-    height: 4em;
-    background: white;
-    border: none;
-    opacity: 0.8;
-    text-align: center;
-    line-height: 4em;
-    outline: none;
-    -webkit-transition: all 0.3s ease;
-            transition: all 0.3s ease;
-  }
-  .return-top i {
-    position: relative;
-    top: 0;
-    -webkit-transition: top 0.3s ease;
-            transition: top 0.3s ease;
-  }
-
-  .return-top.visible {
-    bottom: 0;
-  }
-  .return-top.visible:hover, .return-top.visible:active, .return-top.visible:focus {
-    opacity: 1;
-    cursor: pointer;
-  }
-  .return-top.visible:hover i, .return-top.visible:active i, .return-top.visible:focus i {
-    top: -6px;
-  }
-
-  .sidebar-footer {
-    margin-bottom: -72px;
-  }
-
-  .design-credit {
-    margin-top: 72px;
-  }
-}
-/* 700px */
-@media all and (min-width: 43.75em) {
-  .sidebar-footer {
-    margin-top: 3em;
-  }
-  .sidebar-footer:after {
-    content: ".";
-    display: block;
-    clear: both;
-    visibility: hidden;
-    line-height: 0;
-    height: 0;
-  }
-
-  .sidebar-footer:not(.active-1) .widget {
-    width: 47%;
-    float: left;
-    margin-top: 1.5em;
-  }
-  .sidebar-footer:not(.active-1) .widget:nth-child(odd) {
-    margin-right: 3%;
-  }
-}
-/* 900px */
-@media all and (min-width: 56.25em) {
-  .site-footer h1 {
-    font-size: 2.625em;
-    line-height: 1.143;
-  }
-}
-/* 1000px */
-@media all and (min-width: 62.5em) {
-  .sidebar-footer:not(.active-1):not(.active-2) .widget {
-    width: 31%;
-    margin-right: 0;
-    margin-top: 1.5em;
-  }
-  .sidebar-footer:not(.active-1):not(.active-2) .widget:nth-child(3n - 2), .sidebar-footer:not(.active-1):not(.active-2) .widget:nth-child(3n - 1) {
-    margin-right: 3%;
-  }
-  .sidebar-footer:not(.active-1):not(.active-2) .widget:nth-child(3n + 4) {
-    clear: left;
-  }
-}
-/* page */
-.singular-page .entry,
-.error404 .entry,
-.search .entry {
-  padding-top: 3em;
-}
-
-.singular-page .featured-image {
-  margin-top: -3em;
-  margin-bottom: 3em;
-}
-
-.error404 input,
-.search input {
-  margin: 0.75em 0;
-}
-.error404 input[type="search"],
-.search input[type="search"] {
-  margin-right: 0.75em;
-}
-
-.search-form-container {
-  margin: 1.5em 0 3em;
-}
-.search-form-container .search-icon {
-  display: none;
-}
-
-.archive-header {
-  padding: 1.5em 0;
+  font-size: 0.85rem;
+  color: #999999;
   text-transform: uppercase;
-  color: #8c8c8c;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
 }
-.archive-header span {
-  letter-spacing: 0.08em;
+
+/* --- 3. 学术长摘要优化与省略号修复 --- */
+.entry-description {
+  font-size: 0.95rem; 
+  font-style: italic;
+  color: #555555; 
+  margin: 0 0 25px 0;
+  line-height: 1.8; 
+  letter-spacing: 0.2px; /* 稍微增加一点字间距，提升呼吸感 */
+  
+  /* 多行截断 */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.archive-header h1 {
-  letter-spacing: 0.06em;
-  font-weight: 700;
-  font-size: 1em;
-  line-height: 1.5;
+
+/* --- 基础状态：硬朗的矩形标签 --- */
+a.tag {
   display: inline-block;
-}
-.archive-header p {
-  margin: 0.75em 0;
-  text-transform: none;
-}
-
-.archive .main {
-  padding-bottom: 0;
-}
-
-.search .search-box {
-  padding: 1.5em;
-  margin-bottom: 1.5em;
-  background: white;
-  text-align: center;
-  clear: both;
-}
-.search .search-box .search-form-container {
-  margin-bottom: 1.5em;
-}
-.search .search-box.bottom {
-  margin-top: 1.5em;
+  margin: 0 8px 8px 0;
+  font-size: 0.8rem;
+  font-family: sans-serif;
+  background-color: #f4f4f4;
+  color: #555;
+  padding: 4px 12px;
+  border-radius: 0; 
+  letter-spacing: 0.5px;
+  text-decoration: none; 
+  
+  /* 🎯 极其重要：动画必须挂载在基础状态上！这样进出都有平滑过渡 */
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-.page-template-full-width .entry {
-  width: 100%;
-  max-width: none;
-}
-.page-template-full-width .entry-container {
-  padding: 0 5%;
-  max-width: 1280px;
-  margin: 0 auto;
+/* 🎯 层次 1：卡片悬浮时，亮起极其干净的浅底色 */
+.post-entry:hover a.tag {
+  color: var(--accent-color, #e65100); 
+  background-color: var(--accent-color-light, #fff3e0);
 }
 
-/* 900px */
-@media all and (min-width: 56.25em) {
-  .search-form-container {
-    margin: 1.5em 0 4.5em;
+/* 🎯 层次 2：精准悬停 Tag，物理起跳 + 伪加粗防抖！ */
+.post-entry a.tag:hover,
+.single-header a.tag:hover {
+  color: var(--accent-color, #e65100);
+  /* 这里我们可以稍微用一点 filter 滤镜让它变深一丢丢作为按下反馈，或者直接保持原色，靠阴影和位移提供反馈 */
+  background-color: var(--accent-color-light, #fff3e0);
+  filter: brightness(0.98);
+  
+  /* 🎯 Faux-bold 伪加粗魔法：不改变元素宽度，完美消灭闪烁和抖动！ */
+  text-shadow: 0 0 0.5px var(--accent-color, #e65100);
+  
+  /* 物理悬浮 */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); 
+  z-index: 2; 
+}
+
+/* --- 5. 移动端与响应式保护 --- */
+body, html {
+  overflow-x: hidden; /* 防止横向溢出导致页面左右摇摆 */
+}
+
+/* 在手机屏幕上适当减小留白 */
+@media (max-width: 600px) {
+  .site-main {
+    margin-top: 100px;
+  }
+  .post-entry {
+    padding: 25px 20px;
   }
 }
-/* Attachment styles */
-.singular-attachment .further-reading a {
+
+/* =========================================
+   主页底部归档按钮 (Archive Action - 终极物理动效版)
+   ========================================= */
+.archive-action {
+  margin-top: 60px; 
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: flex-end; 
+}
+
+.btn-archive {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px; /* 用 gap 控制文字和箭头的距离，代替空格 */
+  font-size: 1.1rem;
+  font-weight: 600; 
+  font-style: normal; /* 坚决弃用斜体，保持视觉基石的稳重 */
+  color: #666666;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px; 
+  
+  padding: 12px 24px; 
+  background-color: transparent;
+  line-height: 1; /* 锁死行高，对齐的第一步 */
+  
+  /* 延长过渡时间到 0.3s，使用平滑的贝塞尔曲线，告别生硬 */
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* 🎯 箭头的专属控制与光学对齐 */
+.btn-archive .arrow {
+  position: relative;
+  top: -1px; /* 向上微调，进行绝对视觉居中 */
+  font-family: sans-serif; /* 强制箭头使用无衬线体，防止部分衬线体的箭头太细或下沉 */
+  /* 给箭头独立的位移动画 */
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* 🎯 悬浮魔法：色块显现 + 整体起跳 */
+.btn-archive:hover {
+  color: #ffffff;
+  background-color: #1a1a1a; 
+  
+  text-shadow: 0 0 0.6px #ffffff, 0 0 0.6px #ffffff; 
+  
+  /* 整体向右 6px，向上 2px 跃起 */
+  transform: translate(6px, -2px);
+  box-shadow: -4px 6px 12px rgba(0, 0, 0, 0.15); 
+}
+
+/* 🎯 终极动效：悬浮时，内部的箭头发生“相对位移”，产生强烈的向前探索感！ */
+.btn-archive:hover .arrow {
+  transform: translateX(6px); /* 箭头再向右滑动 6px！ */
+}
+
+/* =========================================
+   独立页面 (Page) 专属样式
+   ========================================= */
+/* 独立页面头部需要类似首页 Hero 区域的巨大呼吸感 */
+.page-header {
+  padding-top: 80px; 
+  margin-bottom: 60px;
+}
+
+/* 手机端稍微缩减一点顶部留白 */
+@media (max-width: 768px) {
+  .page-header {
+    padding-top: 40px; 
+    margin-bottom: 40px;
+  }
+}
+
+/* =========================================
+   Archive 归档页面 (Metro Typography)
+   ========================================= */
+
+.archive-year-section {
+  margin-bottom: 80px;
+}
+
+/* Metro 风格的巨大排版：年份作为视觉锚点 */
+/* 年份使用主题色 + 透明度，极其高级的水印感 */
+.archive-year {
+  font-size: 4.5rem; 
   font-weight: 700;
-  font-size: 1em;
-  line-height: 1.5;
-  color: #8c8c8c;
-}
-.singular-attachment .further-reading a:link, .singular-attachment .further-reading a:visited {
-  color: #8c8c8c;
-}
-.singular-attachment .further-reading a:hover, .singular-attachment .further-reading a:active, .singular-attachment .further-reading a:focus {
-  color: black;
-}
-.singular-attachment .further-reading p {
-  width: 49.5%;
-}
-.singular-attachment .attachment-container img {
-  display: block;
+  color: var(--primary-color); /* 你的水鸭绿 */
+  opacity: 0.3; /* 30% 透明度，融入背景 */
+  margin: 0 0 20px 0;
+  line-height: 1;
+  letter-spacing: -2px; 
+  z-index: -1; 
 }
 
-/* Widget Area Styles */
-.sidebar-after-post-content,
-.sidebar-after-page-content {
-  padding: 3em 0 0.75em;
-  border-top: solid 1px #ededed;
-  border-bottom: solid 1px #ededed;
-  margin-bottom: 1.5em;
-}
-.sidebar-after-post-content .widget,
-.sidebar-after-page-content .widget {
-  margin-bottom: 2.25em;
+.archive-posts-list {
+  display: flex;
+  flex-direction: column;
 }
 
-/* Widget Styles */
-.widget-title {
-  font-size: 1em;
-  line-height: 1.5;
+/* 归档条目：单行高密度排列，与主页的全宽悬浮魔法一致 */
+.archive-item {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  box-sizing: border-box;
+  
+  padding: 20px 20px; /* 稍微增加上下的 padding，用空白来分隔每一篇文章 */
+  background-color: transparent;
+  
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
-.widget ul {
-  margin: 1.5em 0;
-  list-style: none;
+@media (min-width: 800px) {
+  .archive-item {
+    padding-left: calc(50vw - 380px);
+    padding-right: calc(50vw - 380px);
+  }
 }
-.widget li {
+
+/* 全宽悬浮光带效果 */
+.archive-item:hover {
+  background-color: #ffffff;
+  transform: translateY(-2px);
+  z-index: 10;
+  position: relative;
+  border-bottom-color: transparent;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.04), 0 -5px 15px rgba(0,0,0,0.02);
+}
+
+.archive-link {
+  display: flex;
+  align-items: baseline; /* 让日期和标题在一条基线上 */
+  gap: 30px;
+  text-decoration: none;
+}
+
+.archive-meta {
+  font-size: 1rem;
+  color: #999999;
   font-weight: 400;
-}
-.widget li a {
-  color: #8c8c8c;
-}
-.widget li a:link, .widget li a:visited {
-  color: #8c8c8c;
-}
-.widget li a:hover, .widget li a:active, .widget li a:focus {
-  color: black;
+  flex-shrink: 0;
+  width: 60px; /* 固定日期宽度，确保所有标题左侧完美对齐 */
 }
 
-.widget-search .search-form-container {
-  margin-bottom: 3em;
-}
-
-.site-footer .widget_search .search-field {
-  max-width: none;
-}
-.site-footer .widget_search .search-submit {
-  background: #4d4d4d;
-  width: 100%;
-  max-width: none;
-  min-width: none;
-}
-
-.widget_categories select {
-  margin-top: 1.5em;
-}
-
-@media all and (min-width: 50em) {
-  .site-footer .widget_search .search-form {
-    display: -webkit-box;
-    display: flex;
-  }
-  .site-footer .widget_search .search-field,
-  .site-footer .widget_search .search-submit {
-    width: auto;
-  }
-  .site-footer .widget_search .search-field {
-    margin-right: 0;
-    -webkit-box-flex: 1;
-            flex-grow: 1;
-  }
-}
-/* Footer menu styles */
-.menu-footer-items {
-  list-style: none;
-  margin: 0.75em 0 1.5em;
-}
-.menu-footer-items li {
-  position: relative;
-  display: block;
-}
-.menu-footer-items a {
-  color: #8c8c8c;
-  opacity: 0.4;
-}
-.menu-footer-items a:link, .menu-footer-items a:visited {
-  color: #8c8c8c;
-}
-.menu-footer-items a:hover, .menu-footer-items a:active, .menu-footer-items a:focus {
-  color: #8c8c8c;
-  opacity: 0.9;
-}
-.menu-footer-items ul {
-  list-style: none;
-}
-
-/* 700px */
-@media all and (min-width: 43.75em) {
-  .menu-footer-items li,
-  .menu-footer-items a {
-    display: inline-block;
-  }
-  .menu-footer-items a {
-    margin: 0 8px;
-  }
-  .menu-footer-items a:hover + ul, .menu-footer-items a:active + ul, .menu-footer-items a:focus + ul {
-    bottom: 24px;
-    opacity: 1;
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  .menu-footer-items .sub-menu {
-    position: absolute;
-    background: #1A1A1A;
-    text-align: center;
-    margin: 0;
-    min-width: 100%;
-    max-width: 220px;
-    left: auto;
-    right: auto;
-    bottom: -9999px;
-    -webkit-transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
-            transition: opacity 0.3s ease, transform 0.3s ease;
-    -webkit-transform: scale(0.95);
-            transform: scale(0.95);
-  }
-  .menu-footer-items .sub-menu:hover {
-    bottom: 24px;
-    opacity: 1;
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  .menu-footer-items .sub-menu a {
-    display: block;
-    margin: 0;
-    padding: 0.75em 1.5em;
-  }
-  .menu-footer-items .sub-menu .sub-menu:hover {
-    bottom: 0;
-    left: 100%;
-    right: auto;
-  }
-  .menu-footer-items .sub-menu a:hover + ul, .menu-footer-items .sub-menu a:active + ul, .menu-footer-items .sub-menu a:focus + ul {
-    bottom: 0;
-    left: 100%;
-    right: auto;
-  }
-}
-/* top navigation styles */
-.top-navigation {
-  position: relative;
-  left: -6%;
-  width: 112%;
-  min-height: 3em;
-  background: #111;
-  padding: 0.375em 5.55%;
-  margin: -0.75em 0 0;
-  line-height: 0;
-}
-.top-navigation ~ button {
-  top: 2.25em;
-}
-.top-navigation .container {
-  margin: 0 auto;
-  max-width: 1280px;
-}
-.top-navigation .container:after {
-  content: ".";
-  display: block;
-  clear: both;
-  visibility: hidden;
-  line-height: 0;
-  height: 0;
-}
-
-.rtl .top-navigation {
-  right: -6%;
-}
-
-/* 600px */
-@media all and (min-width: 37.5em) {
-  .top-navigation {
-    margin-top: -0.75em;
-    left: -6.2%;
-    width: 112.4%;
-    z-index: 39;
-  }
-}
-/* 800px */
-@media all and (min-width: 50em) {
-  .top-navigation {
-    margin: -2.25em 0 1.5em 0;
-  }
-}
-/* secondary menu styles */
-.menu-secondary {
-  float: left;
-  z-index: 9;
-}
-
-.toggle-secondary-navigation {
-  background: none;
-  border: none;
-  color: white;
-  opacity: 0.4;
-  font-size: 1.313em;
-  /* 21px / 16px */
-  line-height: 1.714;
+.archive-title {
+  font-size: 1.15rem;
+  font-weight: 400; /* 在高密度列表中，不加粗更利于扫视 */
+  color: #333333;
   margin: 0;
-  padding: 0;
-  outline: none;
-  -webkit-transition: -webkit-transform 0.3s ease;
-          transition: transform 0.3s ease;
-}
-.toggle-secondary-navigation:hover {
-  cursor: pointer;
-}
-
-.menu-secondary-items {
-  list-style: none;
-  position: absolute;
-  z-index: -1;
-  opacity: 0;
-  width: 100%;
-  left: 0;
-  padding: 1.5em;
-  margin: 0;
-  background: #111;
-  -webkit-transition: all 0.3s ease;
-          transition: all 0.3s ease;
-}
-.menu-secondary-items a {
-  color: white;
-  opacity: 0.4;
-  margin-right: 0.75em;
-}
-.menu-secondary-items a:link, .menu-secondary-items a:visited {
-  color: white;
-}
-.menu-secondary-items a:hover, .menu-secondary-items a:active, .menu-secondary-items a:focus {
-  color: white;
-  opacity: 0.9;
-}
-.menu-secondary-items ul {
-  list-style: none;
-}
-
-/* when secondary menu is open */
-#main, #title-info, #toggle-navigation, #site-header, #site-footer {
-  -webkit-transition: -webkit-transform 0.3s ease;
-          transition: transform 0.3s ease;
-}
-
-.secondary-toggle .site-header {
-  background: transparent;
-}
-.secondary-toggle .toggle-secondary-navigation {
-  opacity: 0.9;
-  -webkit-transform: rotate(315deg);
-          transform: rotate(315deg);
-}
-.secondary-toggle .menu-secondary-items {
-  z-index: 1;
-  opacity: 1;
-}
-
-/* 600px */
-@media all and (min-width: 37.5em) {
-  .menu-secondary-items {
-    position: relative;
-    z-index: 1;
-    opacity: 1;
-    padding: 0.5em 0;
-  }
-  .menu-secondary-items:before {
-    content: '//';
-    margin-right: 16px;
-    color: white;
-    opacity: 0.4;
-  }
-  .menu-secondary-items li,
-  .menu-secondary-items a {
-    display: inline-block;
-  }
-
-  .toggle-secondary-navigation {
-    display: none;
-  }
-
-  .menu-secondary-items {
-    /* Tier 2 */
-    /* Tier 3 */
-  }
-  .menu-secondary-items li {
-    position: relative;
-  }
-  .menu-secondary-items ul {
-    position: absolute;
-    top: -9999px;
-    margin: 0 auto;
-    left: -70%;
-    right: -70%;
-    max-width: 200px;
-    opacity: 0;
-    background: #111;
-    text-align: center;
-    -webkit-transform: scale(0.95);
-            transform: scale(0.95);
-    -webkit-transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
-            transition: opacity 0.3s ease, transform 0.3s ease;
-  }
-  .menu-secondary-items ul li,
-  .menu-secondary-items ul a {
-    display: block;
-  }
-  .menu-secondary-items ul a {
-    padding: 0 1.5em;
-    margin: 0.75em 0;
-  }
-  .menu-secondary-items ul li:first-child > a {
-    padding-top: 0.75em;
-  }
-  .menu-secondary-items ul li:last-child > a {
-    padding-bottom: 0.75em;
-  }
-  .menu-secondary-items ul:hover {
-    top: 1.5em;
-    opacity: 1;
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  .menu-secondary-items a:hover + ul, .menu-secondary-items a:active + ul, .menu-secondary-items a:focus + ul {
-    top: 1.5em;
-    opacity: 1;
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  .menu-secondary-items ul ul:hover {
-    left: 100%;
-    right: -100%;
-    top: -0.60975em;
-  }
-  .menu-secondary-items ul a:hover + ul, .menu-secondary-items ul a:active + ul, .menu-secondary-items ul a:focus + ul {
-    left: 100%;
-    right: -100%;
-    top: -0.60975em;
-  }
-}
-/* search form styles */
-.site-header .search-form-container {
-  position: absolute;
-  right: 5.55%;
-  left: 12.55%;
-  top: 0;
-  height: 100%;
-  margin: 0;
-}
-.site-header .search-form-container button {
-  -webkit-transform: translateZ(0);
-          transform: translateZ(0);
-  position: relative;
-  z-index: 9;
-  display: block;
-  left: 0;
-  height: 100%;
-  float: right;
-  border: none;
-  background: #111;
-  font-size: 1em;
-  padding: 0.75em;
-  margin: 0 -12px 0 0;
-  outline: none;
-  -webkit-transition: all 0.3s ease;
-          transition: all 0.3s ease;
-}
-.site-header .search-form-container button:hover i, .site-header .search-form-container button:active i {
-  opacity: 1;
-}
-.site-header .search-form-container button:hover {
-  cursor: pointer;
-}
-.site-header .search-form-container i {
-  position: relative;
-  z-index: 9;
-  color: white;
-  opacity: 0.4;
   line-height: 1.5;
-  -webkit-transition: opacity 0.2s ease;
-          transition: opacity 0.2s ease;
-}
-.site-header .search-form-container input {
-  margin: 0;
-  height: 100%;
-  position: absolute;
-}
-.site-header .search-form-container .search-form {
-  -webkit-transform: translateZ(0);
-          transform: translateZ(0);
-  position: absolute;
-  top: 0;
-  z-index: 19;
-  left: 107%;
-  width: 90%;
-  height: 100%;
-  -webkit-transition: all 0.3s ease;
-          transition: all 0.3s ease;
-}
-.site-header .search-form-container input.search-field {
-  width: 80%;
-  left: 0;
-  max-width: none !important;
-  outline: none !important;
-}
-.site-header .search-form-container input.search-submit {
-  width: 30%;
-  right: 0;
-  max-width: none !important;
-  min-width: 0 !important;
-  outline: none !important;
-}
-.site-header .search-form-container + ul {
-  margin-right: 3.75em;
+  transition: color 0.3s ease;
 }
 
-.search-open .site-header .search-form {
-  -webkit-transform: translateX(-100%);
-          transform: translateX(-100%);
+.archive-item:hover .archive-title {
+  color: var(--primary-color);
 }
-.search-open .site-header .search-form-container {
-  left: 5.55%;
+
+/* 归档页面的 Tag：极简、降噪、右侧对齐 */
+.archive-link {
+  display: flex;
+  align-items: baseline; 
+  gap: 30px;
+  text-decoration: none;
+  width: 100%; /* 确保填满容器 */
 }
-.search-open .site-header .search-form-container button {
-  width: 24%;
+
+/* 之前写好的 .archive-meta 和 .archive-title 保持不变... */
+
+/* 新增的 Tag 容器：利用 margin-left: auto 将其推到最右侧 */
+/* Tag 容器：增加换行规则和靠右对齐 */
+.archive-tags {
+  margin-left: auto;
+  display: flex;
+  gap: 12px;
+  opacity: 0.5; 
+  transition: opacity 0.3s ease;
+  
+  /* 新增：如果 Tag 实在太多，允许整体换行，并且换行后依然保持右对齐 */
+  flex-wrap: wrap; 
+  justify-content: flex-end; 
+  /* 限制一下 Tag 区域的最大宽度，防止它反过来把标题挤得太惨 */
+  max-width: 50%; 
 }
-.search-open .site-header .search-form-container i {
+
+.archive-tag-item {
+  font-size: 0.85rem;
+  font-family: sans-serif; 
+  color: #999999;
+  
+  /* 核心魔法：强制单个 Tag 内部绝对不准换行！ */
+  white-space: nowrap; 
+}
+
+/* 当整行卡片被 Hover 悬浮时，Tag 稍微亮起，增强交互反馈 */
+.archive-item:hover .archive-tags {
   opacity: 1;
 }
 
-.rtl .site-header .search-form-container input.search-field {
-  width: calc(100% - 120px) !important;
-  right: 120px;
+/* 同样，保持全站一致，当卡片悬浮时，Tag 文字呈现你心爱的深秋橘 */
+.archive-item:hover .archive-tag-item {
+  color: var(--accent-color); 
 }
 
-/* 600px */
-@media all and (min-width: 37.5em) {
-  .search-open .site-header .search-form-container button {
-    width: auto;
+/* 移动端适配：极致的做减法，保持列表清爽 */
+@media (max-width: 600px) {
+  .archive-link {
+    flex-direction: column;
+    align-items: flex-start; /* 手机上全部靠左 */
+    gap: 4px; /* 既然没了 Tag，标题和间距可以稍微收紧 */
   }
-
-  .site-header .search-form-container .search-form {
-    width: 20em;
+  
+  /* 🎯 核心优化：移动端屏幕空间宝贵，直接隐藏 Tag，拒绝视觉拥挤！ */
+  .archive-tags {
+    display: none !important; 
   }
-  .site-header .search-form-container input.search-submit {
-    min-width: 120px !important;
-  }
-}
-/* social icon styling */
-.social-media-icons {
-  list-style: none;
-  margin: 0;
-  -webkit-transition: opacity 0.3s ease-in-out, -webkit-transform 0.2s ease-in-out;
-          transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out;
-}
-.social-media-icons li,
-.social-media-icons a {
-  display: inline-block;
-}
-.social-media-icons a {
-  font-size: 1.313em;
-  /* 21px / 16px */
-  line-height: 1.714;
-  margin: 0 0.375em;
-  color: white;
-  opacity: 0.4;
-  position: relative;
-  z-index: 9;
-}
-.social-media-icons a:link, .social-media-icons a:visited {
-  color: white;
-}
-.social-media-icons a:hover, .social-media-icons a:active, .social-media-icons a:focus {
-  color: white;
-  opacity: 1;
-}
-
-.site-header .social-media-icons {
-  float: right;
-  height: 100%;
-}
-
-.search-open .site-header .social-media-icons {
-  opacity: 0;
-  -webkit-transform: translateX(12px);
-          transform: translateX(12px);
-}
-
-@media all and (min-width: 1500px) {
-  .top-navigation .social-media-icons {
-    margin-right: 0px !important;
+  
+  .archive-meta {
+    font-size: 0.85rem;
   }
 }
-/**
- * 14.2 Galleries
- */
-.gallery {
-  margin: 2.25em auto;
+
+/* 针对 List 页面完整日期的专属微调 */
+.archive-meta.list-meta {
+  width: 90px; /* 稍微给够宽度 */
+  white-space: nowrap; /* 绝对禁止换行 */
+  font-family: inherit; /* 🎯 恢复默认的全站优雅字体 */
 }
 
-.gallery-item {
-  display: inline-block;
-  padding: 0.75em;
-  text-align: center;
-  vertical-align: top;
-  width: 100%;
-  margin: 0;
-}
-.gallery-item img {
-  max-width: 100%;
-  max-height: 100%;
+/* =========================================
+   标签云 (Taxonomy Terms Cloud) - 极致物理与色彩统一
+   ========================================= */
+.taxonomy-cloud {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 16px 20px; 
+  margin-top: 20px;
 }
 
-.gallery-columns-2 .gallery-item {
-  max-width: 50%;
+/* 针对标签云里的 Tag 进行微调放大，使用 a.taxonomy-tag 提升优先级覆盖基础样式 */
+a.taxonomy-tag {
+  font-size: 1rem !important; /* 强制字号放大，确立主角地位 */
+  padding: 12px 24px; /* 上下左右增加更舒适的点击区 */
+  margin: 0 !important; /* 🎯 强制清除基础 tag 带来的 margin，完全由外层云容器的 gap 来控制间距！ */
 }
 
-.gallery-columns-3 .gallery-item {
-  max-width: 33.33%;
+/* 文章数量角标：极其黯淡，绝不抢戏 */
+.tag-count {
+  font-size: 0.85rem;
+  opacity: 0.4; /* 用透明度来压低视觉层级 */
+  transition: opacity 0.3s ease;
 }
 
-.gallery-columns-4 .gallery-item {
-  max-width: 25%;
+/* 🎯 终极交互统一：精准悬停在分类标签上时，触发全站标准的浮起和高亮！ */
+.taxonomy-cloud a.taxonomy-tag:hover {
+  color: var(--accent-color);
+  background-color: var(--accent-color-light, #fff3e0);
+  filter: brightness(0.98); 
+  text-shadow: 0 0 0.5px var(--accent-color); /* 伪加粗防抖 */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); 
+  z-index: 2; 
 }
 
-.gallery-columns-5 .gallery-item {
-  max-width: 20%;
-}
-
-.gallery-columns-6 .gallery-item {
-  max-width: 16.66%;
-}
-
-.gallery-columns-7 .gallery-item {
-  max-width: 14.28%;
-}
-
-.gallery-columns-8 .gallery-item {
-  max-width: 12.5%;
-}
-
-.gallery-columns-9 .gallery-item {
-  max-width: 11.11%;
-}
-
-.gallery-icon img {
-  margin: 0 auto;
-}
-
-.gallery-caption {
-  color: #8c8c8c;
-  display: block;
-  font-family: "raleway", sans-serif;
-  font-size: 12px;
-  padding: 0.5em 0;
-}
-
-.gallery-columns-6 .gallery-caption,
-.gallery-columns-7 .gallery-caption,
-.gallery-columns-8 .gallery-caption,
-.gallery-columns-9 .gallery-caption {
-  display: none;
-}
-
-/* Jetpack Galleries */
-.tiled-gallery {
-  margin: 2.25em auto !important;
-}
-.tiled-gallery .gallery-row {
-  margin: 0 auto;
-}
-
-/* Styles for when user selects a dark header */
-.dark-header {
-  /* Secondary Nav */
-  /* Search Icon */
-}
-.dark-header .site-title a {
-  color: #222;
-}
-.dark-header .site-title a:link, .dark-header .site-title a:visited, .dark-header .site-title a:hover, .dark-header .site-title a:active, .dark-header .site-title a:focus {
-  color: #222;
-}
-.dark-header .toggle-navigation {
-  color: #222;
-}
-.dark-header .site-header .site-description {
-  color: #222;
-}
-.dark-header .site-header .social-media-icons a {
-  color: #222;
-}
-.dark-header .site-header .social-media-icons a:link, .dark-header .site-header .social-media-icons a:visited {
-  color: #222;
-}
-.dark-header .site-header .social-media-icons a:hover, .dark-header .site-header .social-media-icons a:active, .dark-header .site-header .social-media-icons a:focus {
-  color: #222;
-}
-.dark-header .toggle-secondary-navigation {
-  color: #222;
-}
-.dark-header .menu-secondary-items a,
-.dark-header .menu-secondary-items a:link,
-.dark-header .menu-secondary-items a:visited,
-.dark-header .menu-secondary-items a:hover,
-.dark-header .menu-secondary-items a:active,
-.dark-header .menu-secondary-items a:focus {
-  color: #222;
-}
-.dark-header .site-header .search-form-container i {
-  color: #222;
-}
-.dark-header .site-header.toggled .site-title a {
-  color: white;
-}
-.dark-header .site-header.toggled .site-title a:link, .dark-header .site-header.toggled .site-title a:visited, .dark-header .site-header.toggled .site-title a:hover, .dark-header .site-header.toggled .site-title a:active, .dark-header .site-header.toggled .site-title a:focus {
-  color: white;
-}
-.dark-header .site-header.toggled .toggle-navigation {
-  color: white;
-}
-.dark-header .site-header.toggled .site-description {
-  color: white;
-}
-
-/* 600px */
-@media all and (min-width: 37.5em) {
-  .dark-header .menu-secondary-items:before {
-    color: #222;
-  }
-  .dark-header .menu-secondary-items ul {
-    background: white;
-  }
-}
-/* 800px */
-@media all and (min-width: 50em) {
-  .dark-header .menu-unset > ul a,
-  .dark-header .menu-primary-items a {
-    color: #222;
-  }
-  .dark-header .menu-unset > ul a:link, .dark-header .menu-unset > ul a:visited,
-  .dark-header .menu-primary-items a:link,
-  .dark-header .menu-primary-items a:visited {
-    color: #222;
-  }
-  .dark-header .menu-unset > ul > li:after,
-  .dark-header .menu-primary-items > li:after {
-    color: #222;
-  }
-  .dark-header .menu-unset > ul ul,
-  .dark-header .menu-primary-items ul {
-    background: white;
-  }
-}
-/* background image styles */
-.background-image-active .background-image {
-  background-size: cover;
-  background-position: 50%;
-  position: fixed;
-  z-index: -1;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-.background-image-active .site-header {
-  border-color: transparent;
-}
-.background-image-active .excerpt {
-  opacity: 1;
-}
-.background-image-active .site-header,
-.background-image-active .site-header .search-form-container button,
-.background-image-active .main,
-.background-image-active .menu-secondary-items {
-  background: none;
-}
-.background-image-active .top-navigation {
-  background: rgba(255, 255, 255, 0.2);
-}
-.background-image-active .site-footer {
-  background: #222;
-}
-
-/* background style textures */
-.background-texture-active .site-header,
-.background-texture-active .site-header .search-form-container button,
-.background-texture-active .main,
-.background-texture-active .menu-secondary-items {
-  background: none;
-}
-.background-texture-active .site-header {
-  border-color: transparent;
-}
-.background-texture-active .site-footer {
-  background: #222;
-}
-.background-texture-active .top-navigation {
-  background: rgba(255, 255, 255, 0.2);
-}
-.background-texture-active .excerpt {
-  opacity: 1;
-}
-
-/* Featured Video styles */
-.featured-video video {
-  width: 100%;
-}
-
-.singular-page .featured-video {
-  margin: -3em 0 3em;
-}
-
-.full-width-images.blog .excerpt.has-video,
-.full-width-images.archive .excerpt.has-video,
-.two-column-images.blog .excerpt.has-video,
-.two-column-images.archive .excerpt.has-video {
-  background: none;
-}
-.full-width-images.blog .excerpt.has-video .overlay,
-.full-width-images.blog .excerpt.has-video .overlay-link,
-.full-width-images.blog .excerpt.has-video i,
-.full-width-images.archive .excerpt.has-video .overlay,
-.full-width-images.archive .excerpt.has-video .overlay-link,
-.full-width-images.archive .excerpt.has-video i,
-.two-column-images.blog .excerpt.has-video .overlay,
-.two-column-images.blog .excerpt.has-video .overlay-link,
-.two-column-images.blog .excerpt.has-video i,
-.two-column-images.archive .excerpt.has-video .overlay,
-.two-column-images.archive .excerpt.has-video .overlay-link,
-.two-column-images.archive .excerpt.has-video i {
-  display: none;
-}
-.full-width-images.blog .excerpt.has-video .excerpt-container,
-.full-width-images.archive .excerpt.has-video .excerpt-container,
-.two-column-images.blog .excerpt.has-video .excerpt-container,
-.two-column-images.archive .excerpt.has-video .excerpt-container {
-  position: relative;
-  opacity: 1;
-}
-.full-width-images.blog .excerpt.has-video .excerpt-header, .full-width-images.blog .excerpt.has-video .entry-header,
-.full-width-images.archive .excerpt.has-video .excerpt-header,
-.full-width-images.archive .excerpt.has-video .entry-header,
-.two-column-images.blog .excerpt.has-video .excerpt-header,
-.two-column-images.blog .excerpt.has-video .entry-header,
-.two-column-images.archive .excerpt.has-video .excerpt-header,
-.two-column-images.archive .excerpt.has-video .entry-header {
-  padding: 0.75em 1.5em 1.5em;
-}
-.full-width-images.blog .excerpt.has-video .excerpt-title, .full-width-images.blog .excerpt.has-video .entry-title,
-.full-width-images.archive .excerpt.has-video .excerpt-title,
-.full-width-images.archive .excerpt.has-video .entry-title,
-.two-column-images.blog .excerpt.has-video .excerpt-title,
-.two-column-images.blog .excerpt.has-video .entry-title,
-.two-column-images.archive .excerpt.has-video .excerpt-title,
-.two-column-images.archive .excerpt.has-video .entry-title {
-  font-size: 1em;
-  line-height: 1.5;
-}
-.full-width-images.blog .excerpt.has-video .excerpt-title a, .full-width-images.blog .excerpt.has-video .entry-title a,
-.full-width-images.archive .excerpt.has-video .excerpt-title a,
-.full-width-images.archive .excerpt.has-video .entry-title a,
-.two-column-images.blog .excerpt.has-video .excerpt-title a,
-.two-column-images.blog .excerpt.has-video .entry-title a,
-.two-column-images.archive .excerpt.has-video .excerpt-title a,
-.two-column-images.archive .excerpt.has-video .entry-title a {
-  color: white;
+/* 悬浮时，数字也跟着变深秋橘，但保持一丢丢透明度，完美融入 */
+.taxonomy-cloud a.taxonomy-tag:hover .tag-count {
   opacity: 0.8;
 }
-.full-width-images.blog .excerpt.has-video .excerpt-title a:link, .full-width-images.blog .excerpt.has-video .entry-title a:link, .full-width-images.blog .excerpt.has-video .excerpt-title a:visited, .full-width-images.blog .excerpt.has-video .entry-title a:visited,
-.full-width-images.archive .excerpt.has-video .excerpt-title a:link,
-.full-width-images.archive .excerpt.has-video .entry-title a:link,
-.full-width-images.archive .excerpt.has-video .excerpt-title a:visited,
-.full-width-images.archive .excerpt.has-video .entry-title a:visited,
-.two-column-images.blog .excerpt.has-video .excerpt-title a:link,
-.two-column-images.blog .excerpt.has-video .entry-title a:link,
-.two-column-images.blog .excerpt.has-video .excerpt-title a:visited,
-.two-column-images.blog .excerpt.has-video .entry-title a:visited,
-.two-column-images.archive .excerpt.has-video .excerpt-title a:link,
-.two-column-images.archive .excerpt.has-video .entry-title a:link,
-.two-column-images.archive .excerpt.has-video .excerpt-title a:visited,
-.two-column-images.archive .excerpt.has-video .entry-title a:visited {
-  color: white;
+
+/* =========================================
+   Metro 风格 footer 设计
+   ========================================= */
+.site-footer.metro-dark {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  padding: 100px 0 40px;
 }
-.full-width-images.blog .excerpt.has-video .excerpt-title a:hover, .full-width-images.blog .excerpt.has-video .entry-title a:hover, .full-width-images.blog .excerpt.has-video .excerpt-title a:active, .full-width-images.blog .excerpt.has-video .entry-title a:active, .full-width-images.blog .excerpt.has-video .excerpt-title a:focus, .full-width-images.blog .excerpt.has-video .entry-title a:focus,
-.full-width-images.archive .excerpt.has-video .excerpt-title a:hover,
-.full-width-images.archive .excerpt.has-video .entry-title a:hover,
-.full-width-images.archive .excerpt.has-video .excerpt-title a:active,
-.full-width-images.archive .excerpt.has-video .entry-title a:active,
-.full-width-images.archive .excerpt.has-video .excerpt-title a:focus,
-.full-width-images.archive .excerpt.has-video .entry-title a:focus,
-.two-column-images.blog .excerpt.has-video .excerpt-title a:hover,
-.two-column-images.blog .excerpt.has-video .entry-title a:hover,
-.two-column-images.blog .excerpt.has-video .excerpt-title a:active,
-.two-column-images.blog .excerpt.has-video .entry-title a:active,
-.two-column-images.blog .excerpt.has-video .excerpt-title a:focus,
-.two-column-images.blog .excerpt.has-video .entry-title a:focus,
-.two-column-images.archive .excerpt.has-video .excerpt-title a:hover,
-.two-column-images.archive .excerpt.has-video .entry-title a:hover,
-.two-column-images.archive .excerpt.has-video .excerpt-title a:active,
-.two-column-images.archive .excerpt.has-video .entry-title a:active,
-.two-column-images.archive .excerpt.has-video .excerpt-title a:focus,
-.two-column-images.archive .excerpt.has-video .entry-title a:focus {
-  color: white;
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.footer-main-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 80px;
+  margin-bottom: 120px; 
+}
+
+/* ================= 左侧：品牌与简介区 ================= */
+.footer-brand-zone {
+  flex: 1;
+  max-width: 450px;
+  text-align: left; 
+}
+
+.footer-site-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 12px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.25em; 
+}
+
+.footer-slogan {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #888888;
+  margin: 0 0 50px 0; 
+  letter-spacing: 0.15em; 
+  text-transform: uppercase;
+}
+
+.editorial-bio {
+  font-size: 1.15rem; 
+  font-weight: 400;  
+  line-height: 1.6;
+  color: #a0a0a0; 
+  margin: 0;
+}
+
+/* ================= 右侧：Metro Pivot 链接区 ================= */
+.footer-links-zone.pivot-layout {
+  display: flex;
+  flex-direction: column; 
+  gap: 60px; 
+  flex: 1;
+  max-width: 600px; 
+  align-items: flex-end; 
+  text-align: right; 
+}
+
+.pivot-header {
+  font-size: 2.2rem; 
+  font-weight: 800; 
+  color: rgba(255, 255, 255, 0.25);; 
+  margin: 0 0 20px 0;
+  letter-spacing: -0.02em;
+  text-transform: capitalize; 
+}
+
+.metro-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex; 
+  flex-wrap: wrap;
+  justify-content: flex-end; 
+  gap: 15px 30px; 
+}
+
+.metro-list a {
+  color: #e0e0e0;
+  text-decoration: none;
+  font-size: 1.05rem;
+  transition: all 0.2s ease;
+}
+
+.metro-list a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 1px;
+}
+
+/* ================= 底部：版权与 RSS ================= */
+.footer-copyright-zone {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  border-top: 1px solid #333333; 
+  padding-top: 25px; 
+}
+
+.copyright-info {
+  font-size: 0.85rem; 
+  color: #666666;
+}
+
+.copyright-info a {
+  color: inherit; /* 直接继承父级颜色，减少冗余代码 */
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.copyright-info a:hover {
+  color: #ffffff;
+}
+
+.meta-divider {
+  margin: 0 2px; /* 稍微缩小一点间距，让 · 看起来更紧凑 */
+  color: #444444; 
+}
+
+/* ================= RSS 按钮光学对齐修复 ================= */
+.site-footer .footer-copyright-zone .footer-rss-btn {
+  display: inline-flex; 
+  align-items: center; 
+  gap: 4px; /* 缩小 gap 以抵消 letter-spacing 带来的尾部空格 */
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #888888;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1; /* 锁死行高，这是对齐的核心 */
+  transition: all 0.3s ease;
+}
+
+.site-footer .footer-copyright-zone .footer-rss-btn .rss-icon {
+  transition: transform 0.3s ease, stroke 0.3s ease;
+  margin-top: -2px; /* 向上微调 2px，实现视觉上的完美绝对居中 */
+}
+
+.site-footer .footer-copyright-zone .footer-rss-btn:hover {
+  color: #ffffff; 
+}
+
+.site-footer .footer-copyright-zone .footer-rss-btn:hover .rss-icon {
+  stroke: #F26522 !important; 
+  transform: translate(2px, -2px) scale(1.1); 
+}
+
+/* ================= 移动端响应式 ================= */
+@media (max-width: 900px) {
+  .footer-main-grid {
+    flex-direction: column;
+    gap: 80px;
+  }
+  
+  .footer-links-zone.pivot-layout {
+    align-items: flex-start;
+    text-align: left;
+  }
+  
+  .metro-list {
+    justify-content: flex-start;
+  }
+  
+  .footer-slogan {
+    margin: 0 0 30px 0; 
+  }
+
+  .footer-copyright-zone {
+    flex-direction: column;
+    align-items: flex-start; 
+    gap: 20px;
+  }
+  
+  .copyright-info {
+    line-height: 1.6;
+  }
+
+  /* =========================================
+     移动端失去 Hover，直接常驻高光点睛状态
+     ========================================= */
+  .site-footer .footer-copyright-zone .footer-rss-btn {
+    color: #cccccc; /* 文字明度提高，在深色底或浅色底上都更具辨识度 */
+  }
+  
+  .site-footer .footer-copyright-zone .footer-rss-btn .rss-icon {
+    stroke: var(--accent-color, #F26522) !important; /* 强制常驻主题色 */
+    /* 稍微放大一点点，弥补没有动态 hover 缩放的遗憾 */
+    transform: scale(1.1); 
+  }
+  
+  @media (max-width: 500px) {
+    /* 提高权重，确保分割符绝对被隐藏 */
+    .copyright-info .meta-divider {
+      display: none;
+    }
+    
+    /* 精准打击：让除了 divider 之外的 span 和 a 标签变成块级元素折行 */
+    .copyright-info span:not(.meta-divider), 
+    .copyright-info a {
+      display: block; 
+      margin-bottom: 6px; /* 给上下两行之间增加一点呼吸间距，不再紧紧贴在一起 */
+    }
+  }
+}
+
+/* =========================================
+   右下角悬浮工具箱容器 (核心定位)
+   ========================================= */
+.metro-tools-dock {
+  position: fixed; /* 🎯 脱离文档流，悬浮在屏幕上 */
+  right: 20px; /* 默认距离右侧 20px */
+  bottom: 40px; /* 默认距离底部 40px */
+  display: flex;
+  flex-direction: column; /* 让里面的按钮上下排列 */
+  gap: 10px; /* 两个按钮之间的间距 */
+  z-index: 900; /* 保证它盖在大部分元素上面 */
+  
+  /* 配合 JS 的滚动显示逻辑 */
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* JS 触发显示时的状态 */
+.metro-tools-dock.show {
   opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
-@media all and (min-width: 56.25em) {
-  .excerpt .featured-video {
-    -webkit-transform: translateZ(0);
-            transform: translateZ(0);
-    /* fixes FF glitch where image focuses & unfocuses */
-    width: 50%;
-    height: 100%;
-    padding-bottom: 0;
-    position: absolute;
-    right: 0;
-    -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
+/* 宽屏电脑上的极客对齐魔法 */
+@media (min-width: 1280px) {
+  .metro-tools-dock {
+    /* 让按钮贴着 1200px 宽的主体内容边缘，而不是飞到带鱼屏最右边 */
+    right: calc(50vw - 580px);
   }
-  .excerpt .featured-video div,
-  .excerpt .featured-video video {
-    position: relative;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
-  }
-
-  .excerpt.even .featured-video {
-    right: 50%;
-    right: calc(50% - 1px);
-  }
-
-  /* Premium Layouts */
-  .full-width .excerpt .featured-video,
-  .full-width-images .excerpt .featured-video,
-  .two-column .excerpt .featured-video,
-  .two-column-images .excerpt .featured-video {
-    width: 100%;
-    height: auto;
-    position: relative;
-    right: 0;
-  }
-  .full-width .excerpt .featured-video div,
-  .full-width .excerpt .featured-video video,
-  .full-width-images .excerpt .featured-video div,
-  .full-width-images .excerpt .featured-video video,
-  .two-column .excerpt .featured-video div,
-  .two-column .excerpt .featured-video video,
-  .two-column-images .excerpt .featured-video div,
-  .two-column-images .excerpt .featured-video video {
-    position: relative;
-    top: 0;
-    -webkit-transform: none;
-            transform: none;
-  }
-}
-/* 900px */
-@media all and (min-width: 56.25em) {
-  .ie9 .excerpt {
-    opacity: 1;
-  }
-  .ie9 .excerpt:hover {
-    opacity: 1;
-  }
-}
-/* Styles for Disqus Comment System */
-#disqus_thread {
-  background: white;
-  padding: 1.5em 5.55%;
-  max-width: 1280px;
 }
 
-/* 600px */
-@media all and (min-width: 37.5em) {
-  #disqus_thread {
-    width: 88.88%;
-    margin: 0 auto;
-  }
-}
-/* 700px */
-@media all and (min-width: 43.75em) {
-  #disqus_thread {
-    padding: 1.5em 10%;
-  }
-}
-/* 900px */
-@media all and (min-width: 56.25em) {
-  #disqus_thread {
-    padding: 1.5em 14.66%;
-  }
-}
-/* 1100px */
-@media all and (min-width: 68.75em) {
-  #disqus_thread {
-    padding: 1.5em 17.435% 3em;
-  }
-}
-/* 1200px */
-@media all and (min-width: 75em) {
-  #disqus_thread {
-    padding: 1.5em 19.75% 3em;
-  }
-}
-@media all and (min-width: 1400px) {
-  #disqus_thread {
-    padding: 1.5em 285px 3em;
-  }
-}
-/* bbpress Styles */
-.bbpress.archive .main {
-  width: 100%;
-  margin-bottom: 3em;
-}
-
-.entry-bbpress {
-  padding-top: 3em;
-}
-.entry-bbpress .entry-container {
-  padding: 0 11.11%;
-}
-
-#wp-bbp_topic_content-editor-container input,
-#wp-bbp_reply_content-editor-container input {
-  width: auto;
-  padding: 6px 24px !important;
-}
-#wp-bbp_topic_content-editor-container textarea,
-#wp-bbp_reply_content-editor-container textarea {
-  outline: solid 1px #222;
-  margin-top: 1.5em !important;
-}
-
-#bbp_topic_tags {
-  max-width: 500px;
-  font-size: 13px;
-}
-
-#bbp_topic_title {
-  max-width: none;
-}
-
-.bbp-submit-wrapper button {
-  background: #222;
-  color: white;
-  max-width: 22.2em !important;
-  min-width: 11.1em;
-  padding: 0.8em;
-  min-height: 45px;
-  outline: none;
-  border: none;
-  font-family: "raleway", sans-serif;
-  font-size: 0.813em;
-  line-height: 1.85;
-  border-radius: 0;
-  -webkit-appearance: none;
-  -webkit-transition: all 0.2s ease;
-          transition: all 0.2s ease;
-}
-.bbp-submit-wrapper button:hover, .bbp-submit-wrapper button:active, .bbp-submit-wrapper button:focus {
+/* 锐利的方形高对比按钮 */
+.metro-tool-btn {
+  width: 48px;
+  height: 48px;
+  background-color: #111111 !important; 
+  border: none !important;
+  border-radius: 0 !important;
+  display: flex !important; 
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
-  background: black;
+  color: #ffffff !important; 
+  padding: 0 !important;
+  
+  /* 🎯 找回丝滑灵魂：添加极其顺滑的背景色和物理位移过渡动画 */
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
 }
 
-@media all and (min-width: 62.5em) {
-  #bbp_topic_title {
-    width: 70%;
+/* 🎯 斩草除根：杀掉旧主题在 button 上可能绑定的任何伪元素背景动画！ */
+.metro-tool-btn::before,
+.metro-tool-btn::after {
+  display: none !important;
+}
+
+/* 强制让 SVG 绝对居中显示 */
+.metro-tool-btn svg { 
+  width: 22px !important; 
+  height: 22px !important; 
+  stroke: #ffffff !important; 
+  display: block;
+  margin: 0 !important; /* 清除可能残留的外边距，解决歪斜 */
+}
+
+/* Hover 状态：亮起主题色并平滑上浮 */
+.metro-tool-btn:hover {
+  background-color: var(--primary-color, #26a69a) !important; 
+  transform: translateY(-4px) !important; 
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15) !important;
+}
+
+/* =========================================
+   桌面端/移动端显示控制
+   ========================================= */
+/* 桌面端：绝对隐藏目录按钮！ */
+.mobile-only {
+  display: none !important; 
+}
+
+/* 手机端 (小于 1000px)：显示目录按钮 */
+@media (max-width: 1000px) {
+  .mobile-only {
+    display: flex !important; 
   }
 }
-#bbpress-forums div.bbp-search-form {
-  margin: 1px 0 12px 0;
+
+/* =========================================
+   📱 移动端专属元素 (默认在桌面端隐藏)
+   ========================================= */
+.mobile-toggle-btn,
+.mobile-menu-overlay {
+  display: none;
 }
 
-@media all and (min-width: 43.75em) {
-  #bbpress-forums #bbp-search-form #bbp_search {
-    width: 500px !important;
+/* =========================================
+   📱 移动端响应式断点 (< 768px)
+   ========================================= */
+@media (max-width: 768px) {
+  
+  /* 1. 隐藏桌面端的导航和搜索 */
+  .nav-menu,
+  .search-container {
+    display: none !important;
+  }
+
+  /* 🎯 修复重叠与保留 Title：将 header-inner 变成实体挡板！ */
+  .header-inner {
+    position: relative;
+    z-index: 1002; /* 必须大于 overlay 的 999 */
+    background-color: #fafafa; /* 和你的网页背景色保持一致 */
+  }
+
+  /* 提升 Title 层级，确保它和汉堡包一起显示在遮罩上方 */
+  .site-title {
+    position: relative;
+    z-index: 1003; 
+  }
+
+  /* 2. 汉堡包触发按钮：极其丝滑的形变 */
+  .mobile-toggle-btn {
+    display: flex; 
+    position: relative;
+    width: 36px;
+    height: 36px;
+    background: transparent;
+    border: none;
+    color: #111;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    z-index: 1003; /* 🎯 与 Title 平级，永远在最上层，不会被遮罩盖住 */
+  }
+
+  .mobile-toggle-btn svg {
+    position: absolute;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.2s ease;
+  }
+
+  /* 默认：三道杠显示，X 隐藏 */
+  .icon-hamburger { opacity: 1; transform: rotate(0deg) scale(1); }
+  .icon-close-menu { opacity: 0; transform: rotate(-90deg) scale(0.5); }
+
+  /* 展开状态：三道杠旋转消失，X 旋转浮现！ */
+  .menu-open .icon-hamburger { opacity: 0; transform: rotate(90deg) scale(0.5); }
+  .menu-open .icon-close-menu { opacity: 1; transform: rotate(0deg) scale(1); }
+
+  /* 3. 全屏遮罩层：从上方丝滑降临 */
+  .mobile-menu-overlay {
+    display: block; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    
+    /* 🎯 终极魔法 1：使用 dvh (动态视口)。
+       它会随着浏览器底栏的出现/消失自动计算真实可用高度！ */
+    height: 100vh; /* 兼容老浏览器的 Fallback */
+    height: 100dvh; 
+    
+    background-color: #fafafa; 
+    z-index: 999; 
+    
+    transform: translateY(-100%); 
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    
+    /* 🎯 终极魔法 2：阻断滚动链！
+       滑到菜单底部时，绝不把滚动事件传给背后的网页 */
+    overflow-y: auto; 
+    overscroll-behavior: contain; 
+  }
+
+  /* 展开状态：覆盖全屏 */
+  .menu-open .mobile-menu-overlay {
+    transform: translateY(0);
+  }
+
+  /* 内部容器排版：减小高度挤压，让一屏装下所有内容 */
+  .mobile-menu-inner {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%; /* 因为外面已经 100dvh 了，这里直接撑满即可 */
+    /* 稍微减小顶部 padding，从 90px 降到 80px，给底部的 RSS 腾出空间 */
+    padding: 80px 20px 30px 20px; 
+    /* 将 padding 强制包裹在 100% 高度以内，绝不溢出屏幕！ */
+    box-sizing: border-box;
+  }
+
+  /* 4. 移动端菜单：稍微减小字号和间距，防溢出 */
+  .mobile-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* 绝对右对齐 */
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+
+  .mobile-nav-link {
+    font-size: 2.2rem; /* 控制在合理大小 */
+    font-weight: 800;
+    color: #aaa; /* 默认灰色 */
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    transition: color 0.2s ease, transform 0.2s ease;
+  }
+
+  /* Active 状态指示：黑色 + 极其轻微的左移，产生空间感 */
+  .mobile-nav-link.active {
+    color: #111;
+    transform: translateX(-8px); 
+  }
+
+  /* 5. 纯粹的文字搜索框：内容即设计！ */
+  .mobile-search-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* 跟着右对齐 */
+    width: 100%;
+  }
+
+  #mobileSearchInput {
+    width: 100%;
+    max-width: 250px; 
+    padding: 8px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #111; /* 极具分量的黑色底线 */
+    font-size: 1.2rem; 
+    font-weight: 700;
+    color: #111;
+    text-transform: uppercase;
+    
+    /* 🎯 核心细节：让输入的文字和占位符也从右边开始，维持右对齐隐形线！ */
+    text-align: right; 
+    outline: none;
+    border-radius: 0;
+    transition: border-color 0.2s ease;
+  }
+  
+  #mobileSearchInput::placeholder { color: #ccc; }
+  
+  /* 聚焦时，粗底线亮起主题色 */
+  #mobileSearchInput:focus {
+    border-bottom-color: var(--primary-color, var(--accent-color, #F26522)); 
+  }
+
+  /* 移动端搜索结果简易面板 */
+  .mobile-search-results {
+    display: none;
+    width: 100%;
+    max-width: 250px;
+    margin-top: 15px;
+    text-align: right; /* 搜索结果文字依然右对齐 */
+  }
+
+  .mobile-search-results .search-result-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* 右对齐 */
+    padding: 15px 0;
+    border-bottom: 1px dashed #ddd;
+    text-decoration: none;
+  }
+
+  .mobile-search-results .search-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 5px;
+  }
+  .mobile-search-results .search-date {
+    font-size: 0.8rem;
+    color: #888;
+  }
+
+  /* 6. 底部版权：利用 margin-top: auto 自动推到底部 */
+  .mobile-meta-footer {
+    margin-top: auto; /* 🎯 神奇的一笔：自动吸收剩余空间压底 */
+    padding-top: 40px; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+  }
+
+  .mobile-meta-footer .copyright-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* 右对齐 */
+    font-size: 0.8rem;
+    color: #999;
+    line-height: 1.4;
+  }
+
+  /* 🎯 RSS 点睛之笔的样式 */
+  .mobile-rss-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #111; 
+    text-decoration: none;
+    letter-spacing: 1px;
+  }
+
+  .mobile-rss-btn .rss-icon {
+    /* 强制使用你的主题色！ */
+    color: var(--accent-color, #F26522); 
+    margin-top: -1px; /* 光学对齐 */
   }
 }
-/*
 
-ATTENTION:
-
-Please do not edit this. Your changes will be overwritten when you update Tracks.
-
-If you want to make CSS edits, use the "Custom CSS" section in the Customizer instead (Appearance > Customize).
-
-If you want more information about customizing Tracks with CSS, check out this guide: https://www.competethemes.com/help/custom-css-tracks/
-
-*/
+/* 🎯 极其重要：当菜单展开时，禁止背后的网页内容滚动！ */
+body.menu-open {
+  overflow: hidden;
+  /* 针对某些固执的移动端浏览器（如 iOS Safari）的深度锁定 */
+  touch-action: none; 
+}

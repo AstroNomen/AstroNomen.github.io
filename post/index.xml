@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on SSS</title>
-    <link>https://astronomen.github.io/post/</link>
-    <description>Recent content in Posts on SSS</description>
+    <title>Posts on S.S.S.</title>
+    <link>https://sss.akiday.com/post/</link>
+    <description>Recent content in Posts on S.S.S.</description>
     <generator>Hugo</generator>
-    <language>en-us</language>
+    <language>en-gb</language>
     <lastBuildDate>Fri, 07 Jun 2024 12:00:00 +0100</lastBuildDate>
-    <atom:link href="https://astronomen.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://sss.akiday.com/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Recent Trends in Astrocomb</title>
-      <link>https://astronomen.github.io/post/astrocomb/</link>
+      <link>https://sss.akiday.com/post/astrocomb/</link>
       <pubDate>Sun, 24 Dec 2023 16:00:00 +0100</pubDate>
-      <guid>https://astronomen.github.io/post/astrocomb/</guid>
-      <description>&lt;p&gt;&lt;em&gt;&lt;u&gt;&lt;strong&gt;Abstract&lt;/strong&gt;&lt;/u&gt;—The motion of star systems will cause a Doppler shift on the spectrum, providing valuable insights into the dynamics and characteristics of celestial objects. Astronomical deep space exploration necessitates the use of high-precision astronomical spectrographs to analyze the subtle variations in Doppler shift observed in stellar absorption lines. Astrocombs serve as essential tools for the precision calibration of astronomical spectrographs, playing a crucial role in advancing the fields of cosmology and exoplanet research. As technological fabrication processes undergo continual enhancement, astrocombs undergo iteration. Here we provide a brief overview of astrocombs.&lt;/em&gt;&lt;/p&gt;</description>
+      <guid>https://sss.akiday.com/post/astrocomb/</guid>
+      <description>&lt;p&gt;&lt;em&gt;&lt;!-- raw HTML omitted --&gt;&lt;strong&gt;Abstract&lt;/strong&gt;&lt;!-- raw HTML omitted --&gt;—The motion of star systems will cause a Doppler shift on the spectrum, providing valuable insights into the dynamics and characteristics of celestial objects. Astronomical deep space exploration necessitates the use of high-precision astronomical spectrographs to analyze the subtle variations in Doppler shift observed in stellar absorption lines. Astrocombs serve as essential tools for the precision calibration of astronomical spectrographs, playing a crucial role in advancing the fields of cosmology and exoplanet research. As technological fabrication processes undergo continual enhancement, astrocombs undergo iteration. Here we provide a brief overview of astrocombs.&lt;/em&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Phonon Coherence and Polaritons of Excitons</title>
-      <link>https://astronomen.github.io/post/phonon_coherence_exciton/</link>
+      <link>https://sss.akiday.com/post/phonon_coherence_exciton/</link>
       <pubDate>Fri, 07 Jun 2024 12:00:00 +0100</pubDate>
-      <guid>https://astronomen.github.io/post/phonon_coherence_exciton/</guid>
+      <guid>https://sss.akiday.com/post/phonon_coherence_exciton/</guid>
       <description>&lt;p&gt;This paper is the review of  &lt;em&gt;&lt;strong&gt;Phonon coherences reveal the polaronic character of excitons in two-dimensional lead halide perovskites&lt;/strong&gt;&lt;/em&gt;, which is written by &lt;em&gt;Thouin, F., Valverde-Chávez, D.A., Quarti, C.&lt;/em&gt; &lt;em&gt;et al.&lt;/em&gt; on &lt;strong&gt;Nature Materials&lt;/strong&gt;. 18, 349–356 (2019).  &lt;a href=&#34;https://doi.org/10.1038/s41563-018-0262-7&#34;&gt;https://doi.org/10.1038/s41563-018-0262-7&lt;/a&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;Hybrid organic-inorganic metal halide perovskites have become an interesting area in materials science owing to their unique optical and electronic characteristics, and have been widely used in the preparation of optoelectronic devices such as solar cells[1]. The distinct lattice structures of these quantum well-like derivatives result in unique behaviour. To elucidate the peculiar nature of these materials,  Félix Thouin and his colleagues delve into the interaction between excitons and phonons in 2D lead halide perovskites, providing significant insights into their polaronic nature and the resultant impact on their optoelectronic properties in the paper I reviewed, which confer both structural flexibility and remarkable electronic characteristics. This review will offer a detailed discussion of the computational and experimental results presented in their publication, alongside a broader introduction to the topic. In two-dimensional lead halide perovskites, strongly bound, stable excitons typically exist at room temperature within the lattice and exhibit lower binding energies[2]. These lower binding energies result in the coexistence of multiple excitons with distinct lattice couplings, introducing dynamic disorder effects. Such unique coupling facilitates the formation of biexcitons, which has profound implications for developing light-emitting devices. What distinguishes these excitons from those in non-ionic semiconductor quantum wells is their rich spectral structure, which depends on the degree of lattice distortion imposed by the organic cationic ligands. To differentiate various excitons, the reviewed paper implemented high-resolution resonant impulsive stimulated Raman spectroscopy (RISRS)[3][4], as resonance Raman spectroscopy serves as a direct optical probe of polaronic effects on the nature of excitons[5].&lt;/p&gt;</description>
     </item>
     <item>
       <title>Ultra Violet C Irradiation Grating Coupler Design</title>
-      <link>https://astronomen.github.io/post/uvcgrating/</link>
+      <link>https://sss.akiday.com/post/uvcgrating/</link>
       <pubDate>Thu, 01 Jun 2023 12:00:00 +0100</pubDate>
-      <guid>https://astronomen.github.io/post/uvcgrating/</guid>
+      <guid>https://sss.akiday.com/post/uvcgrating/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;Ultraviolet (UV) irradiation is defined as a type of electromagnetic radiation, with a wavelength (100–400nm) shorter than that of visible light (400–700nm), but longer than x-rays (&amp;lt;100 nm)[1]. Ultra Violet C irradiation (UVC) ranges from 100 to 280nm in wavelength. UV irradiation is divided into four distinct spectral areas including vacuum UV (100–200 nm), UVC (200–280 nm), UVB (280–315 nm) and UVA (315–400 nm)[2].&lt;/p&gt;&#xA;&lt;p&gt;Due to its power to damage the genetic material (DNA and RNA) of microorganisms, which can prevent them from producing, UVC irradiation is widely used in disinfection and sterilization. Besides, a variety of molecules exhibit autofluorescence with UV light excitation. So UVC is widely used in the field of medicine and biology[3].&lt;/p&gt;</description>
     </item>
     <item>
       <title>Liquid Crystal Actuator and Ink-jet Print</title>
-      <link>https://astronomen.github.io/post/lc-actuator/</link>
+      <link>https://sss.akiday.com/post/lc-actuator/</link>
       <pubDate>Thu, 22 Dec 2022 17:00:00 +0100</pubDate>
-      <guid>https://astronomen.github.io/post/lc-actuator/</guid>
+      <guid>https://sss.akiday.com/post/lc-actuator/</guid>
       <description>&lt;p&gt;This paper is collaborated between me and my colleague Songyu Yao. This is our literature review of  &lt;em&gt;&lt;strong&gt;Printed artificial cilia from liquid-crystal network actuators modularly driven by light&lt;/strong&gt;&lt;/em&gt;, which is written by &lt;em&gt;Casper L. van Oosten, Cees W. M. Bastiaansen&lt;/em&gt; and &lt;em&gt;Dirk J. Broer&lt;/em&gt; on &lt;strong&gt;Nature Materials&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;introduction-of-basic-concepts&#34;&gt;Introduction of Basic Concepts&lt;/h2&gt;&#xA;&lt;h3 id=&#34;liquid-crystals&#34;&gt;Liquid Crystals&lt;/h3&gt;&#xA;&lt;p&gt;Liquid crystals (LC) are materials with anisotropy, the position of molecules can be randomly arranged, which means it can flow like a liquid, but the molecules are fixed oriented. Typically, liquid crystals are divided into thermotropic, lyotropic and metallotropic.&lt;/p&gt;</description>
     </item>
   </channel>

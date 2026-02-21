@@ -1,263 +1,203 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en-gb">
 <head>
     <meta charset="utf-8">
-    <meta name="google-site-verification" content="GDbVv_xxXtuvfEbsKqpO5tCQeKjliEtybmvD-w9p1ME" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Ultra Violet C Irradiation Grating Coupler Design | S.S.S.</title>
+    
+    <meta name="description" content="Introduction
+Ultraviolet (UV) irradiation is defined as a type of electromagnetic radiation, with a wavelength (100–400nm) shorter than that of visible light (400–700nm), but longer than x-rays (&lt;100 nm)[1]. Ultra Violet C irradiation (UVC) ranges from 100 to 280nm in wavelength. UV irradiation is divided into four distinct spectral areas including vacuum UV (100–200 nm), UVC (200–280 nm), UVB (280–315 nm) and UVA (315–400 nm)[2].
+Due to its power to damage the genetic material (DNA and RNA) of microorganisms, which can prevent them from producing, UVC irradiation is widely used in disinfection and sterilization. Besides, a variety of molecules exhibit autofluorescence with UV light excitation. So UVC is widely used in the field of medicine and biology[3].">
+    <meta name="keywords" content="Photonics, PIC, Lumerical, Simulation">
+    <meta name="author" content="Author">
 
     
-    <meta property="og:site_name" content="SSS">
-    <meta property="og:type" content="article">
-
-    
-    <meta property="og:image" content="https://astronomen.github.io//img/home-bg.jpg">
-    <meta property="twitter:image" content="https://astronomen.github.io//img/home-bg.jpg" />
-    
-
-    
-    <meta name="title" content="Ultra Violet C Irradiation Grating Coupler Design" />
-    <meta property="og:title" content="Ultra Violet C Irradiation Grating Coupler Design" />
-    <meta property="twitter:title" content="Ultra Violet C Irradiation Grating Coupler Design" />
+    <meta name="google-site-verification" content="googlee23cc6110df4ac20.html" />
     
 
     
-    <meta name="description" content="A design scheme for grating couplers based on Silica, target work wavelength at 266nm.">
-    <meta property="og:description" content="A design scheme for grating couplers based on Silica, target work wavelength at 266nm." />
-    <meta property="twitter:description" content="A design scheme for grating couplers based on Silica, target work wavelength at 266nm." />
-    
-
-    
-    <meta property="twitter:card" content="summary" />
-    
-    
-
-    <meta name="keyword"  content="Blog, Photonics, Physics, Academi, Research">
-    <link rel="shortcut icon" href="/img/favicon.ico">
-
-    <title>Ultra Violet C Irradiation Grating Coupler Design | Personal Research Blog</title>
-
-    <link rel="canonical" href="/post/uvcgrating/">
-
-    
-    
-    
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-
-    
-    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
-
-    
-    <link rel="stylesheet" href="/css/zanshang.css">
-
-    
-    <link rel="stylesheet" href="/css/font-awesome.all.min.css">
-
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
-
-    
-    <script src="/js/jquery.min.js"></script>
-
-    
-    <script src="/js/bootstrap.min.js"></script>
-
-    
-    <script src="/js/hux-blog.min.js"></script>
-
-    
-    <script src="/js/lazysizes.min.js"></script>
-
-    
-    
-    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
-    
-    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
-    
-
-    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L18R9FHVX6"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            renderMathInElement(document.body);
-        });
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-L18R9FHVX6');
     </script>
+    
 
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/metrotypo.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bonheur+Royale&text=S.tudyomnhige%20&display=swap" rel="stylesheet">
+
+    <style>
+      :root {
+        --primary-color: #26a69a;
+        --accent-color: #e65100;
+        --accent-color-light: #fff3e0;
+      }
+    </style>
 </head>
+<body>
+    <header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    
+    <a href="/" class="site-title">S.S.S.</a>
 
-
-
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-L18R9FHVX6"></script>
-      <script>
-        var doNotTrack = false;
-        if ( false ) {
-          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
-          var doNotTrack = (dnt == "1" || dnt == "yes");
-        }
-        if (!doNotTrack) {
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-L18R9FHVX6');
-        }
-      </script>
-
-
-
-
-
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-
-    <div class="container-fluid">
+    <nav class="nav-menu">
+       
+      
         
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">SSS</a>
-        </div>
+        <a href="/" class="nav-link ">
+          Home
+        </a>
+      
+        
+        <a href="/tags/" class="nav-link ">
+          Tags
+        </a>
+      
+        
+        <a href="/archive/" class="nav-link ">
+          Archive
+        </a>
+      
+        
+        <a href="/about/" class="nav-link ">
+          About
+        </a>
+      
+    </nav>
 
-        
-        
-        <div id="huxblog_navbar">
-            <div class="navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="/">All Posts</a>
-                    </li>
-                    
-                        
-                        <li>
-                            <a href="/categories/research/">research</a>
-                        </li>
-                        
-                        <li>
-                            <a href="/categories/review/">review</a>
-                        </li>
-                        
-                    
-                    
-		    
-                        <li><a href="/archive//">TIMELINE</a></li>
-                    
-                        <li><a href="/about//">ABOUT</a></li>
-                    
-		            <li>
-                        <a href="/search"><i class="fa fa-search"></i></a>
-		           </li>
-                </ul>
-            </div>
-        </div>
-        
+    <div class="search-container" id="searchContainer">
+      <input type="text" id="searchInput" class="search-input" placeholder="SEARCH...">
+      <button class="search-toggle-btn" id="searchToggleBtn" aria-label="Toggle Search">
+        <svg class="icon-search" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <svg class="icon-close" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <div class="search-results-panel" id="searchResults"></div>
     </div>
-    
-</nav>
-<script>
-    
-    
-    
-    var $body   = document.body;
-    var $toggle = document.querySelector('.navbar-toggle');
-    var $navbar = document.querySelector('#huxblog_navbar');
-    var $collapse = document.querySelector('.navbar-collapse');
 
-    $toggle.addEventListener('click', handleMagic)
-    function handleMagic(e){
-        if ($navbar.className.indexOf('in') > 0) {
+    <button class="mobile-toggle-btn" id="mobileToggleBtn" aria-label="Menu">
+      <svg class="icon-hamburger" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square">
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+      <svg class="icon-close-menu" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+
+  </div> <div class="mobile-menu-overlay" id="mobileOverlay">
+    <div class="mobile-menu-inner">
+      
+      <nav class="mobile-nav">
+         
         
-            $navbar.className = " ";
+          
+        
+           
             
-            setTimeout(function(){
-                
-                if($navbar.className.indexOf('in') < 0) {
-                    $collapse.style.height = "0px"
-                }
-            },400)
-        }else{
+            <a href="/tags/" class="mobile-nav-link ">Tags</a>
+          
         
-            $collapse.style.height = "auto"
-            $navbar.className += " in";
-        }
-    }
-</script>
+           
+            
+            <a href="/archive/" class="mobile-nav-link ">Archive</a>
+          
+        
+           
+            
+            <a href="/about/" class="mobile-nav-link ">About</a>
+          
+        
+      </nav>
 
+      <div class="mobile-search-box">
+        <input type="text" id="mobileSearchInput" placeholder="SEARCH...">
+        <div class="mobile-search-results" id="mobileSearchResults"></div>
+      </div>
 
-
-
-<style type="text/css">
-    header.intro-header {
-        background-image: url('/img/home-bg.jpg')
-    }
-</style>
-
-<header class="intro-header" >
-
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-heading">
-                    <div class="tags">
-                        
-                        <a class="tag" href="/tags/photonics" title="Photonics">
-                            Photonics
-                        </a>
-                        
-                        <a class="tag" href="/tags/pic" title="PIC">
-                            PIC
-                        </a>
-                        
-                        <a class="tag" href="/tags/lumerical" title="Lumerical">
-                            Lumerical
-                        </a>
-                        
-                        <a class="tag" href="/tags/simulation" title="Simulation">
-                            Simulation
-                        </a>
-                        
-                    </div>
-                    <h1>Ultra Violet C Irradiation Grating Coupler Design</h1>
-                    <h2 class="subheading"></h2>
-                    <span class="meta">
-                        
-                            Posted by 
-                            
-                                Charles
-                             
-                            on 
-                            Thursday, June 1, 2023
-                            
-                            
-                            
-                            
-                    </span>
-                </div>
-            </div>
+      <div class="mobile-meta-footer">
+        <div class="copyright-info">
+          <span>© 2026 S.S.S.</span>
+          <span class="meta-divider">·</span>
+          <span>All rights reserved</span>
         </div>
+
+        <a href="/index.xml" class="mobile-rss-btn" target="_blank" rel="noopener noreferrer">
+          RSS
+          <svg class="rss-icon" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 11a9 9 0 0 1 9 9"></path>
+            <path d="M4 4a16 16 0 0 1 16 16"></path>
+            <circle cx="5" cy="19" r="1"></circle>
+          </svg>
+        </a>
+      </div>
+      
     </div>
+  </div>
 </header>
 
+<script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
+<script src="/js/metro-search.js" defer></script>
 
-
-
-<article>
-    <div class="container">
-        <div class="row">
-
+    <main class="site-main">
+        
+<div class="single-layout">
+    
+    <article class="single-content-area">
+        <header class="single-header">
             
-            <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                post-container">
-
+            <div class="post-tags single-tags">
                 
-                <h2 id="introduction">Introduction</h2>
+                <a href="/tags/photonics/" class="tag">#Photonics</a>
+                
+                <a href="/tags/pic/" class="tag">#PIC</a>
+                
+                <a href="/tags/lumerical/" class="tag">#Lumerical</a>
+                
+                <a href="/tags/simulation/" class="tag">#Simulation</a>
+                
+            </div>
+            
+
+            <h1 class="single-title">Ultra Violet C Irradiation Grating Coupler Design</h1>
+            
+
+            <div class="entry-meta single-meta">
+                <time datetime="2023-06-01T12:00:00&#43;01:00">
+                    June 1, 2023
+                </time>
+                
+                <span class="meta-separator">/</span>
+                <span class="author">Charles</span>
+                
+            </div>
+        </header>
+
+        <div class="single-content">
+            <h2 id="introduction">Introduction</h2>
 <p>Ultraviolet (UV) irradiation is defined as a type of electromagnetic radiation, with a wavelength (100–400nm) shorter than that of visible light (400–700nm), but longer than x-rays (&lt;100 nm)[1]. Ultra Violet C irradiation (UVC) ranges from 100 to 280nm in wavelength. UV irradiation is divided into four distinct spectral areas including vacuum UV (100–200 nm), UVC (200–280 nm), UVB (280–315 nm) and UVA (315–400 nm)[2].</p>
 <p>Due to its power to damage the genetic material (DNA and RNA) of microorganisms, which can prevent them from producing, UVC irradiation is widely used in disinfection and sterilization. Besides, a variety of molecules exhibit autofluorescence with UV light excitation. So UVC is widely used in the field of medicine and biology[3].</p>
 <p>Because of UVC&rsquo;s excellent bioluminescent properties, it can be used in medical and biological sensing. Meanwhile, UVC has a short wavelength, which means it can have a good resolution in optical imaging[4].</p>
 <hr>
-<p>This paper starts with the application of this direction. Efficient collection of information carrying UVC light means related devices can be miniaturized and integrated. To be applied to around the wavelength with 266 nm, a design scheme for grating couplers based on the SiO<sub>2</sub> is presented in this paper.</p>
+<p>This paper starts with the application of this direction. Efficient collection of information carrying UVC light means related devices can be miniaturized and integrated. To be applied to around the wavelength with 266 nm, a design scheme for grating couplers based on the SiO<!-- raw HTML omitted -->2<!-- raw HTML omitted --> is presented in this paper.</p>
 <p>The paper starts with an introduction to the approach we used for our simulation. Next, we proposed the calculation for the initial parameter during the design. Then we move to the simulation, analyze the result, try to improve it and verify the improved proposals. Finally, we will have a conclusion about the whole project.</p>
 <h2 id="fdtd">FDTD</h2>
 <p>To design a photonic device, we are required to understand how light will propagate in the structure. Considering reflections, interference, scattering and radiation, interaction between multiple modes, changes in the mode profile and so on variations of light, we need an approach to solve how the light will propagate in our design.</p>
@@ -275,13 +215,13 @@
 <h2 id="grating-design">Grating Design</h2>
 <p>A grating coupler is a kind of periodic structure, which can diffract light between the waveguide and free space. Due to that, it can be used as an I/O component, whose goal is to couple light between free space or fibre and waveguide[8]. To get a better coupling efficiency, and couple light as much as possible, we need to adjust the relevant parameters of the grating coupler according to the demand calculation[9].</p>
 <h3 id="parameter-calculation">Parameter calculation</h3>
-<p>
-  <figure>
-    <img src="https://raw.githubusercontent.com/AstroNomen/ENBlogPic/imgen/20230601/scheme.png" alt="Cross-section scheme of the grating coupler">
-    <center><figcaption>Fig.1: Cross-section scheme of the grating coupler</figcaption></center>
-  </figure>
-
-</p>
+<p><figure class="metro-figure">
+  <img src="https://raw.githubusercontent.com/AstroNomen/ENBlogPic/imgen/20230601/scheme.png" alt="Cross-section scheme of the grating coupler" loading="lazy" />
+  
+  
+    <figcaption class="metro-caption">Fig.1: Cross-section scheme of the grating coupler</figcaption>
+  
+</figure></p>
 <p>The figure above shows the cross-section schematic of a grating coupler. Such a grating coupler usually consists of a silicon waveguide core, a top cladding using oxide or air, a bottom cladding using buried oxide as the substrate, and a silicon substrate.</p>
 <p>Considering the situation that an arbitrary wave propagates in a uniform medium, it can be seen as a set of plane waves which propagate independently without power exchange. The plane waves will be diffracted when the medium has a periodic structure. Such periodic structure leads to very specific coupling between certain plane waves of the set (or between specific directions), which is described by the so-called Bragg condition. Hence, we can couple an incident light (usually guided by a fibre) propagate through the waveguide, and use the light to convey information to achieve our goals.</p>
 <p>Bragg condition relates to the k-vector of the incident plane wave and the k-vectors of the diffraction orders. Therefore, we can use a k-vector diagram as a handy tool to easily graphically depict the relationship between the k-vectors, and calculate the parameters which influence the coupling efficiency.</p>
@@ -292,14 +232,14 @@
 <li>The duty cycle, or fill factor, is the etch width divided by the period</li>
 <li>θ is the angle between the surface normal and the propagation direction of incident light</li>
 </ul>
-<p>To design a waveguide grating coupler, we need to simulate different situations with different parameters and select the optimal parameters from them. In our project, the light beam we want to couple will incident at an angle of 10° from the surface normal. The centre wavelength is around <strong>266nm</strong>. In the meantime, the material we used to build the grating coupler is Silica(SiO<sub>2</sub>). Through these target demands and known quantities, we can draw such k-diagram as follows:</p>
-<p>
-  <figure>
-    <img src="https://raw.githubusercontent.com/AstroNomen/ENBlogPic/imgen/20230601/kdiagram.png" alt="K-Diagram">
-    <center><figcaption>Fig.2: K-Diagram</figcaption></center>
-  </figure>
-
-</p>
+<p>To design a waveguide grating coupler, we need to simulate different situations with different parameters and select the optimal parameters from them. In our project, the light beam we want to couple will incident at an angle of 10° from the surface normal. The centre wavelength is around <strong>266nm</strong>. In the meantime, the material we used to build the grating coupler is Silica(SiO<!-- raw HTML omitted -->2<!-- raw HTML omitted -->). Through these target demands and known quantities, we can draw such k-diagram as follows:</p>
+<p><figure class="metro-figure">
+  <img src="https://raw.githubusercontent.com/AstroNomen/ENBlogPic/imgen/20230601/kdiagram.png" alt="K-Diagram" loading="lazy" />
+  
+  
+    <figcaption class="metro-caption">Fig.2: K-Diagram</figcaption>
+  
+</figure></p>
 <p>Using the k-diagram we drew above, we can easily write down such equation:
 $$
 K=k^{&rsquo;}-k_{in} sin\theta
@@ -314,108 +254,108 @@ $$
 $$</p>
 <p>Substituting the values to calculate, we can get the period should be around 200nm.</p>
 <h3 id="model-structure">Model Structure</h3>
-<p>
-  <figure>
-    <img src="https://raw.githubusercontent.com/AstroNomen/ENBlogPic/imgen/20230601/structure.png" alt="Model Structure">
-    <center><figcaption>Fig.3: Model Structure</figcaption></center>
-  </figure>
-
-</p>
+<p><figure class="metro-figure">
+  <img src="https://raw.githubusercontent.com/AstroNomen/ENBlogPic/imgen/20230601/structure.png" alt="Model Structure" loading="lazy" />
+  
+  
+    <figcaption class="metro-caption">Fig.3: Model Structure</figcaption>
+  
+</figure></p>
 <p>In the Lumerical software, we build a structure like the figure above. For the initial design, we choose the thickness of the grating waveguide as 185nm. Under the grating layer is 2µm air, then is a thick Si substrate.</p>
 <p>While building the simulation model, we found it is not wise to put a source with a specific angle directly, it will introduce incident position as a new variable and it needs a large source scale to cover the whole grating which will lead longer time for simulating. So we utilize the reversibility of the optical path to change our minds to simulate, we put a source as incident light from the left of the grating and put a monitor just above the whole structure. In this way, we can collect all the light coupling from the waveguide to air without considering the incident position, and determine the coupling efficiency of the grating coupler.</p>
 <h2 id="simulation-result">Simulation Result</h2>
 <p>In the last chapter, we calculate and get the period of the grating. However, there are still other parameters that influence the coupling efficiency of the grating coupler. In this chapter, we want to study the effect of etch depth on coupling efficiency in different conditions, which means we need to fix other variables that will influence the coupling efficiency. To perfect our design, we need to start with the determination of the duty cycle, which is another important grating coupler parameter.</p>
 <h3 id="initial-simulation">Initial simulation</h3>
 <p>First, we run the initial simulation, this is the simulation that works for determining some important parameters and ensures the following simulation results are valuable for our design goals. In this simulation, we set the duty cycle as 50% and sweep the coupling efficiency at different etch depths. The result is shown as follows:</p>
-<p>
-  <figure>
-    <img src="https://raw.githubusercontent.com/AstroNomen/ENBlogPic/imgen/20230601/185.png" alt="Coupling efficiency at 50% period">
-    <center><figcaption>Fig.4: Coupling efficiency at 50% period</figcaption></center>
-  </figure>
-
-</p>
+<p><figure class="metro-figure">
+  <img src="https://raw.githubusercontent.com/AstroNomen/ENBlogPic/imgen/20230601/185.png" alt="Coupling efficiency at 50% period" loading="lazy" />
+  
+  
+    <figcaption class="metro-caption">Fig.4: Coupling efficiency at 50% period</figcaption>
+  
+</figure></p>
 <p>From the figure4, the first thing we noticed is the weird dip when the etch depth is close to 100nm. To explain that, we went through another two simulations and observed the cross-section E-field figure passing through the waveguide. Before that, I want to go into detail about the structure we simulated. This would be very helpful for understanding simulation results.</p>
-<p>
-  <figure>
-    <img src="https://raw.githubusercontent.com/AstroNomen/ENBlogPic/imgen/20230601/SimuStructure.png" alt="Simulation Structure">
-    <center><figcaption>Fig.5: Simulation Structure</figcaption></center>
-  </figure>
-
-</p>
+<p><figure class="metro-figure">
+  <img src="https://raw.githubusercontent.com/AstroNomen/ENBlogPic/imgen/20230601/SimuStructure.png" alt="Simulation Structure" loading="lazy" />
+  
+  
+    <figcaption class="metro-caption">Fig.5: Simulation Structure</figcaption>
+  
+</figure></p>
 <p>The above figure shows the structure we simulate in this section. Before and after the grating we have input and output waveguides, with the same thickness of the grating total. Then we put the fundamental source with wavelength at 266nm in the input waveguide. Above and below the structure are just air, and an E-field monitor covers the whole structure to see the propagation passing through the structure&rsquo;s cross-section. We chose two groups of parameters to do the simulation, one is the most efficient point with 128nm etch depth, and the other one is the least efficient point with 107nm etch depth. Then we obtained these two figures:</p>
-<p>
-  <figure>
-    <img src="https://raw.githubusercontent.com/AstroNomen/ENBlogPic/imgen/20230601/128.png" alt="Electric field of 128nm etch depth">
-    <center><figcaption>Fig.6(a): Electric field of 128nm etch depth</figcaption></center>
-  </figure>
-
-
-
-  <figure>
-    <img src="https://raw.githubusercontent.com/AstroNomen/ENBlogPic/imgen/20230601/107.png" alt="Electric field of 107nm etch depth">
-    <center><figcaption>Fig.6(b): Electric field of 107nm etch depth</figcaption></center>
-  </figure>
-
-</p>
+<p><figure class="metro-figure">
+  <img src="https://raw.githubusercontent.com/AstroNomen/ENBlogPic/imgen/20230601/128.png" alt="Electric field of 128nm etch depth" loading="lazy" />
+  
+  
+    <figcaption class="metro-caption">Fig.6(a): Electric field of 128nm etch depth</figcaption>
+  
+</figure>
+<figure class="metro-figure">
+  <img src="https://raw.githubusercontent.com/AstroNomen/ENBlogPic/imgen/20230601/107.png" alt="Electric field of 107nm etch depth" loading="lazy" />
+  
+  
+    <figcaption class="metro-caption">Fig.6(b): Electric field of 107nm etch depth</figcaption>
+  
+</figure></p>
 <p>Comparing the two figures above, a much stronger back reflection can be observed clearly in the 107nm etch depth condition than in the 128nm etch depth condition. By putting a monitor behind the source, we can obtain how much light goes back, And the result says there are 67% of light goes back in 107nm etch depth condition, while for 128nm etch depth condition, the result is only about 9%. Furthermore, if we observe the patterns in these two figures, we can find the 107 etch depth condition forms a strong standing wave before the grating structure.</p>
 <p>These phenomena all point to the same cause, in this etch depth, the effective index change forms a strong back reflection. Then the back reflected light interferes with the source and superimposes, making more light leak out from the back not being coupled by the grating. Reflected on the etch depth sweep image we get a visible dip in this range of etch depth.</p>
 <p>Back to the etch depth sweep Figure4, another point we cared about is the point which has the most coupling efficiency. When the etch depth is 128nm, we got 49.74% coupling efficiency which seems good. However, considering the fabrication, this parameter means that after the etching process, the remaining part of the grating is only 57nm thick. This is not a good thickness because of the stress in the material. The entire structure may collapse due to its stress concentration, and the grating will break up. To avoid that, we thickened the whole thickness of the grating to 300nm and did the following optimization design.</p>
 <h3 id="parameter-optimization">Parameter optimization</h3>
 <p>Until now, we still haven’t got a proper value of the grating duty cycle. However, both changing the duty cycle and etch depth will change the coupling efficiency, which means that we need to sweep two parameters at the same time. Considering that we want to iterate as many times as possible in parameter optimization, a double sweep at the same time will cost extensive computing resources and time, a double sweep is not a good choice.</p>
 <p>Based on such considerations, we used the optimization function in the Lumerical at first. The optimization function can change no matter how many parameters are at the same time, and give the &ldquo;best of merit&rdquo; in a proper number of iterations. Set the coupling efficiency as the ”merit” we want, the optimization function gives us a set of parameters. 150nm and 27% duty cycle is the best solution it found. Nevertheless, this function cannot show us a trend when the parameters change. To verify the result, we run another two sweeps.</p>
-<p>
-  <figure>
-    <img src="https://raw.githubusercontent.com/AstroNomen/ENBlogPic/imgen/20230601/depth.png" alt="Coupling efficiency of 50% duty cycle">
-    <center><figcaption>Fig.7: Coupling efficiency of 50% duty cycle</figcaption></center>
-  </figure>
-
-</p>
+<p><figure class="metro-figure">
+  <img src="https://raw.githubusercontent.com/AstroNomen/ENBlogPic/imgen/20230601/depth.png" alt="Coupling efficiency of 50% duty cycle" loading="lazy" />
+  
+  
+    <figcaption class="metro-caption">Fig.7: Coupling efficiency of 50% duty cycle</figcaption>
+  
+</figure></p>
 <p>First, we still fix the duty cycle as 50%, then start to sweep the etch depth from 0 to 150nm. By this way after etching, we can still have 150nm remaining to ensure the strength of the structure. From the result above, we can find with a 50% duty cycle, 150nm etch depth is indeed the point which has the most coupling efficiency. With this conclusion, we fixed the etch depth as 150nm, then ran the sweep of duty cycle, and got the result as follows:</p>
-<p>
-  <figure>
-    <img src="https://raw.githubusercontent.com/AstroNomen/ENBlogPic/imgen/20230601/ff.png" alt="Coupling efficiency of different duty cycle">
-    <center><figcaption>Fig.8: Coupling efficiency of different duty cycle</figcaption></center>
-  </figure>
-
-</p>
+<p><figure class="metro-figure">
+  <img src="https://raw.githubusercontent.com/AstroNomen/ENBlogPic/imgen/20230601/ff.png" alt="Coupling efficiency of different duty cycle" loading="lazy" />
+  
+  
+    <figcaption class="metro-caption">Fig.8: Coupling efficiency of different duty cycle</figcaption>
+  
+</figure></p>
 <p>From the figure, we can observe the trend of the coupling efficiency changed by the duty cycle very clearly. When the duty cycle is around 30%, the coupling efficiency is very close. So for the following design and simulation, considering the process precision, we will use 30% as the duty cycle of the grating.</p>
 <h3 id="absorption-of-si">Absorption of Si</h3>
 <p>After determining the key parameters, we first did a simulation under a 30% duty cycle, 200nm period, 300nm grating thickness, and 10µm long to see how the etch depth influences the coupling efficiency.</p>
-<p>
-  <figure>
-    <img src="https://raw.githubusercontent.com/AstroNomen/ENBlogPic/imgen/20230601/10_Air.png" alt="Coupling efficiency of 10 μm grating">
-    <center><figcaption>Fig.9: Coupling efficiency of 10 μm grating</figcaption></center>
-  </figure>
-
-</p>
+<p><figure class="metro-figure">
+  <img src="https://raw.githubusercontent.com/AstroNomen/ENBlogPic/imgen/20230601/10_Air.png" alt="Coupling efficiency of 10 μm grating" loading="lazy" />
+  
+  
+    <figcaption class="metro-caption">Fig.9: Coupling efficiency of 10 μm grating</figcaption>
+  
+</figure></p>
 <p>The largest coupling efficiency point is very close to the simulation we did in the first two steps. And curve looks a little similar to the first etch depth sweep figure4. There is a similar dip happens in the near 100nm etch depth range. And the reason we think is the same as the first one, which is caused by the back reflection.</p>
 <p>In this condition, we put a power monitor around the structure. The top monitor is 10µm above the grating, to reduce the impact of the wave itself on the collection. It shows the coupling efficiency which is nearly 40% as the curve shows. A monitor placed at the end of the output waveguide records how much light just passes through the structure. This result is 26.07%. Then there is still a monitor which is placed behind the source to monitor back reflection. The back reflection for now is around 30.87%. At last, we put a monitor under the grating structure, which also has a 10µm distance from the grating bottom. This monitor collects only 1.08% of light. If we add these results together, we find that the resulting light is about 98% of the total light source. This is because part of the light is lost during propagation, and it also proves the accuracy of our simulation result.</p>
 <p>To further optimize the design, we add 5µm Si as the substrate below the air layer. The thickness of the air below the grating is 2µm.</p>
-<p>
-  <figure>
-    <img src="https://raw.githubusercontent.com/AstroNomen/ENBlogPic/imgen/20230601/10_Si.png" alt="Coupling efficiency of 10 μm grating with Si Sub">
-    <center><figcaption>Fig.10: Coupling efficiency of 10 μm grating with Si Sub</figcaption></center>
-  </figure>
-
-</p>
+<p><figure class="metro-figure">
+  <img src="https://raw.githubusercontent.com/AstroNomen/ENBlogPic/imgen/20230601/10_Si.png" alt="Coupling efficiency of 10 μm grating with Si Sub" loading="lazy" />
+  
+  
+    <figcaption class="metro-caption">Fig.10: Coupling efficiency of 10 μm grating with Si Sub</figcaption>
+  
+</figure></p>
 <p>Although it still has a little dip like our first simulation, there has been a huge improvement in the coupling efficiency. Now with 145nm etch depth, the coupling efficiency can reach to 67.56%. Compared to 40% coupling efficiency at 150nm etch depth without Si substrate, we can notice a little etch depth shift between them. We think they are all the results of the influence of Si substrate.</p>
-<p>
-  <figure>
-    <img src="https://raw.githubusercontent.com/AstroNomen/ENBlogPic/imgen/20230601/Si.png" alt="Electric field with Si Sub">
-    <center><figcaption>Fig.11: Electric field with Si Sub</figcaption></center>
-  </figure>
-
-</p>
+<p><figure class="metro-figure">
+  <img src="https://raw.githubusercontent.com/AstroNomen/ENBlogPic/imgen/20230601/Si.png" alt="Electric field with Si Sub" loading="lazy" />
+  
+  
+    <figcaption class="metro-caption">Fig.11: Electric field with Si Sub</figcaption>
+  
+</figure></p>
 <p>To confirm our conjecture, we build a cross-section view to monitor the electric field passing through the structure again. The figure we obtained is shown above. Si substrate works like a mirror, it’s obvious to see that the light is reflected back to the grating and coupled again. In this way, the coupling efficiency can be improved compared to the structure without Si substrate. As the Si doesn’t have 100% reflectivity, the light which doesn’t be reflected will be absorbed by the Si. That’s why we can see a dark range in the figure. That dark area indicates where the silicon substrate is located.</p>
 <h3 id="grating-length">Grating Length</h3>
 <p>In the last section, we study the grating length influence. Fixed the period, duty cycle, grating thickness and materials as same to previous work, just lengthened the grating coupler to 50µm. Then still do the sweep on the etch depth, the result we got is the figure as follows.</p>
-<p>
-  <figure>
-    <img src="https://raw.githubusercontent.com/AstroNomen/ENBlogPic/imgen/20230601/50_Air.png" alt="Coupling efficiency of 50 μm grating with Si Sub">
-    <center><figcaption>Fig.12: Coupling efficiency of 50 μm grating with Si Sub</figcaption></center>
-  </figure>
-
-</p>
+<p><figure class="metro-figure">
+  <img src="https://raw.githubusercontent.com/AstroNomen/ENBlogPic/imgen/20230601/50_Air.png" alt="Coupling efficiency of 50 μm grating with Si Sub" loading="lazy" />
+  
+  
+    <figcaption class="metro-caption">Fig.12: Coupling efficiency of 50 μm grating with Si Sub</figcaption>
+  
+</figure></p>
 <p>Observe the curve, the shape is still similar to the previous simulation. The dip in coupling efficiency still exists. This further confirms our conjecture, because the grating length won’t influence the effective refractive index. The dip is just the result of effective refractive index change, which forms a strong back reflection. When we lengthen the grating coupler length, this strong back reflection will still happen when the etch depth is close to 100nm.</p>
 <p>Meanwhile, a longer grating coupler means more light can be coupled. That’s why we can find in some other parameters and the same etch depth at 150nm, a 50µm grating coupler has a coupling efficiency of 55.84%, which is much higher than the 40.46% of a 10µm grating coupler.</p>
 <h2 id="conclusion">Conclusion</h2>
@@ -440,300 +380,193 @@ $$</p>
 <p>[9] Yun Wang et al. “Universal grating coupler design”. In: <em>Photonics North 2013</em>. Vol. 8915. SPIE. 2013, pp. 284–290.</p>
 <p>[10] Theodor Tamir and Song-Tsuen Peng. “Analysis and design of grating couplers”. In: <em>Applied physics</em> 14 (1977), pp. 235–254.</p>
 
-
-                
-
-                
-                <hr>
-                <ul class="pager">
-                    
-                    <li class="previous">
-                        <a href="/post/lc-actuator/" data-toggle="tooltip" data-placement="top" title="Liquid Crystal Actuator and Ink-jet Print">&larr;
-                            Previous Post</a>
-                    </li>
-                    
-                    
-                    <li class="next">
-                        <a href="/post/phonon_coherence_exciton/" data-toggle="tooltip" data-placement="top" title="Phonon Coherence and Polaritons of Excitons">Next
-                            Post &rarr;</a>
-                    </li>
-                    
-                </ul>
-                
-
-                
-
-
-
-
-            </div>
-
-            
-            
-            <div class="
-                col-lg-2 col-lg-offset-0
-                visible-lg-block
-                sidebar-container
-                catalog-container">
-                <div class="side-catalog">
-                    <hr class="hidden-sm hidden-xs">
-                    <h5>
-                        <a class="catalog-toggle" href="#">CATALOG</a>
-                    </h5>
-                    <ul class="catalog-body"></ul>
-                </div>
-            </div>
-            
-
-            
-            <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                sidebar-container">
-
-                
-                
-                <section>
-                    <hr class="hidden-sm hidden-xs">
-                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
-                    <div class="tags">
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        <a href="/tags/photonics" title="photonics">
-                            photonics
-                        </a>
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                    </div>
-                </section>
-                
-
-                
-                
-                <section>
-                    <hr>
-                    <h5>FRIENDS</h5>
-                    <ul class="list-inline">
-                        
-                        <li><a target="_blank" href="https://storm-lifter-278.notion.site/20fd9d7d2ac78016877af1808ecdaaf4?v=20fd9d7d2ac781e69c79000c5eac71bb">Chengyu Fu</a></li>
-                        
-                    </ul>
-                </section>
-                
-            </div>
         </div>
-    </div>
-</article>
+    </article>
 
+    
+      <aside class="single-sidebar">
+          <div class="toc-container">
+              <span class="toc-title">Contents</span>
+              <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#fdtd">FDTD</a></li>
+    <li><a href="#grating-design">Grating Design</a>
+      <ul>
+        <li><a href="#parameter-calculation">Parameter calculation</a></li>
+        <li><a href="#model-structure">Model Structure</a></li>
+      </ul>
+    </li>
+    <li><a href="#simulation-result">Simulation Result</a>
+      <ul>
+        <li><a href="#initial-simulation">Initial simulation</a></li>
+        <li><a href="#parameter-optimization">Parameter optimization</a></li>
+        <li><a href="#absorption-of-si">Absorption of Si</a></li>
+        <li><a href="#grating-length">Grating Length</a></li>
+      </ul>
+    </li>
+    <li><a href="#conclusion">Conclusion</a></li>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav>
+          </div>
+      </aside>
+    
 
+</div>
 
+    </main>
 
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <ul class="list-inline text-center">
-                    
-                    <li>
-                        <a href="javascript:void(0);" onclick="window.location.href='mailto:' + 'Zhifan.Dai@outlook.com'">
-                            <span class="fa-stack fa-lg">
-                                <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-		           
-                    
-                    
-                    
-                    
+    <footer class="site-footer metro-dark">
+  <div class="footer-container">
+    
+    <div class="footer-main-grid">
+      
+      <div class="footer-brand-zone">
+        <h2 class="footer-site-title">S.S.S.</h2>
+        
+          <p class="footer-slogan">Study Something Shining</p>
+        
+        <div class="editorial-bio">PhD Researcher of Physics<br>sNOm Laboratory<br>@Politecnico di Milano</div>
+      </div>
 
-		            
-                    
-                    
-                    <li>
-                        <a target="_blank" href="https://github.com/AstroNomen">
-                            <span class="fa-stack fa-lg">
-                                <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-		            
-                    
-                    
-                    
-                    <li>
-                        <a target="_blank" href="https://www.linkedin.com/in/zhi-fan-dai-958624248/">
-                            <span class="fa-stack fa-lg">
-                                <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-		           
-                    
-                    
-                    
-                    
-                    
-                    
+      <div class="footer-links-zone pivot-layout">
+        
+        
+        <div class="pivot-section">
+          <h3 class="pivot-header">Quick Links</h3>
+          <ul class="metro-list">
             
+            <li><a href="https://akiday.com/en/">Bio</a></li>
             
+            <li><a href="https://www.akiday.com">Blog in Chinese</a></li>
             
-           
-                   <li>
-                       <a href='' rel="alternate" type="application/rss+xml" title="SSS" >
-                           <span class="fa-stack fa-lg">
-                               <i class="fas fa-circle fa-stack-2x"></i>
-                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
-                           </span>
-                       </a>
-                   </li>
-            
-             </ul>
-		<p class="copyright text-muted">
-                    
-                    &copy; 2025 SSS · Zhi-Fan (Charles) Dai · <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">CC BY-NC-SA</a>
-                    
-                    <br>
-                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a>
-                    
-                </p>
-            </div>
+          </ul>
         </div>
+        
+
+        
+        <div class="pivot-section">
+          <h3 class="pivot-header">Friends</h3>
+          <ul class="metro-list">
+            
+            <li><a href="https://storm-lifter-278.notion.site/20fd9d7d2ac78016877af1808ecdaaf4?v=20fd9d7d2ac781e69c79000c5eac71bb" target="_blank" rel="noopener noreferrer">Chengyu Fu</a></li>
+            
+          </ul>
+        </div>
+        
+
+        <div class="pivot-section">
+          <h3 class="pivot-header">Connect</h3>
+          <ul class="metro-list">
+            
+            <li><a href="#" class="protected-email" data-contact="Zhifan.Dai@outlook.com">Email ↗</a></li>
+            
+            
+              
+                <li><a href="https://www.linkedin.com/in/zhi-fan-dai-958624248/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></li>
+              
+            
+              
+                <li><a href="https://github.com/AstroNomen" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li>
+              
+            
+              
+            
+          </ul>
+        </div>
+
+      </div>
     </div>
+
+    <div class="footer-copyright-zone">
+      <div class="copyright-info">
+        <span>© 2026 S.S.S.</span>
+        <span class="meta-divider">·</span>
+        <span>All rights reserved</span>
+        <span class="meta-divider">·</span>
+        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="license noopener noreferrer">CC BY-NC-SA 4.0</a>
+      </div>
+      
+      <div class="copyright-rss">
+        
+          
+        
+          
+        
+          
+            <a href="/index.xml" target="_blank" rel="noopener noreferrer" class="footer-rss-btn">RSS<svg class="rss-icon" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+          
+        
+      </div>
+    </div>
+
+  </div>
 </footer>
 
-
-
-
 <script>
-    function loadAsync(u, c) {
-      var d = document, t = 'script',
-          o = d.createElement(t),
-          s = d.getElementsByTagName(t)[0];
-      o.src = u;
-      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-      s.parentNode.insertBefore(o, s);
-    }
-</script>
-
-
-
-
-
-
-<script>
-    
-    if($('#tag_cloud').length !== 0){
-        loadAsync("/js/jquery.tagcloud.js",function(){
-            $.fn.tagcloud.defaults = {
-                
-                color: {start: '#bbbbee', end: '#0085a1'},
-            };
-            $('#tag_cloud a').tagcloud();
-        })
-    }
-</script>
-
-
-<script>
-    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
-        var $nav = document.querySelector("nav");
-        if($nav) FastClick.attach($nav);
-    })
-</script>
-
-
-
-
-
-
-<script type="text/javascript">
-    function generateCatalog(selector) {
-
-        
-        
-        
-        
-            _containerSelector = 'div.post-container'
-        
-
-        
-        var P = $(_containerSelector), a, n, t, l, i, c;
-        a = P.find('h1,h2,h3,h4,h5,h6');
-
-        
-        $(selector).html('')
-
-        
-        a.each(function () {
-            n = $(this).prop('tagName').toLowerCase();
-            i = "#" + $(this).prop('id');
-            t = $(this).text();
-            c = $('<a href="' + i + '" rel="nofollow" title="' + t + '">' + t + '</a>'); 
-            l = $('<li class="' + n + '_nav"></li>').append(c);
-            $(selector).append(l);
-        });
-        return true;
-    }
-
-    generateCatalog(".catalog-body");
-
-    
-    $(".catalog-toggle").click((function (e) {
-        e.preventDefault();
-        $('.side-catalog').toggleClass("fold")
-    }))
-
-    
-
-
-    loadAsync("\/js\/jquery.nav.js", function () {
-        $('.catalog-body').onePageNav({
-            currentClass: "active",
-            changeHash: !1,
-            easing: "swing",
-            filter: "",
-            scrollSpeed: 700,
-            scrollOffset: 0,
-            scrollThreshold: .2,
-            begin: null,
-            end: null,
-            scrollChange: null,
-            padding: 80
-        });
+  document.addEventListener('DOMContentLoaded', function() {
+    const emailLinks = document.querySelectorAll('.protected-email');
+    emailLinks.forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault(); 
+        const emailAddress = this.getAttribute('data-contact');
+        window.location.href = 'mailto:' + emailAddress; 
+      });
     });
+  });
 </script>
 
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    
+    const toc = document.querySelector('.single-sidebar');
+    const footer = document.querySelector('.site-footer');
 
+    
+    if(toc && footer) {
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          
+          if(entry.isIntersecting) {
+            toc.classList.add('fade-out'); 
+          } else {
+            toc.classList.remove('fade-out'); 
+          }
+        });
+      }, {
+        root: null,
+        threshold: 0.1 
+      });
 
+      observer.observe(footer);
+    }
+  });
+</script>
 
+    <script src="/js/main.js"></script>
 
+    <div class="toc-backdrop"></div>
+    <div class="metro-tools-dock">
+      
+      <button id="back-to-top" class="metro-tool-btn" title="Back to Top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"></polyline></svg>
+      </button>
 
+      
+      <button id="mobile-toc-toggle" class="metro-tool-btn mobile-only" title="Table of Contents">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square">
+          <line x1="9" y1="6" x2="21" y2="6"></line>
+          <line x1="9" y1="12" x2="21" y2="12"></line>
+          <line x1="9" y1="18" x2="21" y2="18"></line>
+          <rect x="3" y="5" width="2" height="2" fill="currentColor" stroke="none"></rect>
+          <rect x="3" y="11" width="2" height="2" fill="currentColor" stroke="none"></rect>
+          <rect x="3" y="17" width="2" height="2" fill="currentColor" stroke="none"></rect>
+        </svg>
+      </button>
+      
+      
+    </div>
 </body>
 </html>

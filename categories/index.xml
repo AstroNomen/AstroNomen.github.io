@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on SSS</title>
-    <link>https://astronomen.github.io/categories/</link>
-    <description>Recent content in Categories on SSS</description>
+    <title>Categories on S.S.S.</title>
+    <link>https://sss.akiday.com/categories/</link>
+    <description>Recent content in Categories on S.S.S.</description>
     <generator>Hugo</generator>
-    <language>en-us</language>
+    <language>en-gb</language>
     <lastBuildDate>Fri, 07 Jun 2024 12:00:00 +0100</lastBuildDate>
-    <atom:link href="https://astronomen.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://sss.akiday.com/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Review</title>
-      <link>https://astronomen.github.io/categories/review/</link>
+      <link>https://sss.akiday.com/categories/review/</link>
       <pubDate>Fri, 07 Jun 2024 12:00:00 +0100</pubDate>
-      <guid>https://astronomen.github.io/categories/review/</guid>
+      <guid>https://sss.akiday.com/categories/review/</guid>
       <description></description>
     </item>
     <item>
       <title>Research</title>
-      <link>https://astronomen.github.io/categories/research/</link>
+      <link>https://sss.akiday.com/categories/research/</link>
       <pubDate>Thu, 01 Jun 2023 12:00:00 +0100</pubDate>
-      <guid>https://astronomen.github.io/categories/research/</guid>
+      <guid>https://sss.akiday.com/categories/research/</guid>
       <description></description>
     </item>
   </channel>

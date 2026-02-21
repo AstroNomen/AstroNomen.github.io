@@ -1,344 +1,287 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en-gb">
 <head>
     <meta charset="utf-8">
-    <meta name="google-site-verification" content="GDbVv_xxXtuvfEbsKqpO5tCQeKjliEtybmvD-w9p1ME" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Phonon Coherence and Polaritons of Excitons | S.S.S.</title>
+    
+    <meta name="description" content="This paper is the review of  Phonon coherences reveal the polaronic character of excitons in two-dimensional lead halide perovskites, which is written by Thouin, F., Valverde-Chávez, D.A., Quarti, C. et al. on Nature Materials. 18, 349–356 (2019).  https://doi.org/10.1038/s41563-018-0262-7
+
+Introduction
+Hybrid organic-inorganic metal halide perovskites have become an interesting area in materials science owing to their unique optical and electronic characteristics, and have been widely used in the preparation of optoelectronic devices such as solar cells[1]. The distinct lattice structures of these quantum well-like derivatives result in unique behaviour. To elucidate the peculiar nature of these materials,  Félix Thouin and his colleagues delve into the interaction between excitons and phonons in 2D lead halide perovskites, providing significant insights into their polaronic nature and the resultant impact on their optoelectronic properties in the paper I reviewed, which confer both structural flexibility and remarkable electronic characteristics. This review will offer a detailed discussion of the computational and experimental results presented in their publication, alongside a broader introduction to the topic. In two-dimensional lead halide perovskites, strongly bound, stable excitons typically exist at room temperature within the lattice and exhibit lower binding energies[2]. These lower binding energies result in the coexistence of multiple excitons with distinct lattice couplings, introducing dynamic disorder effects. Such unique coupling facilitates the formation of biexcitons, which has profound implications for developing light-emitting devices. What distinguishes these excitons from those in non-ionic semiconductor quantum wells is their rich spectral structure, which depends on the degree of lattice distortion imposed by the organic cationic ligands. To differentiate various excitons, the reviewed paper implemented high-resolution resonant impulsive stimulated Raman spectroscopy (RISRS)[3][4], as resonance Raman spectroscopy serves as a direct optical probe of polaronic effects on the nature of excitons[5].">
+    <meta name="keywords" content="Materials, Phonon, Exciton, Two-dimensional Perovskites">
+    <meta name="author" content="Author">
 
     
-    <meta property="og:site_name" content="SSS">
-    <meta property="og:type" content="article">
-
-    
-    <meta property="og:image" content="https://astronomen.github.io//img/home-bg.jpg">
-    <meta property="twitter:image" content="https://astronomen.github.io//img/home-bg.jpg" />
-    
-
-    
-    <meta name="title" content="Phonon Coherence and Polaritons of Excitons" />
-    <meta property="og:title" content="Phonon Coherence and Polaritons of Excitons" />
-    <meta property="twitter:title" content="Phonon Coherence and Polaritons of Excitons" />
-    
-
-    
-    <meta name="description" content="The mechanism of the unique optoelectronic characteristics of two-dimensional perovskites has always been a question of curiosity for researchers. The latest studies have shown that the coherence of phonons plays an important role in characterizing the polarization characteristics of excitons in two-dimensional perovskites. This review will explore this topic in depth.">
-    <meta property="og:description" content="The mechanism of the unique optoelectronic characteristics of two-dimensional perovskites has always been a question of curiosity for researchers. The latest studies have shown that the coherence of phonons plays an important role in characterizing the polarization characteristics of excitons in two-dimensional perovskites. This review will explore this topic in depth." />
-    <meta property="twitter:description" content="The mechanism of the unique optoelectronic characteristics of two-dimensional perovskites has always been a question of curiosity for researchers. The latest studies have shown that the coherence of phonons plays an important role in characterizing the polarization characteristics of excitons in two-dimensional perovskites. This review will explore this topic in depth." />
+    <meta name="google-site-verification" content="googlee23cc6110df4ac20.html" />
     
 
     
-    <meta property="twitter:card" content="summary" />
-    
-    
-
-    <meta name="keyword"  content="Blog, Photonics, Physics, Academi, Research">
-    <link rel="shortcut icon" href="/img/favicon.ico">
-
-    <title>Phonon Coherence and Polaritons of Excitons | Personal Research Blog</title>
-
-    <link rel="canonical" href="/post/phonon_coherence_exciton/">
-
-    
-    
-    
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-
-    
-    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
-
-    
-    <link rel="stylesheet" href="/css/zanshang.css">
-
-    
-    <link rel="stylesheet" href="/css/font-awesome.all.min.css">
-
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
-
-    
-    <script src="/js/jquery.min.js"></script>
-
-    
-    <script src="/js/bootstrap.min.js"></script>
-
-    
-    <script src="/js/hux-blog.min.js"></script>
-
-    
-    <script src="/js/lazysizes.min.js"></script>
-
-    
-    
-    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
-    
-    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
-    
-
-    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L18R9FHVX6"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            renderMathInElement(document.body);
-        });
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-L18R9FHVX6');
     </script>
+    
 
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/metrotypo.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bonheur+Royale&text=S.tudyomnhige%20&display=swap" rel="stylesheet">
+
+    <style>
+      :root {
+        --primary-color: #26a69a;
+        --accent-color: #e65100;
+        --accent-color-light: #fff3e0;
+      }
+    </style>
 </head>
+<body>
+    <header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    
+    <a href="/" class="site-title">S.S.S.</a>
 
-
-
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-L18R9FHVX6"></script>
-      <script>
-        var doNotTrack = false;
-        if ( false ) {
-          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
-          var doNotTrack = (dnt == "1" || dnt == "yes");
-        }
-        if (!doNotTrack) {
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-L18R9FHVX6');
-        }
-      </script>
-
-
-
-
-
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-
-    <div class="container-fluid">
+    <nav class="nav-menu">
+       
+      
         
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">SSS</a>
-        </div>
+        <a href="/" class="nav-link ">
+          Home
+        </a>
+      
+        
+        <a href="/tags/" class="nav-link ">
+          Tags
+        </a>
+      
+        
+        <a href="/archive/" class="nav-link ">
+          Archive
+        </a>
+      
+        
+        <a href="/about/" class="nav-link ">
+          About
+        </a>
+      
+    </nav>
 
-        
-        
-        <div id="huxblog_navbar">
-            <div class="navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="/">All Posts</a>
-                    </li>
-                    
-                        
-                        <li>
-                            <a href="/categories/research/">research</a>
-                        </li>
-                        
-                        <li>
-                            <a href="/categories/review/">review</a>
-                        </li>
-                        
-                    
-                    
-		    
-                        <li><a href="/archive//">TIMELINE</a></li>
-                    
-                        <li><a href="/about//">ABOUT</a></li>
-                    
-		            <li>
-                        <a href="/search"><i class="fa fa-search"></i></a>
-		           </li>
-                </ul>
-            </div>
-        </div>
-        
+    <div class="search-container" id="searchContainer">
+      <input type="text" id="searchInput" class="search-input" placeholder="SEARCH...">
+      <button class="search-toggle-btn" id="searchToggleBtn" aria-label="Toggle Search">
+        <svg class="icon-search" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <svg class="icon-close" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <div class="search-results-panel" id="searchResults"></div>
     </div>
-    
-</nav>
-<script>
-    
-    
-    
-    var $body   = document.body;
-    var $toggle = document.querySelector('.navbar-toggle');
-    var $navbar = document.querySelector('#huxblog_navbar');
-    var $collapse = document.querySelector('.navbar-collapse');
 
-    $toggle.addEventListener('click', handleMagic)
-    function handleMagic(e){
-        if ($navbar.className.indexOf('in') > 0) {
+    <button class="mobile-toggle-btn" id="mobileToggleBtn" aria-label="Menu">
+      <svg class="icon-hamburger" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square">
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+      <svg class="icon-close-menu" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+
+  </div> <div class="mobile-menu-overlay" id="mobileOverlay">
+    <div class="mobile-menu-inner">
+      
+      <nav class="mobile-nav">
+         
         
-            $navbar.className = " ";
+          
+        
+           
             
-            setTimeout(function(){
-                
-                if($navbar.className.indexOf('in') < 0) {
-                    $collapse.style.height = "0px"
-                }
-            },400)
-        }else{
+            <a href="/tags/" class="mobile-nav-link ">Tags</a>
+          
         
-            $collapse.style.height = "auto"
-            $navbar.className += " in";
-        }
-    }
-</script>
+           
+            
+            <a href="/archive/" class="mobile-nav-link ">Archive</a>
+          
+        
+           
+            
+            <a href="/about/" class="mobile-nav-link ">About</a>
+          
+        
+      </nav>
 
+      <div class="mobile-search-box">
+        <input type="text" id="mobileSearchInput" placeholder="SEARCH...">
+        <div class="mobile-search-results" id="mobileSearchResults"></div>
+      </div>
 
-
-
-<style type="text/css">
-    header.intro-header {
-        background-image: url('/img/home-bg.jpg')
-    }
-</style>
-
-<header class="intro-header" >
-
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-heading">
-                    <div class="tags">
-                        
-                        <a class="tag" href="/tags/materials" title="Materials">
-                            Materials
-                        </a>
-                        
-                        <a class="tag" href="/tags/phonon" title="Phonon">
-                            Phonon
-                        </a>
-                        
-                        <a class="tag" href="/tags/exciton" title="Exciton">
-                            Exciton
-                        </a>
-                        
-                        <a class="tag" href="/tags/two-dimensional-perovskites" title="Two-dimensional Perovskites">
-                            Two-dimensional Perovskites
-                        </a>
-                        
-                    </div>
-                    <h1>Phonon Coherence and Polaritons of Excitons</h1>
-                    <h2 class="subheading">Literature review on &#39;Topics in Nanoscience&#39; course</h2>
-                    <span class="meta">
-                        
-                            Posted by 
-                            
-                                Charles
-                             
-                            on 
-                            Friday, June 7, 2024
-                            
-                            
-                            
-                            
-                    </span>
-                </div>
-            </div>
+      <div class="mobile-meta-footer">
+        <div class="copyright-info">
+          <span>© 2026 S.S.S.</span>
+          <span class="meta-divider">·</span>
+          <span>All rights reserved</span>
         </div>
+
+        <a href="/index.xml" class="mobile-rss-btn" target="_blank" rel="noopener noreferrer">
+          RSS
+          <svg class="rss-icon" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 11a9 9 0 0 1 9 9"></path>
+            <path d="M4 4a16 16 0 0 1 16 16"></path>
+            <circle cx="5" cy="19" r="1"></circle>
+          </svg>
+        </a>
+      </div>
+      
     </div>
+  </div>
 </header>
 
+<script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
+<script src="/js/metro-search.js" defer></script>
 
-
-
-<article>
-    <div class="container">
-        <div class="row">
-
+    <main class="site-main">
+        
+<div class="single-layout">
+    
+    <article class="single-content-area">
+        <header class="single-header">
             
-            <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                post-container">
-
+            <div class="post-tags single-tags">
                 
-                <p>This paper is the review of  <em><strong>Phonon coherences reveal the polaronic character of excitons in two-dimensional lead halide perovskites</strong></em>, which is written by <em>Thouin, F., Valverde-Chávez, D.A., Quarti, C.</em> <em>et al.</em> on <strong>Nature Materials</strong>. 18, 349–356 (2019).  <a href="https://doi.org/10.1038/s41563-018-0262-7">https://doi.org/10.1038/s41563-018-0262-7</a></p>
+                <a href="/tags/materials/" class="tag">#Materials</a>
+                
+                <a href="/tags/phonon/" class="tag">#Phonon</a>
+                
+                <a href="/tags/exciton/" class="tag">#Exciton</a>
+                
+                <a href="/tags/two-dimensional-perovskites/" class="tag">#Two-dimensional Perovskites</a>
+                
+            </div>
+            
+
+            <h1 class="single-title">Phonon Coherence and Polaritons of Excitons</h1>
+            
+            <h2 class="single-subtitle">Literature review on &#39;Topics in Nanoscience&#39; course</h2>
+            
+
+            <div class="entry-meta single-meta">
+                <time datetime="2024-06-07T12:00:00&#43;01:00">
+                    June 7, 2024
+                </time>
+                
+                <span class="meta-separator">/</span>
+                <span class="author">Charles</span>
+                
+            </div>
+        </header>
+
+        <div class="single-content">
+            <p>This paper is the review of  <em><strong>Phonon coherences reveal the polaronic character of excitons in two-dimensional lead halide perovskites</strong></em>, which is written by <em>Thouin, F., Valverde-Chávez, D.A., Quarti, C.</em> <em>et al.</em> on <strong>Nature Materials</strong>. 18, 349–356 (2019).  <a href="https://doi.org/10.1038/s41563-018-0262-7">https://doi.org/10.1038/s41563-018-0262-7</a></p>
 <hr>
 <h2 id="introduction">Introduction</h2>
 <p>Hybrid organic-inorganic metal halide perovskites have become an interesting area in materials science owing to their unique optical and electronic characteristics, and have been widely used in the preparation of optoelectronic devices such as solar cells[1]. The distinct lattice structures of these quantum well-like derivatives result in unique behaviour. To elucidate the peculiar nature of these materials,  Félix Thouin and his colleagues delve into the interaction between excitons and phonons in 2D lead halide perovskites, providing significant insights into their polaronic nature and the resultant impact on their optoelectronic properties in the paper I reviewed, which confer both structural flexibility and remarkable electronic characteristics. This review will offer a detailed discussion of the computational and experimental results presented in their publication, alongside a broader introduction to the topic. In two-dimensional lead halide perovskites, strongly bound, stable excitons typically exist at room temperature within the lattice and exhibit lower binding energies[2]. These lower binding energies result in the coexistence of multiple excitons with distinct lattice couplings, introducing dynamic disorder effects. Such unique coupling facilitates the formation of biexcitons, which has profound implications for developing light-emitting devices. What distinguishes these excitons from those in non-ionic semiconductor quantum wells is their rich spectral structure, which depends on the degree of lattice distortion imposed by the organic cationic ligands. To differentiate various excitons, the reviewed paper implemented high-resolution resonant impulsive stimulated Raman spectroscopy (RISRS)[3][4], as resonance Raman spectroscopy serves as a direct optical probe of polaronic effects on the nature of excitons[5].</p>
 <h3 id="exciton">Exciton</h3>
 <p>An exciton is a type of bound state formed by an electron and an electron hole, attracted to each other by the Coulomb force[6]. This exciton can transport energy without carrying a net electric charge, making it an elementary excitation. Excitons are commonly found in condensed matter systems such as insulators, semiconductors, and some metals. However, electrically neutral quasiparticles like excitons can also be found in certain atoms, molecules, and liquids.[7]</p>
-<p>
-  <figure>
-    <img src="https://raw.githubusercontent.com/AstroNomen/ENBlogPic/imgen/20240607/excitonmove.png" alt="The diffusion of exciton(bound electron-hole pair) in a lattice">
-    <center><figcaption>Figure 1: The diffusion of exciton(bound electron-hole pair) in a lattice[8]</figcaption></center>
-  </figure>
-
-</p>
+<p><figure class="metro-figure">
+  <img src="https://raw.githubusercontent.com/AstroNomen/ENBlogPic/imgen/20240607/excitonmove.png" alt="The diffusion of exciton(bound electron-hole pair) in a lattice" loading="lazy" />
+  
+  
+    <figcaption class="metro-caption">Figure 1: The diffusion of exciton(bound electron-hole pair) in a lattice[8]</figcaption>
+  
+</figure></p>
 <p>When discussing electrons and electron holes, we must consider band theory and energy relations. When photons are absorbed by a material, the excited electrons are promoted to the conduction band, creating holes in the valence band. Unlike the typical electron-hole pair model, in the case we are discussing, the electrons and holes are located at the same or adjacent positions in the lattice[9]. This proximity allows them to form a bound state through Coulomb interaction, which can be regarded as a composite quasiparticle. From a definitional perspective, excitons can also be considered composite bosons formed by two fermions, the electron and the hole. This bound state results in excitons being electrically neutral, but they can move through the lattice with the aid of band theory, just like the schematic shown above. Thus, excitons can traverse the lattice, transporting energy without any net charge transfer, which in turn causes the wonderful photoelectric properties we observe on a macroscopic scale. Because excitons are composite bosons, they can interact with light. When excitons absorb, reflect, or transmit light, they generate narrow spectral lines in the spectrum. As previously mentioned, an important condition for the formation of excitons is that the electron-hole pairs are located at the same or adjacent positions in the lattice. Thus, the energy of their narrow spectral lines is lower than the free particle band gap of insulators or semiconductors. This phenomenon provides the theoretical basis for the spectral analysis of excitons discussed in the paper[10].</p>
 <h3 id="phonon">Phonon</h3>
 <p>Just as photons are quantized electromagnetic waves, phonons are quantized mechanical waves[11]. In a crystal, atoms or molecules are arranged in a uniform, repeating structure. These atomic arrangements are not static; they undergo thermal vibrations due to heat, causing the atoms to oscillate at specific frequencies. In this vibrational mode, the interaction (bond) between atoms in the crystal can be imagined as behaving like a spring in the macroscopic world. This interaction generates mechanical waves within the lattice, which traverse the lattice with specific momentum and energy. Due to the wave-particle duality in quantum theory, phonons, though wave-like phenomena, can be regarded as particles with discrete vibrational energies in the field of microscopic condensed matter physics. This treatment is similar to how photons are considered particles arising from electromagnetic waves. However, unlike photons, phonons of different wavelengths can interact and mix when they collide with each other, similar to how mechanical waves behave in the macroscopic world, resulting in the formation of different wavelengths. This interaction leads to chaotic behavior, making the prediction and control of phonons more challenging. Just as photons of a given frequency can only exist at specific energy levels, phonons can also be described by band structure diagrams[12]. Phonons can be represented on a graph showing energy (in terms of frequency ω) against momentum (k), revealing two bands separated by a phonon band gap. These bands consist of a higher-energy optical band and a lower-energy acoustic band. Additionally, the distinction between longitudinal modes (where vibrations align with phonon propagation) and transverse modes (where vibrations are perpendicular to phonon propagation) is determined by the direction in which the vibrations and phonons travel.</p>
 <h2 id="materials">Materials</h2>
-<p>In the reviewed paper, two prototypical single-layer perovskite systems,(PEA)<sub>2</sub>PbI<sub>4</sub>(PEA is the abbreviation of phenylethylammonium) and (NBT)<sub>2</sub>PbI<sub>4</sub>  (NBT=n-butylammonium) are mainly focused on. Their structure is shown in the figure below. Perovskite crystals can form a cage structure. In the two materials selected, the inorganic framework consists of lead iodide octahedra, which form a network through corner-sharing. Large organic spacer cations are sandwiched in the middle to create a natural multi-quantum well structure, where the inorganic plate layer acts as a potential energy “well” and the organic layer serves as a potential energy “barrier”[13].</p>
-<p>
-  <figure>
-    <img src="https://raw.githubusercontent.com/AstroNomen/ENBlogPic/imgen/20240607/structureNBT.png" alt=" (a) Crystal structures of (NBT)2PbI4">
-    <center><figcaption>Figure 2: (a) Crystal structures of (NBT)<sub>2</sub>PbI<sub>4</sub></figcaption></center>
-  </figure>
-
-
-  <figure>
-    <img src="https://raw.githubusercontent.com/AstroNomen/ENBlogPic/imgen/20240607/structurePEA.png" alt="Crystal structures of (PEA)2PbI4">
-    <center><figcaption>Figure 2: (b) Crystal structures of (PEA)<sub>2</sub>PbI<sub>4</sub></figcaption></center>
-  </figure>
-
-</p>
-<p>It is precisely because of this unique structural feature that the Pb-I framework can be deformed under interaction, altering the inorganic cage structure and distorting the structure of the entire inorganic lattice. This structural change induces significant dynamic disorder in the lattice, facilitating interactions between electrons and phonons, which in turn modifies the material’s physical properties. Such distortion plays a key role in carrier localization and subsequent broadband emission[14].The effect of the interaction between excitons and phonons, resulting from the changes in the spatial structure of the crystal, is precisely what the reviewed article aims to study. This type of 2D perovskite exhibits excellent optoelectronic properties. Experiments show that it typically presents an extremely narrow-band photoluminescence (PL) spectrum with a full width at half maximum (FWHM) of only about 25 nm. From the structural schematic, it is evident that two organic amino linkers connect different inorganic layers, guiding the crystal to grow in a non-oriented manner to form a spatial crystal structure. Among these, (NBT)<sub>2</sub>PbI<sub>4</sub> has an orthorhombic structure with a &lt;100&gt; orientation[14]. The variable spatial structural characteristics of 2D perovskites also introduce challenges. During crystal growth or thin film application, potential spatial orientation disorder and lattice strain can lead to defects, affecting the generation and characteristics of excitons or carriers, as well as the optoelectronic properties of the entire material. This poses an obstacle to the large-scale  preparation of such materials. Additionally, the organic long-chain structure between the layers can impact the transmission of interlayer charges, necessitating careful design of the interlayer organic molecular chains[13].</p>
+<p>In the reviewed paper, two prototypical single-layer perovskite systems,(PEA)<!-- raw HTML omitted -->2<!-- raw HTML omitted -->PbI<!-- raw HTML omitted -->4<!-- raw HTML omitted -->(PEA is the abbreviation of phenylethylammonium) and (NBT)<!-- raw HTML omitted -->2<!-- raw HTML omitted -->PbI<!-- raw HTML omitted -->4<!-- raw HTML omitted -->  (NBT=n-butylammonium) are mainly focused on. Their structure is shown in the figure below. Perovskite crystals can form a cage structure. In the two materials selected, the inorganic framework consists of lead iodide octahedra, which form a network through corner-sharing. Large organic spacer cations are sandwiched in the middle to create a natural multi-quantum well structure, where the inorganic plate layer acts as a potential energy “well” and the organic layer serves as a potential energy “barrier”[13].</p>
+<p><figure class="metro-figure">
+  <img src="https://raw.githubusercontent.com/AstroNomen/ENBlogPic/imgen/20240607/structureNBT.png" alt=" (a) Crystal structures of (NBT)2PbI4" loading="lazy" />
+  
+  
+    <figcaption class="metro-caption">Figure 2: (a) Crystal structures of (NBT)<sub>2</sub>PbI<sub>4</sub></figcaption>
+  
+</figure><figure class="metro-figure">
+  <img src="https://raw.githubusercontent.com/AstroNomen/ENBlogPic/imgen/20240607/structurePEA.png" alt="Crystal structures of (PEA)2PbI4" loading="lazy" />
+  
+  
+    <figcaption class="metro-caption">Figure 2: (b) Crystal structures of (PEA)<sub>2</sub>PbI<sub>4</sub></figcaption>
+  
+</figure></p>
+<p>It is precisely because of this unique structural feature that the Pb-I framework can be deformed under interaction, altering the inorganic cage structure and distorting the structure of the entire inorganic lattice. This structural change induces significant dynamic disorder in the lattice, facilitating interactions between electrons and phonons, which in turn modifies the material’s physical properties. Such distortion plays a key role in carrier localization and subsequent broadband emission[14].The effect of the interaction between excitons and phonons, resulting from the changes in the spatial structure of the crystal, is precisely what the reviewed article aims to study. This type of 2D perovskite exhibits excellent optoelectronic properties. Experiments show that it typically presents an extremely narrow-band photoluminescence (PL) spectrum with a full width at half maximum (FWHM) of only about 25 nm. From the structural schematic, it is evident that two organic amino linkers connect different inorganic layers, guiding the crystal to grow in a non-oriented manner to form a spatial crystal structure. Among these, (NBT)<!-- raw HTML omitted -->2<!-- raw HTML omitted -->PbI<!-- raw HTML omitted -->4<!-- raw HTML omitted --> has an orthorhombic structure with a &lt;100&gt; orientation[14]. The variable spatial structural characteristics of 2D perovskites also introduce challenges. During crystal growth or thin film application, potential spatial orientation disorder and lattice strain can lead to defects, affecting the generation and characteristics of excitons or carriers, as well as the optoelectronic properties of the entire material. This poses an obstacle to the large-scale  preparation of such materials. Additionally, the organic long-chain structure between the layers can impact the transmission of interlayer charges, necessitating careful design of the interlayer organic molecular chains[13].</p>
 <h2 id="methodology">Methodology</h2>
 <p>To study the interaction between phonons and excitons in two-dimensional perovskites, the original article primarily employed a research method that combines theoretical calculations with experimental analysis. The research team used the Density Functional Theory (DFT) algorithm to calculate and analyze the possible frequencies, and then conducted measurement experiments using Resonant Impulsive Stimulated Raman Spectroscopy (RISRS). By comparing the results from these two approaches, they were able to draw conclusions. This section will briefly introduce the two methods used in the study.</p>
 <h3 id="resonant-impulsive-stimulated-raman-spectroscopy-risrs">Resonant Impulsive Stimulated Raman Spectroscopy (RISRS)</h3>
-<p>The core of Raman spectroscopy lies in its interaction with excitons. As an inelastic light scattering effect, incident photons can lose (or gain) energy by interacting with excitons in the material. Monochromatic excitation light interacts with electrons in the material, producing inelastic scattering, and the polarizability changes due to vibration. Thus, the phonon mode will appear in the scattering spectrum at a wavelength different from the excitation wavelength. The difference between the phonon mode and the excitation wavelength, known as the “Raman Shift”, represents the energy difference between the phonon-scattered light and the expected luminescence. This shift is the core measurement content of Raman spectroscopy, expressed in units of inverse centimeters (cm<sup>−1</sup>)[16]</p>
-<p>
-  <figure>
-    <img src="https://raw.githubusercontent.com/AstroNomen/ENBlogPic/imgen/20240607/RISRS.png" alt="Schematic diagram of a common RISRS device">
-    <center><figcaption>Figure 3: Schematic diagram of a common RISRS device[16]</figcaption></center>
-  </figure>
-
-</p>
+<p>The core of Raman spectroscopy lies in its interaction with excitons. As an inelastic light scattering effect, incident photons can lose (or gain) energy by interacting with excitons in the material. Monochromatic excitation light interacts with electrons in the material, producing inelastic scattering, and the polarizability changes due to vibration. Thus, the phonon mode will appear in the scattering spectrum at a wavelength different from the excitation wavelength. The difference between the phonon mode and the excitation wavelength, known as the “Raman Shift”, represents the energy difference between the phonon-scattered light and the expected luminescence. This shift is the core measurement content of Raman spectroscopy, expressed in units of inverse centimeters (cm<!-- raw HTML omitted -->−1<!-- raw HTML omitted -->)[16]</p>
+<p><figure class="metro-figure">
+  <img src="https://raw.githubusercontent.com/AstroNomen/ENBlogPic/imgen/20240607/RISRS.png" alt="Schematic diagram of a common RISRS device" loading="lazy" />
+  
+  
+    <figcaption class="metro-caption">Figure 3: Schematic diagram of a common RISRS device[16]</figcaption>
+  
+</figure></p>
 <p>In specific measurement and analysis, the intensity of Raman scattering is influenced by the polarization states of incident and scattered light. These polarization states are determined by the orientation and symmetry of the molecules and atoms in the crystal, which are guided by the direction of chemical bonds. Therefore, RISRS provides excellent spatial resolution and can effectively analyze the orientation and symmetry of the crystal. Additionally, Raman scattering  can differentiate between the inorganic and organic parts of the crystal in a qualitative description. Since the atomic composition of organic components is significantly different from that of inorganic components[17], and typically has a smaller relative atomic mass, the Raman shift of their vibration modes will be larger compared to the heavier inorganic parts[18]. This charac teristic makes Raman scattering particularly be able to identify chemical bonds in functional groups. Based on the above reasons, for the 2D perovskite materials discussed in the original article, which feature both long organic interlayer chains and inorganic symmetrical polyhedral structures, RISRS can be regarded as a highly effective research tool. It not only quickly captures high-resolution spectra but also directly observes the coupling between excitons and phonons.</p>
 <h3 id="density-functional-theory-dft-calculations">Density Functional Theory (DFT) Calculations</h3>
 <p>If we describe Density Functional Theory (DFT) in detail, it would probably take another paper. Let me briefly talk about its development history. Its predecessor was the Thomas-Fermi model, independently developed by Llewellyn Thomas and Enrico Fermi in 1927[19]. They used statistical models to approximate the distribution of electrons in atoms. This idea can be traced back to the Hohenberg-Kohn theorem[20], which states that the ground state properties of a multi-electron system are uniquely determined by the electron density, which depends only on three spatial coordinates. This approach allows us to simplify the many-body problem of N electrons in 3N spatial coordinates by using a functional based on electron density, reducing it to a problem involving only 3 spatial coordinates. From the perspective of a complex definition, Density Functional Theory (DFT) attempts to ad dress the inaccuracies of high frequencies and the high computational requirements of post-high frequency methods by replacing multi-body electron wave functions with electron density as the fundamental quantity[21]. Intuitively, this method provides a modeling analysis of complex elec tronic systems under quantum mechanical conditions. In the original article, DFT calculations were used to simulate the vibrational modes of the perovskite lattice. These calculations en abled the research team to assign the observed vibrational frequencies to specific lattice modes, thereby helping to better understand the RISRS spectra introduced in the previous section.</p>
 <h2 id="results-and-discussion">Results and Discussion</h2>
 <h3 id="exciton-absorption">Exciton absorption</h3>
-<p>
-  <figure>
-    <img src="https://raw.githubusercontent.com/AstroNomen/ENBlogPic/imgen/20240607/excitonabsorb.png" alt="Exciton absorption spectrum.">
-    <center><figcaption>Figure 4: Exciton absorption spectrum.</figcaption></center>
-  </figure>
-
-</p>
-<p>The figure above shows the exciton absorption spectrum of (PEA)<sub>2</sub>PbI<sub>4</sub>. The Figure.4a represents its exciton absorption spectrum at 5K. We can clearly observe two main transition peaks at 2.37 eV and 2.41 eV. Then, transient absorption measurements were performed by pumping 3.06 eV into the conduction band, obtaining the time-resolved differential transmission spectrum shown in Figure.4c and the time-resolved differential transmission spectrum of the oscillating component shown in Figure.4d. The oscillatory component of the differential transmission signal arises from the Raman interac tion in RISRS. When the duration induced by the ultrashort pump pulse is much shorter than the period of the Raman-active low-frequency vibration, the pulse force generated by the Raman interaction drives coherent motion within the lattice. This motion modulates the dielectric con stant at the lattice motion frequency, thereby forming a spectrum of varying intensities in the image. We can observe different positive and negative features in segments A and B, indicating the displacement and transition of excitons. The increase in the intensity of the positive signal compared to the ground state suggests that the carriers are being converted into excitons. The reason for choosing 5K here is that the coherent oscillation caused by phonon-phonon scattering at higher temperatures dephases more rapidly, resulting in a reduced modulation depth. Additionally, because the exciton spectral structure persists below room temperature, we focus on measurements at 5K to obtain more pronounced results.</p>
-<p>
-  <figure>
-    <img src="https://raw.githubusercontent.com/AstroNomen/ENBlogPic/imgen/20240607/excitonabsorb2.png" alt="RISRS spectrumn at 5K and associated phonon modes.">
-    <center><figcaption>Figure 5: RISRS spectrum of (PEA)<sub>2</sub>PbI<sub>4</sub> (a) and (NBT)<sub>2</sub>PbI<sub>4</sub> (c) at 5K and associated phonon modes.</figcaption></center>
-  </figure>
-
-</p>
-<p>Also for the (NBT)<sub>2</sub>PbI<sub>4</sub>, they also get the RISRS spectrum at 3.06eV as the above Figure.5c shown. By doing DFT to calculate the vibrational normal modes of these two materials and comparing these with the experimental vibrational frequencies, remarkably consistent results were found between the theoretical predictions and the experimental data. However, compared with  (PEA)<sub>2</sub>PbI<sub>4</sub>, the spectrum of (NBT)<sub>2</sub>PbI<sub>4</sub> shows that all its exciton modes appear to shift to higher energy. It is speculated that this shift may be due to lattice hardening caused by octahedral distortion prevalent in its low-temperature phase. This shift reflects the changes in optoelectronic properties caused by crystal lattice distortion, as mentioned in the material introduction section above．</p>
+<p><figure class="metro-figure">
+  <img src="https://raw.githubusercontent.com/AstroNomen/ENBlogPic/imgen/20240607/excitonabsorb.png" alt="Exciton absorption spectrum." loading="lazy" />
+  
+  
+    <figcaption class="metro-caption">Figure 4: Exciton absorption spectrum.</figcaption>
+  
+</figure></p>
+<p>The figure above shows the exciton absorption spectrum of (PEA)<!-- raw HTML omitted -->2<!-- raw HTML omitted -->PbI<!-- raw HTML omitted -->4<!-- raw HTML omitted -->. The Figure.4a represents its exciton absorption spectrum at 5K. We can clearly observe two main transition peaks at 2.37 eV and 2.41 eV. Then, transient absorption measurements were performed by pumping 3.06 eV into the conduction band, obtaining the time-resolved differential transmission spectrum shown in Figure.4c and the time-resolved differential transmission spectrum of the oscillating component shown in Figure.4d. The oscillatory component of the differential transmission signal arises from the Raman interac tion in RISRS. When the duration induced by the ultrashort pump pulse is much shorter than the period of the Raman-active low-frequency vibration, the pulse force generated by the Raman interaction drives coherent motion within the lattice. This motion modulates the dielectric con stant at the lattice motion frequency, thereby forming a spectrum of varying intensities in the image. We can observe different positive and negative features in segments A and B, indicating the displacement and transition of excitons. The increase in the intensity of the positive signal compared to the ground state suggests that the carriers are being converted into excitons. The reason for choosing 5K here is that the coherent oscillation caused by phonon-phonon scattering at higher temperatures dephases more rapidly, resulting in a reduced modulation depth. Additionally, because the exciton spectral structure persists below room temperature, we focus on measurements at 5K to obtain more pronounced results.</p>
+<p><figure class="metro-figure">
+  <img src="https://raw.githubusercontent.com/AstroNomen/ENBlogPic/imgen/20240607/excitonabsorb2.png" alt="RISRS spectrumn at 5K and associated phonon modes." loading="lazy" />
+  
+  
+    <figcaption class="metro-caption">Figure 5: RISRS spectrum of (PEA)<sub>2</sub>PbI<sub>4</sub> (a) and (NBT)<sub>2</sub>PbI<sub>4</sub> (c) at 5K and associated phonon modes.</figcaption>
+  
+</figure></p>
+<p>Also for the (NBT)<!-- raw HTML omitted -->2<!-- raw HTML omitted -->PbI<!-- raw HTML omitted -->4<!-- raw HTML omitted -->, they also get the RISRS spectrum at 3.06eV as the above Figure.5c shown. By doing DFT to calculate the vibrational normal modes of these two materials and comparing these with the experimental vibrational frequencies, remarkably consistent results were found between the theoretical predictions and the experimental data. However, compared with  (PEA)<!-- raw HTML omitted -->2<!-- raw HTML omitted -->PbI<!-- raw HTML omitted -->4<!-- raw HTML omitted -->, the spectrum of (NBT)<!-- raw HTML omitted -->2<!-- raw HTML omitted -->PbI<!-- raw HTML omitted -->4<!-- raw HTML omitted --> shows that all its exciton modes appear to shift to higher energy. It is speculated that this shift may be due to lattice hardening caused by octahedral distortion prevalent in its low-temperature phase. This shift reflects the changes in optoelectronic properties caused by crystal lattice distortion, as mentioned in the material introduction section above．</p>
 <h3 id="phonon-coherence">Phonon coherence</h3>
 <p>To analyze the coherence of excitons and phonons, we first start from the two most intense lattice modes, A and B, in material A. We find that when the pump energy is ≥ 2.56 eV, the intensity of the two modes in the excitation spectrum increases monotonically. Then the original paper describes pumping continuum 3.06 eV and 2.67 eV to obtain Fig.6(b,c)(d,e), respectively. Additionally, 2.31 eV and 2.46 eV were used as two pump inputs corresponding to different exciton energies A and B , get the Fig.6(h,i)(f,g).</p>
-<p>
-  <figure>
-    <img src="https://raw.githubusercontent.com/AstroNomen/ENBlogPic/imgen/20240607/pumpdependence.png" alt="Pump wavelength dependence of (PEA)2PbI4 RISRS">
-    <center><figcaption>Figure 6: Pump wavelength dependence of (PEA)<sub>2</sub>PbI<sub>4</sub> RISRS</figcaption></center>
-  </figure>
-
-</p>
+<p><figure class="metro-figure">
+  <img src="https://raw.githubusercontent.com/AstroNomen/ENBlogPic/imgen/20240607/pumpdependence.png" alt="Pump wavelength dependence of (PEA)2PbI4 RISRS" loading="lazy" />
+  
+  
+    <figcaption class="metro-caption">Figure 6: Pump wavelength dependence of (PEA)<sub>2</sub>PbI<sub>4</sub> RISRS</figcaption>
+  
+</figure></p>
 <p>We can observe from the figure that different exciton energies have different coupling strengths for various lattice modes. For example, exciton A shows strong coupling to mode M2, indicating that each exciton state has distinct lattice coupling characteristics. The varying amplitude values exhibited by different lattice modes at different exciton pump energies(Fig.7) further support this conclusion.</p>
-<p>
-  <figure>
-    <img src="https://raw.githubusercontent.com/AstroNomen/ENBlogPic/imgen/20240607/amplitudespectra.png" alt="Amplitude spectra of different modes with exciton energy">
-    <center><figcaption>Figure 7: Amplitude spectra of different modes with exciton energy</figcaption></center>
-  </figure>
-
-</p>
+<p><figure class="metro-figure">
+  <img src="https://raw.githubusercontent.com/AstroNomen/ENBlogPic/imgen/20240607/amplitudespectra.png" alt="Amplitude spectra of different modes with exciton energy" loading="lazy" />
+  
+  
+    <figcaption class="metro-caption">Figure 7: Amplitude spectra of different modes with exciton energy</figcaption>
+  
+</figure></p>
 <h2 id="conclusion">Conclusion</h2>
 <p>We already know the importance of two-dimensional perovskite materials for optoelectronic devices such as light-emitting diodes or solar cells. However, the development of these materials is currently hindered by the complex and unclear interactions between the spatial structure of the crystal and phonons and excitons. This article proposes a possible interaction behavior mode between phonons and excitons in two-dimensional perovskite materials. The specific coupling between excitons and phonons may be crucial for future control of exciton behavior in these materials, thereby effectively improving the efficiency of related optoelectronic devices. The conclusion drawn in the article is that excitons in two-dimensional perovskite materials can couple with the phonon modes inherent in the crystal structure. This suggests a theoretical possibility of controlling exciton behavior mechanisms through the phonon properties of the material itself. More importantly, the experimental method used in the article. RISRS (Resonant Impulsive Stimulated Raman Scattering), successfully obtained the absorption spectrum of the material to analyze the possible energy states of excitons. The phonon modes of the crystal were then calculated using Density Functional Theory (DFT). The experimental results showed a high degree of consistency between the RISRS measurements and the DFT calculations, proving the reliability of this methodology. This provides a feasible solution for future research on phonon exciton interaction in other two-dimensional materials in the field of optoelectronics.</p>
 <hr>
 <h2 id="references">References</h2>
 <p>[1] Khagendra P Bhandari and Randy J Ellingson. “An overview of hybrid organic–inorganic metal halide perovskite solar cells”. In: <em>A Comprehensive Guide to Solar Energy Systems</em> (2018), pp. 233–254.</p>
-<p>[2] Teruya Ishihara, Jun Takahashi, and Takenari Goto. “Exciton state in two-dimensional perovskite semiconductor (C<sub>10</sub>H<sub>21</sub>NH<sub>3</sub>) <sub>2</sub>PbI<sub>4</sub>”. In: <em>Solid state communications</em> 69.9 (1989), pp. 933–936.</p>
+<p>[2] Teruya Ishihara, Jun Takahashi, and Takenari Goto. “Exciton state in two-dimensional perovskite semiconductor (C<!-- raw HTML omitted -->10<!-- raw HTML omitted -->H<!-- raw HTML omitted -->21<!-- raw HTML omitted -->NH<!-- raw HTML omitted -->3<!-- raw HTML omitted -->) <!-- raw HTML omitted -->2<!-- raw HTML omitted -->PbI<!-- raw HTML omitted -->4<!-- raw HTML omitted -->”. In: <em>Solid state communications</em> 69.9 (1989), pp. 933–936.</p>
 <p>[3] Lisa Dhar, John A Rogers, and Keith A Nelson. “Time-resolved vibrational spectroscopy in the impulsive limit”. In: <em>Chemical Reviews</em> 94.1 (1994), pp. 157–193.</p>
 <p>[4] R Merlin. “Generating coherent THz phonons with light pulses”. In: <em>Solid state commu nications</em> 102.2-3 (1997), pp. 207–220.</p>
 <p>[5] AK Sood et al. “Resonance Raman scattering by confined LO and TO phonons in GaAs AlAs superlattices”. In: <em>Physical review letters</em> 54.19 (1985), p. 2111.</p>
@@ -359,300 +302,196 @@
 <p>[20] Pierre Hohenberg and Walter Kohn. “Inhomogeneous electron gas”. In: <em>Physical review</em> 136.3B (1964), B864.</p>
 <p>[21] Maylis Orio, Dimitrios A Pantazis, and Frank Neese. “Density functional theory”. In: <em>Photosynthesis research</em> 102 (2009), pp. 443–453.</p>
 
-
-                
-
-                
-                <hr>
-                <ul class="pager">
-                    
-                    <li class="previous">
-                        <a href="/post/uvcgrating/" data-toggle="tooltip" data-placement="top" title="Ultra Violet C Irradiation Grating Coupler Design">&larr;
-                            Previous Post</a>
-                    </li>
-                    
-                    
-                    <li class="next">
-                        <a href="/post/astrocomb/" data-toggle="tooltip" data-placement="top" title="Recent Trends in Astrocomb">Next
-                            Post &rarr;</a>
-                    </li>
-                    
-                </ul>
-                
-
-                
-
-
-
-
-            </div>
-
-            
-            
-            <div class="
-                col-lg-2 col-lg-offset-0
-                visible-lg-block
-                sidebar-container
-                catalog-container">
-                <div class="side-catalog">
-                    <hr class="hidden-sm hidden-xs">
-                    <h5>
-                        <a class="catalog-toggle" href="#">CATALOG</a>
-                    </h5>
-                    <ul class="catalog-body"></ul>
-                </div>
-            </div>
-            
-
-            
-            <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                sidebar-container">
-
-                
-                
-                <section>
-                    <hr class="hidden-sm hidden-xs">
-                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
-                    <div class="tags">
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        <a href="/tags/photonics" title="photonics">
-                            photonics
-                        </a>
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                    </div>
-                </section>
-                
-
-                
-                
-                <section>
-                    <hr>
-                    <h5>FRIENDS</h5>
-                    <ul class="list-inline">
-                        
-                        <li><a target="_blank" href="https://storm-lifter-278.notion.site/20fd9d7d2ac78016877af1808ecdaaf4?v=20fd9d7d2ac781e69c79000c5eac71bb">Chengyu Fu</a></li>
-                        
-                    </ul>
-                </section>
-                
-            </div>
         </div>
-    </div>
-</article>
+    </article>
 
+    
+      <aside class="single-sidebar">
+          <div class="toc-container">
+              <span class="toc-title">Contents</span>
+              <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a>
+      <ul>
+        <li><a href="#exciton">Exciton</a></li>
+        <li><a href="#phonon">Phonon</a></li>
+      </ul>
+    </li>
+    <li><a href="#materials">Materials</a></li>
+    <li><a href="#methodology">Methodology</a>
+      <ul>
+        <li><a href="#resonant-impulsive-stimulated-raman-spectroscopy-risrs">Resonant Impulsive Stimulated Raman Spectroscopy (RISRS)</a></li>
+        <li><a href="#density-functional-theory-dft-calculations">Density Functional Theory (DFT) Calculations</a></li>
+      </ul>
+    </li>
+    <li><a href="#results-and-discussion">Results and Discussion</a>
+      <ul>
+        <li><a href="#exciton-absorption">Exciton absorption</a></li>
+        <li><a href="#phonon-coherence">Phonon coherence</a></li>
+      </ul>
+    </li>
+    <li><a href="#conclusion">Conclusion</a></li>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav>
+          </div>
+      </aside>
+    
 
+</div>
 
+    </main>
 
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <ul class="list-inline text-center">
-                    
-                    <li>
-                        <a href="javascript:void(0);" onclick="window.location.href='mailto:' + 'Zhifan.Dai@outlook.com'">
-                            <span class="fa-stack fa-lg">
-                                <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-		           
-                    
-                    
-                    
-                    
+    <footer class="site-footer metro-dark">
+  <div class="footer-container">
+    
+    <div class="footer-main-grid">
+      
+      <div class="footer-brand-zone">
+        <h2 class="footer-site-title">S.S.S.</h2>
+        
+          <p class="footer-slogan">Study Something Shining</p>
+        
+        <div class="editorial-bio">PhD Researcher of Physics<br>sNOm Laboratory<br>@Politecnico di Milano</div>
+      </div>
 
-		            
-                    
-                    
-                    <li>
-                        <a target="_blank" href="https://github.com/AstroNomen">
-                            <span class="fa-stack fa-lg">
-                                <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-		            
-                    
-                    
-                    
-                    <li>
-                        <a target="_blank" href="https://www.linkedin.com/in/zhi-fan-dai-958624248/">
-                            <span class="fa-stack fa-lg">
-                                <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-		           
-                    
-                    
-                    
-                    
-                    
-                    
+      <div class="footer-links-zone pivot-layout">
+        
+        
+        <div class="pivot-section">
+          <h3 class="pivot-header">Quick Links</h3>
+          <ul class="metro-list">
             
+            <li><a href="https://akiday.com/en/">Bio</a></li>
             
+            <li><a href="https://www.akiday.com">Blog in Chinese</a></li>
             
-           
-                   <li>
-                       <a href='' rel="alternate" type="application/rss+xml" title="SSS" >
-                           <span class="fa-stack fa-lg">
-                               <i class="fas fa-circle fa-stack-2x"></i>
-                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
-                           </span>
-                       </a>
-                   </li>
-            
-             </ul>
-		<p class="copyright text-muted">
-                    
-                    &copy; 2025 SSS · Zhi-Fan (Charles) Dai · <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">CC BY-NC-SA</a>
-                    
-                    <br>
-                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a>
-                    
-                </p>
-            </div>
+          </ul>
         </div>
+        
+
+        
+        <div class="pivot-section">
+          <h3 class="pivot-header">Friends</h3>
+          <ul class="metro-list">
+            
+            <li><a href="https://storm-lifter-278.notion.site/20fd9d7d2ac78016877af1808ecdaaf4?v=20fd9d7d2ac781e69c79000c5eac71bb" target="_blank" rel="noopener noreferrer">Chengyu Fu</a></li>
+            
+          </ul>
+        </div>
+        
+
+        <div class="pivot-section">
+          <h3 class="pivot-header">Connect</h3>
+          <ul class="metro-list">
+            
+            <li><a href="#" class="protected-email" data-contact="Zhifan.Dai@outlook.com">Email ↗</a></li>
+            
+            
+              
+                <li><a href="https://www.linkedin.com/in/zhi-fan-dai-958624248/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></li>
+              
+            
+              
+                <li><a href="https://github.com/AstroNomen" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li>
+              
+            
+              
+            
+          </ul>
+        </div>
+
+      </div>
     </div>
+
+    <div class="footer-copyright-zone">
+      <div class="copyright-info">
+        <span>© 2026 S.S.S.</span>
+        <span class="meta-divider">·</span>
+        <span>All rights reserved</span>
+        <span class="meta-divider">·</span>
+        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="license noopener noreferrer">CC BY-NC-SA 4.0</a>
+      </div>
+      
+      <div class="copyright-rss">
+        
+          
+        
+          
+        
+          
+            <a href="/index.xml" target="_blank" rel="noopener noreferrer" class="footer-rss-btn">RSS<svg class="rss-icon" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+          
+        
+      </div>
+    </div>
+
+  </div>
 </footer>
 
-
-
-
 <script>
-    function loadAsync(u, c) {
-      var d = document, t = 'script',
-          o = d.createElement(t),
-          s = d.getElementsByTagName(t)[0];
-      o.src = u;
-      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-      s.parentNode.insertBefore(o, s);
-    }
-</script>
-
-
-
-
-
-
-<script>
-    
-    if($('#tag_cloud').length !== 0){
-        loadAsync("/js/jquery.tagcloud.js",function(){
-            $.fn.tagcloud.defaults = {
-                
-                color: {start: '#bbbbee', end: '#0085a1'},
-            };
-            $('#tag_cloud a').tagcloud();
-        })
-    }
-</script>
-
-
-<script>
-    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
-        var $nav = document.querySelector("nav");
-        if($nav) FastClick.attach($nav);
-    })
-</script>
-
-
-
-
-
-
-<script type="text/javascript">
-    function generateCatalog(selector) {
-
-        
-        
-        
-        
-            _containerSelector = 'div.post-container'
-        
-
-        
-        var P = $(_containerSelector), a, n, t, l, i, c;
-        a = P.find('h1,h2,h3,h4,h5,h6');
-
-        
-        $(selector).html('')
-
-        
-        a.each(function () {
-            n = $(this).prop('tagName').toLowerCase();
-            i = "#" + $(this).prop('id');
-            t = $(this).text();
-            c = $('<a href="' + i + '" rel="nofollow" title="' + t + '">' + t + '</a>'); 
-            l = $('<li class="' + n + '_nav"></li>').append(c);
-            $(selector).append(l);
-        });
-        return true;
-    }
-
-    generateCatalog(".catalog-body");
-
-    
-    $(".catalog-toggle").click((function (e) {
-        e.preventDefault();
-        $('.side-catalog').toggleClass("fold")
-    }))
-
-    
-
-
-    loadAsync("\/js\/jquery.nav.js", function () {
-        $('.catalog-body').onePageNav({
-            currentClass: "active",
-            changeHash: !1,
-            easing: "swing",
-            filter: "",
-            scrollSpeed: 700,
-            scrollOffset: 0,
-            scrollThreshold: .2,
-            begin: null,
-            end: null,
-            scrollChange: null,
-            padding: 80
-        });
+  document.addEventListener('DOMContentLoaded', function() {
+    const emailLinks = document.querySelectorAll('.protected-email');
+    emailLinks.forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault(); 
+        const emailAddress = this.getAttribute('data-contact');
+        window.location.href = 'mailto:' + emailAddress; 
+      });
     });
+  });
 </script>
 
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    
+    const toc = document.querySelector('.single-sidebar');
+    const footer = document.querySelector('.site-footer');
 
+    
+    if(toc && footer) {
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          
+          if(entry.isIntersecting) {
+            toc.classList.add('fade-out'); 
+          } else {
+            toc.classList.remove('fade-out'); 
+          }
+        });
+      }, {
+        root: null,
+        threshold: 0.1 
+      });
 
+      observer.observe(footer);
+    }
+  });
+</script>
 
+    <script src="/js/main.js"></script>
 
+    <div class="toc-backdrop"></div>
+    <div class="metro-tools-dock">
+      
+      <button id="back-to-top" class="metro-tool-btn" title="Back to Top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"></polyline></svg>
+      </button>
 
+      
+      <button id="mobile-toc-toggle" class="metro-tool-btn mobile-only" title="Table of Contents">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square">
+          <line x1="9" y1="6" x2="21" y2="6"></line>
+          <line x1="9" y1="12" x2="21" y2="12"></line>
+          <line x1="9" y1="18" x2="21" y2="18"></line>
+          <rect x="3" y="5" width="2" height="2" fill="currentColor" stroke="none"></rect>
+          <rect x="3" y="11" width="2" height="2" fill="currentColor" stroke="none"></rect>
+          <rect x="3" y="17" width="2" height="2" fill="currentColor" stroke="none"></rect>
+        </svg>
+      </button>
+      
+      
+    </div>
 </body>
 </html>
