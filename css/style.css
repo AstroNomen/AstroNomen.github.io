@@ -473,6 +473,15 @@ a {
   text-overflow: ellipsis;
 }
 
+/* 🖥️ 桌面端：释放文章摘要，取消行数限制 */
+@media (min-width: 769px) {
+  .entry-description {
+    display: block !important; /* 覆盖原来的 -webkit-box */
+    -webkit-line-clamp: unset !important; /* 解除 3 行封印 */
+    overflow: visible !important;
+  }
+}
+
 /* --- 基础状态：硬朗的矩形标签 --- */
 a.tag {
   display: inline-block;
@@ -1078,11 +1087,13 @@ a.taxonomy-tag {
   margin: 0 !important; /* 清除可能残留的外边距，解决歪斜 */
 }
 
-/* Hover 状态：亮起主题色并平滑上浮 */
-.metro-tool-btn:hover {
-  background-color: var(--primary-color, #26a69a) !important; 
-  transform: translateY(-4px) !important; 
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15) !important;
+/* 🎯 Hover 状态：亮起主题色并平滑上浮 (仅限拥有真实鼠标的设备) */
+@media (hover: hover) and (pointer: fine) {
+  .metro-tool-btn:hover {
+    background-color: var(--primary-color, #26a69a) !important; 
+    transform: translateY(-4px) !important; 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15) !important;
+  }
 }
 
 /* =========================================
@@ -1094,7 +1105,7 @@ a.taxonomy-tag {
 }
 
 /* 手机端 (小于 1000px)：显示目录按钮 */
-@media (max-width: 1000px) {
+@media (max-width: 1350px) {
   .mobile-only {
     display: flex !important; 
   }

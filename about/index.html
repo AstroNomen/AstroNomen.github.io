@@ -6,8 +6,8 @@
     
     <title>About | S.S.S.</title>
     
-    <meta name="description" content="Hello, I am Charles.
-I am currently a PhD researcher at the sNOm Laboratory, Politecnico di Milano in Italy, where my work primarily focuses on nonlinear optics. Prior to this, I completed my Master&rsquo;s degree in Photonics Engineering at the Photonics Research Group (PRG) of Ghent University – IMEC, Belgium.
+    <meta name="description" content="Hello there, I am Charles.
+I am currently a PhD researcher at the sNOm Laboratory, Politecnico di Milano, where my work primarily focuses on nonlinear optics. Prior to this, I completed my Master&rsquo;s degree in Photonics Engineering at the Photonics Research Group (PRG) of Ghent University – IMEC, Belgium.
 Welcome to my digital archive. This space serves as a personal repository for my academic research, collections, and reflections.
 The title of this site, S.S.S., stands for &ldquo;Study Something Shining&rdquo;, a straightforward yet romantic tribute to the field of photonics to which I am dedicated. I have a profound appreciation for this &ldquo;shiny&rdquo; science and the light it sheds on the physical world.">
     <meta name="keywords" content="Photonics, Physics, Optics, Academic Blog, PhD Research, Politecnico di Milano">
@@ -165,16 +165,17 @@ The title of this site, S.S.S., stands for &ldquo;Study Something Shining&rdquo;
     </header>
 
     <div class="single-content post-body">
-      <p>Hello, I am Charles.</p>
-<p>I am currently a PhD researcher at the <strong>sNOm Laboratory, Politecnico di Milano</strong> in Italy, where my work primarily focuses on nonlinear optics. Prior to this, I completed my Master&rsquo;s degree in Photonics Engineering at the <strong>Photonics Research Group (PRG)</strong> of Ghent University – IMEC, Belgium.</p>
+      <p>Hello there, I am Charles.</p>
+<p>I am currently a PhD researcher at the <strong>sNOm Laboratory, Politecnico di Milano</strong>, where my work primarily focuses on nonlinear optics. Prior to this, I completed my Master&rsquo;s degree in Photonics Engineering at the <strong>Photonics Research Group (PRG)</strong> of Ghent University – IMEC, Belgium.</p>
 <p>Welcome to my digital archive. This space serves as a personal repository for my academic research, collections, and reflections.</p>
 <p>The title of this site, <strong>S.S.S.</strong>, stands for <em>&ldquo;Study Something Shining&rdquo;</em>, a straightforward yet romantic tribute to the field of photonics to which I am dedicated. I have a profound appreciation for this &ldquo;shiny&rdquo; science and the light it sheds on the physical world.</p>
 <hr>
 <h3 id="colophon">Colophon</h3>
 <p>Proudly powered by <a href="https://gohugo.io/">Hugo</a> and hosted on <a href="https://pages.github.com/">GitHub Pages</a>.</p>
-<p>The visual framework of this website is driven by <strong>MetroTypo</strong>, a custom theme I designed independently.</p>
-<p>It draws inspiration from the <em>Panorama</em> and <em>Pivot</em> paradigms of the classic Metro UI, merged with the grid-based precision of Swiss Design.  By incorporating the physical surfaces and realistic spatial shadows of Material Design, it crafts a tactile, highly refined reading experience.</p>
-<p>Stripping away all redundant visual noise, this architecture returns the absolute focus to the physics and the content itself.</p>
+<p>The visual framework of this website is <strong>MetroTypo</strong>, a custom Hugo theme I designed and developed.</p>
+<p>For this specific academic space, I crafted a tailored aesthetic language <strong>Lucid Void</strong>:  within the first implementation of <strong>Lucentia</strong> (my overarching personal design ethos).</p>
+<p><strong>Lucid Void</strong> synthesizes the expansive, spatial navigation paradigms of the classic Metro UI with the tactile depth and realistic shadows of Material Design. The foundation I built is intentionally restrained: a strictly monochromatic &ldquo;void&rdquo; of black, white, and gray. This absolute quietness allows the lucid Teal and Autumn Orange accents to leap out, injecting life and my personal identity into the site.</p>
+<p>By stripping away redundant visual noise, this architecture returns the absolute focus to the  content itself.</p>
 
     </div>
   </article>
@@ -199,12 +200,12 @@ The title of this site, S.S.S., stands for &ldquo;Study Something Shining&rdquo;
         
         
         <div class="pivot-section">
-          <h3 class="pivot-header">Quick Links</h3>
+          <h3 class="pivot-header">Elsewhere</h3>
           <ul class="metro-list">
             
-            <li><a href="https://akiday.com/en/">Bio</a></li>
+            <li><a href="https://akiday.com/en/">AkiDAY.</a></li>
             
-            <li><a href="https://blog.akiday.com">Blog in Chinese</a></li>
+            <li><a href="https://blog.akiday.com">Life Journal (ZH)</a></li>
             
           </ul>
         </div>
@@ -229,11 +230,19 @@ The title of this site, S.S.S., stands for &ldquo;Study Something Shining&rdquo;
             
             
               
-                <li><a href="https://www.linkedin.com/in/zhi-fan-dai-958624248/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></li>
+                <li>
+                  <a class="secure-social" data-sl="aHR0cHM6Ly93d3cubGlua2VkaW4uY29tL2luL3poaS1mYW4tZGFpLTk1ODYyNDI0OC8=" style="cursor: pointer;" title="Connect on LinkedIn">
+                    LinkedIn ↗
+                  </a>
+                </li>
               
             
               
-                <li><a href="https://github.com/AstroNomen" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li>
+                <li>
+                  <a class="secure-social" data-sl="aHR0cHM6Ly9naXRodWIuY29tL0FzdHJvTm9tZW4=" style="cursor: pointer;" title="Connect on GitHub">
+                    GitHub ↗
+                  </a>
+                </li>
               
             
               
@@ -277,6 +286,24 @@ The title of this site, S.S.S., stands for &ldquo;Study Something Shining&rdquo;
         e.preventDefault(); 
         const emailAddress = this.getAttribute('data-contact');
         window.location.href = 'mailto:' + emailAddress; 
+      });
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const secureLinks = document.querySelectorAll('.secure-social');
+    secureLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault(); 
+        
+        const encodedUrl = this.getAttribute('data-sl');
+        if (encodedUrl) {
+          const decodedUrl = atob(encodedUrl);
+          
+          window.open(decodedUrl, '_blank', 'noopener,noreferrer');
+        }
       });
     });
   });

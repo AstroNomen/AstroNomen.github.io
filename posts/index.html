@@ -193,12 +193,12 @@
         
         
         <div class="pivot-section">
-          <h3 class="pivot-header">Quick Links</h3>
+          <h3 class="pivot-header">Elsewhere</h3>
           <ul class="metro-list">
             
-            <li><a href="https://akiday.com/en/">Bio</a></li>
+            <li><a href="https://akiday.com/en/">AkiDAY.</a></li>
             
-            <li><a href="https://blog.akiday.com">Blog in Chinese</a></li>
+            <li><a href="https://blog.akiday.com">Life Journal (ZH)</a></li>
             
           </ul>
         </div>
@@ -223,11 +223,19 @@
             
             
               
-                <li><a href="https://www.linkedin.com/in/zhi-fan-dai-958624248/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></li>
+                <li>
+                  <a class="secure-social" data-sl="aHR0cHM6Ly93d3cubGlua2VkaW4uY29tL2luL3poaS1mYW4tZGFpLTk1ODYyNDI0OC8=" style="cursor: pointer;" title="Connect on LinkedIn">
+                    LinkedIn ↗
+                  </a>
+                </li>
               
             
               
-                <li><a href="https://github.com/AstroNomen" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li>
+                <li>
+                  <a class="secure-social" data-sl="aHR0cHM6Ly9naXRodWIuY29tL0FzdHJvTm9tZW4=" style="cursor: pointer;" title="Connect on GitHub">
+                    GitHub ↗
+                  </a>
+                </li>
               
             
               
@@ -271,6 +279,24 @@
         e.preventDefault(); 
         const emailAddress = this.getAttribute('data-contact');
         window.location.href = 'mailto:' + emailAddress; 
+      });
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const secureLinks = document.querySelectorAll('.secure-social');
+    secureLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault(); 
+        
+        const encodedUrl = this.getAttribute('data-sl');
+        if (encodedUrl) {
+          const decodedUrl = atob(encodedUrl);
+          
+          window.open(decodedUrl, '_blank', 'noopener,noreferrer');
+        }
       });
     });
   });
