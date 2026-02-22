@@ -54,12 +54,24 @@
   color: #333;
 }
 
+/* 🖥️ 桌面端：完美的矩形（两端对齐） */
 .single-content p {
   margin-bottom: 1.5em;
-  /* 新增：解决右侧参差不齐的问题 */
-  text-align: justify; /* 左右两端对齐 */
-  -webkit-hyphens: auto; /* Safari 支持 */
-  hyphens: auto; /* 允许浏览器在长单词处自动添加连字符换行 */
+  text-align: justify; 
+  -webkit-hyphens: auto; 
+  -ms-hyphens: auto;
+  hyphens: auto; 
+}
+
+/* 📱 移动端：均匀的字间距 + 轻微参差的呼吸感右边缘 */
+@media (max-width: 768px) {
+  .single-content p,
+  .post-entry p {
+    text-align: left !important; /* 强制左对齐，消灭恶心的白洞 */
+    
+    /* 强化连字符断词，让右边缘尽可能整齐，但绝不拉扯单词内部间距 */
+    overflow-wrap: break-word;
+  }
 }
 
 /* =========================================
