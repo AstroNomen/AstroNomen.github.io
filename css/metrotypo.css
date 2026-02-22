@@ -369,11 +369,15 @@
 .single-sidebar::-webkit-scrollbar { display: none; }
 
 /* 智能隐藏状态的 Class（由 JS 控制） */
-.single-sidebar.fade-out {
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-20px); /* 消失时微微向上浮动，更有高级感 */
-  pointer-events: none; /* 消失后鼠标无法点击，防止遮挡底层文字 */
+/* 🎯 仅在桌面端(>1350px) 目录常驻时，才允许 Footer 触发淡出效果。
+   防止污染移动端和平板端的飞入动画。 */
+@media (min-width: 1351px) {
+  .single-sidebar.fade-out {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px); /* 消失时微微向上浮动，更有高级感 */
+    pointer-events: none; /* 消失后鼠标无法点击，防止遮挡底层文字 */
+  }
 }
 
 /* =========================================
@@ -412,16 +416,18 @@
     /* 🎯 极其硬核的 Metro 左侧压边线，代替原来的顶部压边线 */
     border-top: none;
     border-left: 4px solid var(--primary-color);
-    box-shadow: -10px 0 30px rgba(0,0,0,0.1); /* 左侧阴影 */
+    /* 1. 默认状态下，把阴影关掉，不让影子漏进屏幕 */
+    box-shadow: none; 
     
-    /* 默认藏在屏幕右侧外面 */
     transform: translateX(100%);
-    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), 
+                box-shadow 0.4s ease; /* 让阴影也平滑过渡 */
   }
   
-  /* 当点击工具栏按钮，JS 加上 sheet-open 时，从右侧滑入 */
   .single-sidebar.sheet-open {
     transform: translateX(0);
+    /* 2. 面板滑出时，再把左侧阴影打开 */
+    box-shadow: -10px 0 30px rgba(0,0,0,0.1);
   }
 }
 
