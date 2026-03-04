@@ -2,9 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://sss.akiday.com/post/astrocomb/</loc>
-    <lastmod>2023-12-24T16:00:00+01:00</lastmod>
-  </url><url>
     <loc>https://sss.akiday.com/categories/</loc>
     <lastmod>2024-06-07T12:00:00+01:00</lastmod>
   </url><url>
@@ -39,6 +36,9 @@
     <lastmod>2023-12-24T16:00:00+01:00</lastmod>
   </url><url>
     <loc>https://sss.akiday.com/tags/photonics/</loc>
+    <lastmod>2023-12-24T16:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://sss.akiday.com/post/astrocomb/</loc>
     <lastmod>2023-12-24T16:00:00+01:00</lastmod>
   </url><url>
     <loc>https://sss.akiday.com/tags/lumerical/</loc>

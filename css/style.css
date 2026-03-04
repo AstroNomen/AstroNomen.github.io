@@ -347,34 +347,21 @@ a {
 }
 
 .hero-title {
-  /* 🎯 1. 绝对安全的保底：如果手写体加载失败，直接跌落回你最爱的顶刊衬线栈 */
-  font-family: 'Bonheur Royale', Georgia, "Hoefler Text", "Palatino Linotype", "Book Antiqua", Palatino, serif;
-  font-size: 4.8rem; /* 稍微再放大一点，压住全场 */
-  
-  /* 🎯 2. 找回试镜的粗细：强行开启浏览器的“伪加粗”算法 */
+  font-family: Georgia, "Hoefler Text", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-size: 4.2rem; /* 稍微缩小一点，适合普通字体 */
   font-weight: 600; 
-  
   margin: 0 0 10px 0;
-  
-  /* 🎯 3. 注入 Alex Brush 的舒展感：大幅拉开字母间距 */
-  letter-spacing: 6px; 
+  letter-spacing: 1px; /* 默认只给一点点呼吸感 */
   color: #111111;
 }
 
 .hero-slogan {
-  /* 🎯 同样的学术衬线保底 */
-  font-family: 'Bonheur Royale', Georgia, "Hoefler Text", "Palatino Linotype", "Book Antiqua", Palatino, serif;
-  font-size: 2.2rem; 
-  
-  /* Slogan 也可以稍微加粗，与 Title 呼应。如果觉得太粗可以改回 400 */
+  font-family: Georgia, "Hoefler Text", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-size: 1.8rem; 
   font-weight: 400; 
-  font-style: normal;
   color: #666666;
   margin: 0;
-  
-  /* 🎯 4. 舒展魔法 2.0：稍微拉开字母，并加大“单词与单词”之间的鸿沟 */
-  letter-spacing: 2px; 
-  word-spacing: 4px; 
+  letter-spacing: 1px; 
 }
 
 /* =========================================

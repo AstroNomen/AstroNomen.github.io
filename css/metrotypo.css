@@ -547,46 +547,100 @@
   transform: scale(1);
 }
 
-
-
 /* =========================================
-   移动端目录抽屉 (Bottom Sheet) & 遮罩层
+   💻 Lucid Void 极简代码块 (绝对防御版)
+   针对 Hugo Chroma Table 进行极其暴力的样式重置
    ========================================= */
-.toc-backdrop {
-  position: fixed;
-  top: 0; left: 0; width: 100vw; height: 100vh;
-  background: rgba(0, 0, 0, 0.5); /* 半透明黑遮罩 */
-  z-index: 998;
-  opacity: 0; pointer-events: none;
-  transition: opacity 0.3s ease;
-}
-.toc-backdrop.show { opacity: 1; pointer-events: auto; }
 
-@media (max-width: 1000px) {
-  /* 重构原来的单页侧边栏，变成抽屉 */
-  .single-sidebar {
-    display: block !important; /* 取消原来的隐藏 */
-    position: fixed;
-    top: auto; 
-    bottom: 0; 
-    left: 0;
-    width: 100vw;
-    max-height: 65vh; /* 最多占据屏幕 65% */
-    background: #ffffff;
-    z-index: 999;
-    padding: 30px 20px 40px; /* 内部呼吸感 */
-    
-    /* Metro 风格的强力顶部压边线，绝不要圆角！ */
-    border-top: 4px solid var(--primary-color);
-    box-shadow: 0 -10px 30px rgba(0,0,0,0.1);
-    
-    /* 默认藏在屏幕下方 */
-    transform: translateY(100%);
-    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-  }
-  
-  /* 触发弹出的类 */
-  .single-sidebar.sheet-open {
-    transform: translateY(0);
-  }
+.highlight {
+  background-color: #f6f8fa; /* 极简灰底 */
+  border: 1px solid #e1e4e8;
+  border-radius: 6px; 
+  margin: 1.8em 0;
+  overflow: hidden; 
+  /* 🎯 强力切断文字颜色污染 */
+  color: #24292e !important; 
+}
+
+/* 🎯 强力接管所有后代元素的字体，确保等宽 */
+.highlight,
+.highlight pre,
+.highlight code,
+.highlight span,
+.highlight table,
+.highlight tr,
+.highlight td {
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace !important;
+  font-size: 0.85rem !important;
+  line-height: 1.6 !important;
+}
+
+/* --- 🎯 绝对重置表格：阻断你之前写的全局 Table 样式 --- */
+.highlight table {
+  border: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  border-collapse: collapse !important;
+}
+
+.highlight tr, 
+.highlight td {
+  border: none !important;
+  background: transparent !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* ================================
+   场景 A：无行号的普通状态
+   ================================ */
+.highlight > pre,
+.highlight > div > pre { /* 兼容部分 Hugo 版本多包一层 div 的情况 */
+  padding: 16px 20px !important;
+  margin: 0 !important;
+  overflow-x: auto !important;
+}
+
+/* ================================
+   场景 B：有行号的 Table 状态
+   ================================ */
+
+/* 左侧：行号列 (强制锁死宽度、背景色、文字颜色) */
+.highlight td:first-child {
+  width: 45px !important;
+  min-width: 45px !important;
+  background-color: #eff3f6 !important;
+  border-right: 1px solid #e1e4e8 !important;
+  vertical-align: top !important; /* 确保长代码时行号在顶部，不居中 */
+  user-select: none !important; /* 防止拖拽复制时把行号带上 */
+}
+
+/* 行号内部的 pre：找回上下对齐感，切断橘色污染 */
+.highlight td:first-child pre {
+  padding: 16px 10px 16px 0 !important;
+  margin: 0 !important;
+  text-align: right !important;
+  color: #babbbd !important; /* 强制行号为浅灰色 */
+}
+
+/* 右侧：代码列 */
+.highlight td:last-child {
+  vertical-align: top !important;
+  width: calc(100% - 45px) !important;
+}
+
+/* 代码内部的 pre：允许横向滚动，确保安全内边距 */
+.highlight td:last-child pre {
+  padding: 16px 20px !important;
+  margin: 0 !important;
+  color: #24292e !important; /* 兜底基础代码颜色 */
+  overflow-x: auto !important;
+  word-break: normal !important;
+  white-space: pre !important;
+}
+
+/* 去除 Chroma 自带的底层高亮背景干扰 */
+.highlight .chroma {
+  background-color: transparent !important;
 }
