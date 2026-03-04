@@ -1,0 +1,18 @@
+/* =========================================
+   S.S.S. 个人私有样式
+   ========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Bonheur+Royale&text=S.tudyomnhige%20&display=swap');
+
+.home-hero .hero-title {
+  font-family: 'Bonheur Royale', Georgia, "Hoefler Text", "Palatino Linotype", "Book Antiqua", Palatino, serif !important;
+  font-size: 4.8rem !important;
+  letter-spacing: 6px !important; /* 你的魔法间距只在这里生效 */
+}
+
+.home-hero .hero-slogan {
+  font-family: 'Bonheur Royale', Georgia, "Hoefler Text", "Palatino Linotype", "Book Antiqua", Palatino, serif !important;
+  font-size: 2.2rem !important;
+  letter-spacing: 2px !important;
+  word-spacing: 4px !important;
+}
