@@ -592,6 +592,15 @@
   margin: 0 !important;
 }
 
+/* 🎯 强力切断行内代码对代码块内部标签的样式背景、颜色污染 */
+.highlight code {
+  color: inherit !important;
+  background-color: transparent !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  word-break: normal !important;
+}
+
 /* ================================
    场景 A：无行号的普通状态
    ================================ */

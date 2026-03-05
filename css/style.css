@@ -1,6 +1,9 @@
 /* 开启全局平滑滚动，让页面内的跳转像丝般顺滑 */
 html {
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-variant-ligatures: none;
 }
 
 /* =========================================
@@ -12,22 +15,17 @@ html {
 .search-container,
 .mobile-nav-panel,
 .metro-tools-dock,
-.single-sidebar,    /* 目录侧边栏/抽屉 */
+.single-sidebar,
 input, button {
   /* 涵盖 macOS, iOS, Windows, Android, Linux 的顶级原生字体 */
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  
-  /* 优化英文字体显示：开启抗锯齿，关闭可能导致 UI 错位的连字 */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-variant-ligatures: none;
 }
 
 
 /* 1. 全局排版：纯正的衬线字体，Metro 留白风格 */
 body {
   /* 优先使用 Georgia 等英文衬线体，强制触发英文基线省略号 (...) */
-  font-family: Georgia, "Hoefler Text", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-family: Georgia, "Hoefler Text", "Palatino Linotype", "Book Antiqua", Palatino, "Noto Serif SC", "Source Han Serif SC", "Source Han Serif CN", "Songti SC", "STSong", serif;
   margin: 0;
   padding: 0;
   background-color: #fafafa; /* 纯白背景 */
