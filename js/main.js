@@ -137,6 +137,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const allTocLinks = document.querySelectorAll('#TableOfContents a');
 
   if (tocToggleBtn && tocSidebar && tocBackdrop) {
+    const closeTocBtn = document.getElementById('close-toc-btn');
+    if (closeTocBtn) {
+      closeTocBtn.addEventListener('click', () => {
+        tocSidebar.classList.remove('sheet-open');
+        tocBackdrop.classList.remove('show');
+        document.documentElement.style.overflow = '';
+      });
+    }
+
     // 点击按钮，弹出抽屉和遮罩
     tocToggleBtn.addEventListener('click', () => {
       tocSidebar.classList.add('sheet-open');

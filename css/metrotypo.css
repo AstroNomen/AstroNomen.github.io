@@ -388,6 +388,11 @@
    [阶段 1] 1351px - 1440px: 右侧弹性贴边
    空间足够，放弃居中，死死贴住屏幕右边缘
    ----------------------------------------- */
+
+.close-toc-btn {
+  display: none;
+}
+
 @media (max-width: 1440px) and (min-width: 1351px) {
   .single-sidebar {
     left: auto !important;
@@ -442,7 +447,8 @@
     top: auto; 
     bottom: 0; 
     left: 0;
-    width: 100vw;
+    width: 100%; /* 防止 100vw + padding 导致宽度溢出右侧屏幕边缘 */
+    box-sizing: border-box; /* 确保 padding 包含在 width 之内 */
     max-height: 65vh; 
     background: #ffffff;
     z-index: 999;
@@ -460,7 +466,25 @@
   .single-sidebar.sheet-open {
     transform: translateY(0);
   }
+
+  .close-toc-btn {
+    display: block;
+    position: absolute;
+    top: 26px; /* 同步高度 */
+    right: 20px;
+    background: none;
+    border: none;
+    color: #999;
+    padding: 4px;
+  }
+  
+  .close-toc-btn svg {
+    width: 20px;
+    height: 20px;
+    display: block;
+  }
 }
+
 
 .toc-title {
   display: block;
