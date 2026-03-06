@@ -431,6 +431,37 @@
   }
 }
 
+/* -----------------------------------------
+   [阶段 3] 1000px 以下: 移动端底部抽屉
+   (保留你原本极其完美的手机端代码)
+   ----------------------------------------- */
+@media (max-width: 1000px) {
+  .single-sidebar {
+    display: block !important;
+    position: fixed;
+    top: auto; 
+    bottom: 0; 
+    left: 0;
+    width: 100vw;
+    max-height: 65vh; 
+    background: #ffffff;
+    z-index: 999;
+    padding: 30px 20px 40px;
+    
+    border-left: none; /* 覆盖掉中等屏幕的边线 */
+    border-top: 4px solid var(--primary-color);
+    box-shadow: 0 -10px 30px rgba(0,0,0,0.1);
+    
+    /* 默认藏在屏幕下方 */
+    transform: translateY(100%);
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+  
+  .single-sidebar.sheet-open {
+    transform: translateY(0);
+  }
+}
+
 .toc-title {
   display: block;
   font-size: 0.85rem;

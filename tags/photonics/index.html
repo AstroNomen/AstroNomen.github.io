@@ -329,7 +329,7 @@
 
     <div class="footer-copyright-zone">
       <div class="copyright-info">
-        <span>© 2026 S.S.S.</span>
+        <span>© 2026 S.S.S.</span><span class="meta-divider">·</span>
         <span>All rights reserved</span>
         
         <span class="meta-divider">·</span>
@@ -352,65 +352,6 @@
 
   </div>
 </footer>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const emailLinks = document.querySelectorAll('.protected-email');
-    emailLinks.forEach(function(link) {
-      link.addEventListener('click', function(e) {
-        e.preventDefault(); 
-        const emailAddress = this.getAttribute('data-contact');
-        window.location.href = 'mailto:' + emailAddress; 
-      });
-    });
-  });
-</script>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const secureLinks = document.querySelectorAll('.secure-social');
-    secureLinks.forEach(link => {
-      link.addEventListener('click', function(e) {
-        e.preventDefault(); 
-        
-        const encodedUrl = this.getAttribute('data-sl');
-        if (encodedUrl) {
-          const decodedUrl = atob(encodedUrl);
-          
-          window.open(decodedUrl, '_blank', 'noopener,noreferrer');
-        }
-      });
-    });
-  });
-</script>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    
-    const toc = document.querySelector('.single-sidebar');
-    const footer = document.querySelector('.site-footer');
-
-    
-    if(toc && footer) {
-      
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          
-          if(entry.isIntersecting) {
-            toc.classList.add('fade-out'); 
-          } else {
-            toc.classList.remove('fade-out'); 
-          }
-        });
-      }, {
-        root: null,
-        threshold: 0.1 
-      });
-
-      observer.observe(footer);
-    }
-  });
-</script>
 
     <script src="/js/main.js"></script>
 
