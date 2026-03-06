@@ -1,4 +1,3 @@
-/* 开启全局平滑滚动，让页面内的跳转像丝般顺滑 */
 html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
@@ -6,10 +5,6 @@ html {
   font-variant-ligatures: none;
 }
 
-/* =========================================
-   全局 UI 组件字体 (Metro Sans-serif 基因)
-   让网站的“框架”极具现代感，而“正文”保留学术感
-   ========================================= */
 .site-header,
 .site-footer,
 .search-container,
@@ -17,21 +12,17 @@ html {
 .metro-tools-dock,
 .single-sidebar,
 input, button {
-  /* 涵盖 macOS, iOS, Windows, Android, Linux 的顶级原生字体 */
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-
-/* 1. 全局排版：纯正的衬线字体，Metro 留白风格 */
 body {
-  /* 优先使用 Georgia 等英文衬线体，强制触发英文基线省略号 (...) */
   font-family: Georgia, "Hoefler Text", "Palatino Linotype", "Book Antiqua", Palatino, "Noto Serif SC", "Source Han Serif SC", "Source Han Serif CN", "Songti SC", "STSong", serif;
   margin: 0;
   padding: 0;
-  background-color: #fafafa; /* 纯白背景 */
-  color: #222222; /* 深灰近黑，适合长时间阅读 */
+  background-color: #fafafa;
+  color: #222222;
   line-height: 1.8;
-  -webkit-font-smoothing: antialiased; /* 让文字渲染更清晰 */
+  -webkit-font-smoothing: antialiased;
 }
 
 a {
@@ -39,32 +30,26 @@ a {
   color: inherit;
 }
 
-/* 2. 单栏布局的主容器限制 */
-/* 修改全局主容器，放宽以容纳可能的侧边栏 */
 .site-main {
-  max-width: 760px; /* 极简的单栏宽度，你可以根据喜好微调 (700-800px 都是极佳的阅读宽度)*/
-  margin: 120px auto 60px; /* 顶部留出空间给 Header */
-  padding: 0 20px; /* 适配移动端，两边留白 */
+  max-width: 760px;
+  margin: 120px auto 60px;
+  padding: 0 20px;
 }
 
-/* 3. 顶部 Header 基础架构 */
 .site-header {
   position: fixed;
   top: 0;
   width: 100%;
   background-color: #fafafa; 
   z-index: 1000;
-  /* 恢复 Header 整体的丝滑滑动动画 */
   transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), border-bottom 0.2s ease;
   border-bottom: 1px solid transparent; 
 }
 
-/* 页面滚动时的细边框 */
 .site-header.scrolled {
   border-bottom: 1px solid #eaeaea; 
 }
 
-/* 呼吸感：向上滑动隐藏 */
 .site-header.header-hidden {
   transform: translateY(-100%);
 }
@@ -93,7 +78,7 @@ a {
   color: var(--primary-color, #26a69a) !important; 
 }
 
-/* 4. Metro 菜单区 */
+/* ================= 菜单 ================= */
 .nav-menu {
   display: flex;
   gap: 10px; 
@@ -103,58 +88,46 @@ a {
 .nav-link {
   font-size: 0.95rem;
   font-weight: 500;
-  color: #777; /* 默认更安静的灰色 */
+  color: #777;
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 1px;
   padding: 8px 16px; 
   background-color: transparent;
-  
-  /* 增加对 transform 和 box-shadow 的过渡，时间稍微延长到 0.2s 增加悬停的物理重量感 */
   transition: background-color 0.2s ease, color 0.2s ease, text-shadow 0.2s ease, transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* 🎯 Active 状态：安静的指示（只加粗、变黑，无背景） */
 .nav-link.active {
   color: #111;
-  /* 使用 0.6px 阴影模拟无抖动加粗，非常精致 */
   text-shadow: 0 0 0.6px #111, 0 0 0.6px #111; 
 }
 
-/* 🎯 Hover 状态：Metro 色块 + Material 悬浮升起 + 文字加粗反白 */
 .nav-link:hover {
   color: #ffffff;
-  background-color: #1a1a1a; /* Metro 锐利黑块 */
-  
-  /* 文字变白并模拟加粗凸显 */
+  background-color: #1a1a1a;
   text-shadow: 0 0 0.6px #ffffff, 0 0 0.6px #ffffff; 
-  
-  /* Material 物理反馈：上浮 2px，并投下优雅的弥散阴影 */
   transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); 
 }
 
-/* ================= 搜索组件容器 ================= */
+/* ================= 搜索 ================= */
 .search-container {
-  position: relative; /* 为输入框的绝对定位提供基准 */
+  position: relative;
   display: flex;
   align-items: center;
-  height: 36px; /* 🎯 核心1：强制锁死高度，确保图标和输入框绝对等高 */
+  height: 36px;
 }
 
-/* 🎯 输入框：绝对定位向左展开，绝不推挤菜单！ */
 .search-input {
   position: absolute;
-  right: 36px; /* 紧贴在按钮的左边缘 */
+  right: 36px;
   height: 100%;
   width: 0;
   opacity: 0;
   padding: 0;
-  
-  /* 🎯 核心2：完美的无缝拼接边框 */
   border: 2px solid transparent;
-  border-right: none; /* 去掉右边框，准备与按钮融合 */
-  box-sizing: border-box; /* 让边框计算在 36px 高度内 */
+  border-right: none;
+  box-sizing: border-box;
   
   background-color: transparent;
   font-family: inherit;
@@ -163,23 +136,20 @@ a {
   font-weight: 500;
   outline: none;
   
-  /* 丝滑展开动画 */
   transition: width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), 
               opacity 0.2s ease,
               padding 0.3s ease,
               border-color 0.3s ease;
 }
 
-/* 输入框展开状态 */
 .search-container.is-active .search-input {
-  width: 220px; /* 展开的宽度，你可以根据留白自由调整 */
+  width: 220px;
   opacity: 1;
   padding: 0 12px;
   border-color: #1a1a1a; 
   background-color: #ffffff; 
 }
 
-/* ================= 按钮与形变动画 ================= */
 .search-toggle-btn {
   height: 36px;
   width: 36px;
@@ -189,8 +159,6 @@ a {
   border: 2px solid transparent; 
   cursor: pointer;
   color: #555;
-  
-  /* 必须设置为 relative，为了让内部的两个图标绝对居中重叠 */
   position: relative; 
   display: flex;
   align-items: center;
@@ -199,24 +167,20 @@ a {
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* 让两个图标绝对定位，完美重叠在按钮正中心 */
 .search-toggle-btn svg {
   position: absolute;
-  /* 统一加入旋转和缩放的缓动动画 */
   transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.2s ease;
 }
 
-/* 🎯 默认状态：放大镜显示，X 缩小并旋转隐藏 */
 .icon-search {
   opacity: 1;
   transform: rotate(0deg) scale(1);
 }
 .icon-close {
   opacity: 0;
-  transform: rotate(-90deg) scale(0.5); /* 初始状态是逆时针转了90度且缩小的 */
+  transform: rotate(-90deg) scale(0.5);
 }
 
-/* 🎯 展开状态：按钮变成 Metro 黑块，放大镜消失，X 旋转出现！ */
 .search-container.is-active .search-toggle-btn {
   background-color: #1a1a1a;
   border-color: #1a1a1a;
@@ -225,19 +189,17 @@ a {
 
 .search-container.is-active .icon-search {
   opacity: 0;
-  transform: rotate(90deg) scale(0.5); /* 放大镜顺时针旋转缩小消失 */
+  transform: rotate(90deg) scale(0.5); 
 }
 .search-container.is-active .icon-close {
   opacity: 1;
-  transform: rotate(0deg) scale(1); /* X 顺时针旋转放大，完美入场 */
+  transform: rotate(0deg) scale(1);
 }
 
-/* 未展开时的 Hover 提示 */
 .search-container:not(.is-active) .search-toggle-btn:hover {
   color: #111;
 }
 
-/* 移动端保护 */
 @media (max-width: 768px) {
   .header-inner {
     padding: 15px 20px;
@@ -247,7 +209,7 @@ a {
   }
 }
 
-/* ================= 搜索下拉结果面板 (光影重构) ================= */
+/* 搜索下拉结果面板 */
 .search-results-panel {
   display: none;
   position: absolute;
@@ -257,22 +219,15 @@ a {
   max-width: 90vw; 
   margin-top: 12px;
   background: #ffffff;
-  
-  /* 保留 Metro 的极简直角和硬朗边框 */
   border: 2px solid #1a1a1a;
-  
-  /* 🎯 换成 Material 的无方向弥散悬浮阴影，极其高级 */
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12); 
-  
   z-index: 1001;
   max-height: 500px; 
   overflow-y: auto;
 }
 
-/* 隐藏滚动条 */
 .search-results-panel::-webkit-scrollbar { display: none; }
 
-/* ================= 搜索结果列表项 ================= */
 .search-result-item {
   display: flex;
   justify-content: space-between;
@@ -280,8 +235,6 @@ a {
   padding: 16px;
   text-decoration: none;
   border-bottom: 1px solid #f0f0f0;
-  
-  /* 必须加 relative，为了悬浮时能提升 z-index 盖住上下的边框 */
   position: relative; 
   transition: transform 0.25s cubic-bezier(0.25, 0.8, 0.25, 1), 
               background-color 0.25s ease, 
@@ -290,20 +243,14 @@ a {
   gap: 20px;
 }
 
-/* 🎯 列表项 Hover：内部微悬浮感 (Material 风格) */
 .search-result-item:hover {
-  background-color: #ffffff; /* 保持纯白底色 */
-  transform: translateY(-2px); /* 微微浮起 */
-  
-  /* 极其轻柔的内部弥散阴影，绝不使用左右偏移 */
+  background-color: #ffffff;
+  transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06); 
-  z-index: 2; /* 浮起时层级变高 */
-  
-  /* 悬浮时去掉底边框，让它看起来更像一张独立的卡片 */
+  z-index: 2;
   border-bottom-color: transparent; 
 }
 
-/* 标题样式保留 */
 .search-title {
   font-size: 1rem;
   font-weight: 600;
@@ -311,13 +258,13 @@ a {
   line-height: 1.5;
   display: -webkit-box;
   -webkit-line-clamp: 2; 
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   flex: 1;
-  transition: color 0.2s ease; /* 加入颜色过渡 */
+  transition: color 0.2s ease;
 }
 
-/* 🎯 标题 Hover 变色：调用你的主题色 */
 .search-result-item:hover .search-title {
   color: var(--primary-color, var(--accent-color, #F26522)); 
 }
@@ -325,8 +272,8 @@ a {
 .search-date {
   font-size: 0.8rem;
   color: #888;
-  flex-shrink: 0; /* 防止日期被长标题挤压换行 */
-  margin-top: 4px; /* 稍微往下压一点，和第一行文字的视觉中心对齐 */
+  flex-shrink: 0;
+  margin-top: 4px;
 }
 
 .search-empty {
@@ -337,7 +284,7 @@ a {
 }
 
 /* =========================================
-   首页顶部 Hero 区域 (Title & Slogan)
+   首页顶部 Hero
    ========================================= */
 .home-hero {
   padding: 60px 0 40px 0;
@@ -345,16 +292,14 @@ a {
 }
 
 .hero-title {
-  font-family: Georgia, "Hoefler Text", "Palatino Linotype", "Book Antiqua", Palatino, serif;
-  font-size: 4.2rem; /* 稍微缩小一点，适合普通字体 */
+  font-size: 4.2rem; 
   font-weight: 600; 
   margin: 0 0 10px 0;
-  letter-spacing: 1px; /* 默认只给一点点呼吸感 */
+  letter-spacing: 1px;
   color: #111111;
 }
 
 .hero-slogan {
-  font-family: Georgia, "Hoefler Text", "Palatino Linotype", "Book Antiqua", Palatino, serif;
   font-size: 1.8rem; 
   font-weight: 400; 
   color: #666666;
@@ -363,55 +308,45 @@ a {
 }
 
 /* =========================================
-   主页文章列表 (Post List) & Material Paper
+   主页文章列表
    ========================================= */
 
 .post-list {
   display: flex;
   flex-direction: column;
-  /* 移除 gap，因为我们将使用 padding 来控制间距 */
 }
 
-/* 1. 核心魔法：突破父容器限制，撑满屏幕宽度的文章区块 */
 .post-entry {
   width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
-  box-sizing: border-box; /* 确保 padding 不会增加整体宽度 */
-  
-  /* 移动端默认的内边距 */
+  box-sizing: border-box;
   padding: 40px 20px; 
-  background-color: transparent; /* 默认透明，与你的 #fafafa 融为一体 */
+  background-color: transparent;
   
   transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), 
               box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
               background-color 0.3s ease;
 }
 
-/* 屏幕大于 800px 时，通过计算将文字精确地推回中间的 760px 区域内 */
 @media (min-width: 800px) {
   .post-entry {
-    padding-left: calc(50vw - 380px); /* 380px 是 760px 的一半 */
+    padding-left: calc(50vw - 380px);
     padding-right: calc(50vw - 380px);
   }
 }
 
-/* 全宽悬浮状态 */
 .post-entry:hover {
-  background-color: #ffffff; /* 悬浮时变成纯白纸带 */
+  background-color: #ffffff;
   transform: translateY(-2px);
   z-index: 10;
   position: relative;
-  /* 因为宽度是 100vw，左右的阴影被挤到了屏幕外面！只剩下完美的上下阴影 */
   box-shadow: 0 15px 30px rgba(0,0,0,0.04), 0 -10px 20px rgba(0,0,0,0.02);
 }
 
-/* 保持隐藏原生 a 标签的样式干扰 */
 .post-link-main {
   display: block;
 }
-
-/* --- 2. 标题与副标题层级 --- */
 .entry-title {
   font-size: 1.8rem;
   font-weight: 700;
@@ -425,9 +360,8 @@ a {
   color: var(--primary-color); 
 }
 
-/* 需求3：副标题字号缩小 */
 .entry-subtitle {
-  font-size: 1.05rem; /* 从 1.15rem 降下来 */
+  font-size: 1.05rem;
   font-weight: 400;
   color: #666666;
   margin: 0 0 12px 0;
@@ -441,33 +375,32 @@ a {
   margin-bottom: 20px;
 }
 
-/* --- 3. 学术长摘要优化与省略号修复 --- */
 .entry-description {
   font-size: 0.95rem; 
   font-style: italic;
   color: #555555; 
   margin: 0 0 25px 0;
   line-height: 1.8; 
-  letter-spacing: 0.2px; /* 稍微增加一点字间距，提升呼吸感 */
-  
-  /* 多行截断 */
+  letter-spacing: 0.2px;
   display: -webkit-box;
   -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-/* 🖥️ 桌面端：释放文章摘要，取消行数限制 */
+/* 桌面端 */
 @media (min-width: 769px) {
   .entry-description {
-    display: block !important; /* 覆盖原来的 -webkit-box */
-    -webkit-line-clamp: unset !important; /* 解除 3 行封印 */
+    display: block !important;
+    -webkit-line-clamp: unset !important;
+    line-clamp: unset !important;
     overflow: visible !important;
   }
 }
 
-/* --- 基础状态：硬朗的矩形标签 --- */
+/* ================= 标签 ================= */
 a.tag {
   display: inline-block;
   margin: 0 8px 8px 0;
@@ -479,40 +412,29 @@ a.tag {
   border-radius: 0; 
   letter-spacing: 0.5px;
   text-decoration: none; 
-  
-  /* 🎯 极其重要：动画必须挂载在基础状态上！这样进出都有平滑过渡 */
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* 🎯 层次 1：卡片悬浮时，亮起极其干净的浅底色 */
 .post-entry:hover a.tag {
   color: var(--accent-color, #e65100); 
   background-color: var(--accent-color-light, #fff3e0);
 }
 
-/* 🎯 层次 2：精准悬停 Tag，物理起跳 + 伪加粗防抖！ */
 .post-entry a.tag:hover,
 .single-header a.tag:hover {
   color: var(--accent-color, #e65100);
-  /* 这里我们可以稍微用一点 filter 滤镜让它变深一丢丢作为按下反馈，或者直接保持原色，靠阴影和位移提供反馈 */
   background-color: var(--accent-color-light, #fff3e0);
   filter: brightness(0.98);
-  
-  /* 🎯 Faux-bold 伪加粗魔法：不改变元素宽度，完美消灭闪烁和抖动！ */
   text-shadow: 0 0 0.5px var(--accent-color, #e65100);
-  
-  /* 物理悬浮 */
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); 
   z-index: 2; 
 }
 
-/* --- 5. 移动端与响应式保护 --- */
 body, html {
-  overflow-x: hidden; /* 防止横向溢出导致页面左右摇摆 */
+  overflow-x: hidden;
 }
 
-/* 在手机屏幕上适当减小留白 */
 @media (max-width: 600px) {
   .site-main {
     margin-top: 100px;
@@ -523,7 +445,7 @@ body, html {
 }
 
 /* =========================================
-   主页底部归档按钮 (Archive Action - 终极物理动效版)
+   主页底部归档按钮
    ========================================= */
 .archive-action {
   margin-top: 60px; 
@@ -535,59 +457,48 @@ body, html {
 .btn-archive {
   display: inline-flex;
   align-items: center;
-  gap: 8px; /* 用 gap 控制文字和箭头的距离，代替空格 */
+  gap: 8px;
   font-size: 1.1rem;
   font-weight: 600; 
-  font-style: normal; /* 坚决弃用斜体，保持视觉基石的稳重 */
+  font-style: normal;
   color: #666666;
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 1px; 
-  
   padding: 12px 24px; 
   background-color: transparent;
-  line-height: 1; /* 锁死行高，对齐的第一步 */
-  
-  /* 延长过渡时间到 0.3s，使用平滑的贝塞尔曲线，告别生硬 */
+  line-height: 1; 
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* 🎯 箭头的专属控制与光学对齐 */
 .btn-archive .arrow {
   position: relative;
-  top: -1px; /* 向上微调，进行绝对视觉居中 */
-  font-family: sans-serif; /* 强制箭头使用无衬线体，防止部分衬线体的箭头太细或下沉 */
-  /* 给箭头独立的位移动画 */
+  top: -1px;
+  font-family: sans-serif;
   transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* 🎯 悬浮魔法：色块显现 + 整体起跳 */
 .btn-archive:hover {
   color: #ffffff;
   background-color: #1a1a1a; 
-  
   text-shadow: 0 0 0.6px #ffffff, 0 0 0.6px #ffffff; 
   
-  /* 整体向右 6px，向上 2px 跃起 */
   transform: translate(6px, -2px);
   box-shadow: -4px 6px 12px rgba(0, 0, 0, 0.15); 
 }
 
-/* 🎯 终极动效：悬浮时，内部的箭头发生“相对位移”，产生强烈的向前探索感！ */
 .btn-archive:hover .arrow {
   transform: translateX(6px); /* 箭头再向右滑动 6px！ */
 }
 
 /* =========================================
-   独立页面 (Page) 专属样式
+   独立页面 (Page) 样式
    ========================================= */
-/* 独立页面头部需要类似首页 Hero 区域的巨大呼吸感 */
 .page-header {
   padding-top: 80px; 
   margin-bottom: 60px;
 }
 
-/* 手机端稍微缩减一点顶部留白 */
 @media (max-width: 768px) {
   .page-header {
     padding-top: 40px; 
@@ -596,20 +507,18 @@ body, html {
 }
 
 /* =========================================
-   Archive 归档页面 (Metro Typography)
+   Archive 归档页面
    ========================================= */
 
 .archive-year-section {
   margin-bottom: 80px;
 }
 
-/* Metro 风格的巨大排版：年份作为视觉锚点 */
-/* 年份使用主题色 + 透明度，极其高级的水印感 */
 .archive-year {
   font-size: 4.5rem; 
   font-weight: 700;
-  color: var(--primary-color); /* 你的水鸭绿 */
-  opacity: 0.3; /* 30% 透明度，融入背景 */
+  color: var(--primary-color);
+  opacity: 0.3;
   margin: 0 0 20px 0;
   line-height: 1;
   letter-spacing: -2px; 
@@ -621,16 +530,13 @@ body, html {
   flex-direction: column;
 }
 
-/* 归档条目：单行高密度排列，与主页的全宽悬浮魔法一致 */
 .archive-item {
   width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
   box-sizing: border-box;
-  
-  padding: 20px 20px; /* 稍微增加上下的 padding，用空白来分隔每一篇文章 */
+  padding: 20px 20px;
   background-color: transparent;
-  
   transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
@@ -641,7 +547,6 @@ body, html {
   }
 }
 
-/* 全宽悬浮光带效果 */
 .archive-item:hover {
   background-color: #ffffff;
   transform: translateY(-2px);
@@ -653,9 +558,10 @@ body, html {
 
 .archive-link {
   display: flex;
-  align-items: baseline; /* 让日期和标题在一条基线上 */
+  align-items: baseline;
   gap: 30px;
   text-decoration: none;
+  width: 100%;
 }
 
 .archive-meta {
@@ -663,12 +569,12 @@ body, html {
   color: #999999;
   font-weight: 400;
   flex-shrink: 0;
-  width: 60px; /* 固定日期宽度，确保所有标题左侧完美对齐 */
+  width: 60px;
 }
 
 .archive-title {
   font-size: 1.15rem;
-  font-weight: 400; /* 在高密度列表中，不加粗更利于扫视 */
+  font-weight: 400;
   color: #333333;
   margin: 0;
   line-height: 1.5;
@@ -679,30 +585,15 @@ body, html {
   color: var(--primary-color);
 }
 
-/* 归档页面的 Tag：极简、降噪、右侧对齐 */
-.archive-link {
-  display: flex;
-  align-items: baseline; 
-  gap: 30px;
-  text-decoration: none;
-  width: 100%; /* 确保填满容器 */
-}
-
-/* 之前写好的 .archive-meta 和 .archive-title 保持不变... */
-
-/* 新增的 Tag 容器：利用 margin-left: auto 将其推到最右侧 */
-/* Tag 容器：增加换行规则和靠右对齐 */
 .archive-tags {
   margin-left: auto;
   display: flex;
   gap: 12px;
   opacity: 0.5; 
   transition: opacity 0.3s ease;
-  
-  /* 新增：如果 Tag 实在太多，允许整体换行，并且换行后依然保持右对齐 */
+  /* 如果 Tag 实在太多，允许整体换行，并且换行后依然保持右对齐 */
   flex-wrap: wrap; 
   justify-content: flex-end; 
-  /* 限制一下 Tag 区域的最大宽度，防止它反过来把标题挤得太惨 */
   max-width: 50%; 
 }
 
@@ -710,30 +601,24 @@ body, html {
   font-size: 0.85rem;
   font-family: sans-serif; 
   color: #999999;
-  
-  /* 核心魔法：强制单个 Tag 内部绝对不准换行！ */
   white-space: nowrap; 
 }
 
-/* 当整行卡片被 Hover 悬浮时，Tag 稍微亮起，增强交互反馈 */
 .archive-item:hover .archive-tags {
   opacity: 1;
 }
 
-/* 同样，保持全站一致，当卡片悬浮时，Tag 文字呈现你心爱的深秋橘 */
 .archive-item:hover .archive-tag-item {
   color: var(--accent-color); 
 }
 
-/* 移动端适配：极致的做减法，保持列表清爽 */
 @media (max-width: 600px) {
   .archive-link {
     flex-direction: column;
-    align-items: flex-start; /* 手机上全部靠左 */
-    gap: 4px; /* 既然没了 Tag，标题和间距可以稍微收紧 */
+    align-items: flex-start;
+    gap: 4px;
   }
   
-  /* 🎯 核心优化：移动端屏幕空间宝贵，直接隐藏 Tag，拒绝视觉拥挤！ */
   .archive-tags {
     display: none !important; 
   }
@@ -743,15 +628,14 @@ body, html {
   }
 }
 
-/* 针对 List 页面完整日期的专属微调 */
 .archive-meta.list-meta {
-  width: 90px; /* 稍微给够宽度 */
-  white-space: nowrap; /* 绝对禁止换行 */
-  font-family: inherit; /* 🎯 恢复默认的全站优雅字体 */
+  width: 90px;
+  white-space: nowrap;
+  font-family: inherit;
 }
 
 /* =========================================
-   标签云 (Taxonomy Terms Cloud) - 极致物理与色彩统一
+   标签云 (Taxonomy Terms Cloud)
    ========================================= */
 .taxonomy-cloud {
   display: flex;
@@ -760,38 +644,34 @@ body, html {
   margin-top: 20px;
 }
 
-/* 针对标签云里的 Tag 进行微调放大，使用 a.taxonomy-tag 提升优先级覆盖基础样式 */
 a.taxonomy-tag {
-  font-size: 1rem !important; /* 强制字号放大，确立主角地位 */
-  padding: 12px 24px; /* 上下左右增加更舒适的点击区 */
-  margin: 0 !important; /* 🎯 强制清除基础 tag 带来的 margin，完全由外层云容器的 gap 来控制间距！ */
+  font-size: 1rem !important;
+  padding: 12px 24px;
+  margin: 0 !important;
 }
 
-/* 文章数量角标：极其黯淡，绝不抢戏 */
 .tag-count {
   font-size: 0.85rem;
-  opacity: 0.4; /* 用透明度来压低视觉层级 */
+  opacity: 0.4;
   transition: opacity 0.3s ease;
 }
 
-/* 🎯 终极交互统一：精准悬停在分类标签上时，触发全站标准的浮起和高亮！ */
 .taxonomy-cloud a.taxonomy-tag:hover {
   color: var(--accent-color);
   background-color: var(--accent-color-light, #fff3e0);
   filter: brightness(0.98); 
-  text-shadow: 0 0 0.5px var(--accent-color); /* 伪加粗防抖 */
+  text-shadow: 0 0 0.5px var(--accent-color);
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); 
   z-index: 2; 
 }
 
-/* 悬浮时，数字也跟着变深秋橘，但保持一丢丢透明度，完美融入 */
 .taxonomy-cloud a.taxonomy-tag:hover .tag-count {
   opacity: 0.8;
 }
 
 /* =========================================
-   Metro 风格 footer 设计
+   footer
    ========================================= */
 .site-footer.metro-dark {
   background-color: #1a1a1a;
@@ -904,7 +784,7 @@ a.taxonomy-tag {
 }
 
 .copyright-info a {
-  color: inherit; /* 直接继承父级颜色，减少冗余代码 */
+  color: inherit;
   text-decoration: none;
   transition: color 0.2s ease;
 }
@@ -914,28 +794,28 @@ a.taxonomy-tag {
 }
 
 .meta-divider {
-  margin: 0 2px; /* 稍微缩小一点间距，让 · 看起来更紧凑 */
+  margin: 0 2px;
   color: #444444; 
 }
 
-/* ================= RSS 按钮光学对齐修复 ================= */
+/* ================= RSS  ================= */
 .site-footer .footer-copyright-zone .footer-rss-btn {
   display: inline-flex; 
   align-items: center; 
-  gap: 4px; /* 缩小 gap 以抵消 letter-spacing 带来的尾部空格 */
+  gap: 4px;
   font-size: 0.85rem;
   font-weight: 500;
   color: #888888;
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 1px;
-  line-height: 1; /* 锁死行高，这是对齐的核心 */
+  line-height: 1;
   transition: all 0.3s ease;
 }
 
 .site-footer .footer-copyright-zone .footer-rss-btn .rss-icon {
   transition: transform 0.3s ease, stroke 0.3s ease;
-  margin-top: -2px; /* 向上微调 2px，实现视觉上的完美绝对居中 */
+  margin-top: -2px;
 }
 
 .site-footer .footer-copyright-zone .footer-rss-btn:hover {
@@ -947,7 +827,7 @@ a.taxonomy-tag {
   transform: translate(2px, -2px) scale(1.1); 
 }
 
-/* ================= 移动端响应式 ================= */
+/* ================= Responsive ================= */
 @media (max-width: 900px) {
   .footer-main-grid {
     flex-direction: column;
@@ -977,69 +857,59 @@ a.taxonomy-tag {
     line-height: 1.6;
   }
 
-  /* =========================================
-     移动端失去 Hover，直接常驻高光点睛状态
-     ========================================= */
+  /* No More Hover */
   .site-footer .footer-copyright-zone .footer-rss-btn {
-    color: #cccccc; /* 文字明度提高，在深色底或浅色底上都更具辨识度 */
+    color: #cccccc;
   }
   
   .site-footer .footer-copyright-zone .footer-rss-btn .rss-icon {
-    stroke: var(--accent-color, #F26522) !important; /* 强制常驻主题色 */
-    /* 稍微放大一点点，弥补没有动态 hover 缩放的遗憾 */
+    stroke: var(--accent-color, #F26522) !important;
     transform: scale(1.1); 
   }
   
   @media (max-width: 500px) {
-    /* 提高权重，确保分割符绝对被隐藏 */
     .copyright-info .meta-divider {
       display: none;
     }
     
-    /* 精准打击：让除了 divider 之外的 span 和 a 标签变成块级元素折行 */
     .copyright-info span:not(.meta-divider), 
     .copyright-info a {
       display: block; 
-      margin-bottom: 6px; /* 给上下两行之间增加一点呼吸间距，不再紧紧贴在一起 */
+      margin-bottom: 6px; 
     }
   }
 }
 
 /* =========================================
-   右下角悬浮工具箱容器 (核心定位)
+   右下角Tool Box
    ========================================= */
 .metro-tools-dock {
-  position: fixed; /* 🎯 脱离文档流，悬浮在屏幕上 */
-  right: 20px; /* 默认距离右侧 20px */
-  bottom: 40px; /* 默认距离底部 40px */
+  position: fixed;
+  right: 20px;
+  bottom: 40px;
   display: flex;
-  flex-direction: column; /* 让里面的按钮上下排列 */
-  gap: 10px; /* 两个按钮之间的间距 */
-  z-index: 900; /* 保证它盖在大部分元素上面 */
-  
-  /* 配合 JS 的滚动显示逻辑 */
+  flex-direction: column;
+  gap: 10px;
+  z-index: 900;
   opacity: 0;
   transform: translateY(20px);
   pointer-events: none;
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* JS 触发显示时的状态 */
 .metro-tools-dock.show {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
 }
 
-/* 宽屏电脑上的极客对齐魔法 */
 @media (min-width: 1280px) {
   .metro-tools-dock {
-    /* 让按钮贴着 1200px 宽的主体内容边缘，而不是飞到带鱼屏最右边 */
+    /* 让按钮贴着 1200px 宽的主体内容边缘 */
     right: calc(50vw - 580px);
   }
 }
 
-/* 锐利的方形高对比按钮 */
 .metro-tool-btn {
   width: 48px;
   height: 48px;
@@ -1052,27 +922,23 @@ a.taxonomy-tag {
   cursor: pointer;
   color: #ffffff !important; 
   padding: 0 !important;
-  
-  /* 🎯 找回丝滑灵魂：添加极其顺滑的背景色和物理位移过渡动画 */
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
 }
 
-/* 🎯 斩草除根：杀掉旧主题在 button 上可能绑定的任何伪元素背景动画！ */
 .metro-tool-btn::before,
 .metro-tool-btn::after {
   display: none !important;
 }
 
-/* 强制让 SVG 绝对居中显示 */
 .metro-tool-btn svg { 
   width: 22px !important; 
   height: 22px !important; 
   stroke: #ffffff !important; 
   display: block;
-  margin: 0 !important; /* 清除可能残留的外边距，解决歪斜 */
+  margin: 0 !important;
 }
 
-/* 🎯 Hover 状态：亮起主题色并平滑上浮 (仅限拥有真实鼠标的设备) */
+/* Hover 仅限拥有真实鼠标的设备 */
 @media (hover: hover) and (pointer: fine) {
   .metro-tool-btn:hover {
     background-color: var(--primary-color, #26a69a) !important; 
@@ -1082,53 +948,41 @@ a.taxonomy-tag {
 }
 
 /* =========================================
-   桌面端/移动端显示控制
+   Desktop/Mobile Display Control
    ========================================= */
-/* 桌面端：绝对隐藏目录按钮！ */
 .mobile-only {
   display: none !important; 
 }
 
-/* 手机端 (小于 1000px)：显示目录按钮 */
 @media (max-width: 1350px) {
   .mobile-only {
     display: flex !important; 
   }
 }
 
-/* =========================================
-   📱 移动端专属元素 (默认在桌面端隐藏)
-   ========================================= */
 .mobile-toggle-btn,
 .mobile-menu-overlay {
   display: none;
 }
 
-/* =========================================
-   📱 移动端响应式断点 (< 768px)
-   ========================================= */
 @media (max-width: 768px) {
   
-  /* 1. 隐藏桌面端的导航和搜索 */
   .nav-menu,
   .search-container {
     display: none !important;
   }
 
-  /* 🎯 修复重叠与保留 Title：将 header-inner 变成实体挡板！ */
   .header-inner {
     position: relative;
-    z-index: 1002; /* 必须大于 overlay 的 999 */
-    background-color: #fafafa; /* 和你的网页背景色保持一致 */
+    z-index: 1002;
+    background-color: #fafafa;
   }
 
-  /* 提升 Title 层级，确保它和汉堡包一起显示在遮罩上方 */
   .site-title {
     position: relative;
     z-index: 1003; 
   }
 
-  /* 2. 汉堡包触发按钮：极其丝滑的形变 */
   .mobile-toggle-btn {
     display: flex; 
     position: relative;
@@ -1140,7 +994,7 @@ a.taxonomy-tag {
     cursor: pointer;
     align-items: center;
     justify-content: center;
-    z-index: 1003; /* 🎯 与 Title 平级，永远在最上层，不会被遮罩盖住 */
+    z-index: 1003;
   }
 
   .mobile-toggle-btn svg {
@@ -1148,25 +1002,19 @@ a.taxonomy-tag {
     transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.2s ease;
   }
 
-  /* 默认：三道杠显示，X 隐藏 */
   .icon-hamburger { opacity: 1; transform: rotate(0deg) scale(1); }
   .icon-close-menu { opacity: 0; transform: rotate(-90deg) scale(0.5); }
 
-  /* 展开状态：三道杠旋转消失，X 旋转浮现！ */
   .menu-open .icon-hamburger { opacity: 0; transform: rotate(90deg) scale(0.5); }
   .menu-open .icon-close-menu { opacity: 1; transform: rotate(0deg) scale(1); }
 
-  /* 3. 全屏遮罩层：从上方丝滑降临 */
   .mobile-menu-overlay {
     display: block; 
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    
-    /* 🎯 终极魔法 1：使用 dvh (动态视口)。
-       它会随着浏览器底栏的出现/消失自动计算真实可用高度！ */
-    height: 100vh; /* 兼容老浏览器的 Fallback */
+    height: 100vh; 
     height: 100dvh; 
     
     background-color: #fafafa; 
@@ -1174,59 +1022,49 @@ a.taxonomy-tag {
     
     transform: translateY(-100%); 
     transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-    
-    /* 🎯 终极魔法 2：阻断滚动链！
-       滑到菜单底部时，绝不把滚动事件传给背后的网页 */
+
     overflow-y: auto; 
     overscroll-behavior: contain; 
   }
-
-  /* 展开状态：覆盖全屏 */
   .menu-open .mobile-menu-overlay {
     transform: translateY(0);
   }
 
-  /* 内部容器排版：减小高度挤压，让一屏装下所有内容 */
   .mobile-menu-inner {
     display: flex;
     flex-direction: column;
-    min-height: 100%; /* 因为外面已经 100dvh 了，这里直接撑满即可 */
-    /* 稍微减小顶部 padding，从 90px 降到 80px，给底部的 RSS 腾出空间 */
+    min-height: 100%;
     padding: 80px 20px 30px 20px; 
-    /* 将 padding 强制包裹在 100% 高度以内，绝不溢出屏幕！ */
     box-sizing: border-box;
   }
 
-  /* 4. 移动端菜单：稍微减小字号和间距，防溢出 */
   .mobile-nav {
     display: flex;
     flex-direction: column;
-    align-items: flex-end; /* 绝对右对齐 */
+    align-items: flex-end;
     gap: 20px;
     margin-bottom: 40px;
   }
 
   .mobile-nav-link {
-    font-size: 2.2rem; /* 控制在合理大小 */
+    font-size: 2.2rem;
     font-weight: 800;
-    color: #aaa; /* 默认灰色 */
+    color: #aaa;
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: -0.02em;
     transition: color 0.2s ease, transform 0.2s ease;
   }
 
-  /* Active 状态指示：黑色 + 极其轻微的左移，产生空间感 */
   .mobile-nav-link.active {
     color: #111;
     transform: translateX(-8px); 
   }
 
-  /* 5. 纯粹的文字搜索框：内容即设计！ */
   .mobile-search-box {
     display: flex;
     flex-direction: column;
-    align-items: flex-end; /* 跟着右对齐 */
+    align-items: flex-end;
     width: 100%;
   }
 
@@ -1236,13 +1074,11 @@ a.taxonomy-tag {
     padding: 8px 0;
     background: transparent;
     border: none;
-    border-bottom: 2px solid #111; /* 极具分量的黑色底线 */
+    border-bottom: 2px solid #111;
     font-size: 1.2rem; 
     font-weight: 700;
     color: #111;
     text-transform: uppercase;
-    
-    /* 🎯 核心细节：让输入的文字和占位符也从右边开始，维持右对齐隐形线！ */
     text-align: right; 
     outline: none;
     border-radius: 0;
@@ -1251,18 +1087,15 @@ a.taxonomy-tag {
   
   #mobileSearchInput::placeholder { color: #ccc; }
   
-  /* 聚焦时，粗底线亮起主题色 */
   #mobileSearchInput:focus {
     border-bottom-color: var(--primary-color, var(--accent-color, #F26522)); 
   }
-
-  /* 移动端搜索结果简易面板 */
   .mobile-search-results {
     display: none;
     width: 100%;
     max-width: 250px;
     margin-top: 15px;
-    text-align: right; /* 搜索结果文字依然右对齐 */
+    text-align: right;
   }
 
   .mobile-search-results .search-result-item {
@@ -1285,9 +1118,8 @@ a.taxonomy-tag {
     color: #888;
   }
 
-  /* 6. 底部版权：利用 margin-top: auto 自动推到底部 */
   .mobile-meta-footer {
-    margin-top: auto; /* 🎯 神奇的一笔：自动吸收剩余空间压底 */
+    margin-top: auto;
     padding-top: 40px; 
     display: flex;
     flex-direction: column;
@@ -1298,13 +1130,12 @@ a.taxonomy-tag {
   .mobile-meta-footer .copyright-info {
     display: flex;
     flex-direction: column;
-    align-items: flex-end; /* 右对齐 */
+    align-items: flex-end;
     font-size: 0.8rem;
     color: #999;
     line-height: 1.4;
   }
 
-  /* 🎯 RSS 点睛之笔的样式 */
   .mobile-rss-btn {
     display: inline-flex;
     align-items: center;
@@ -1317,15 +1148,12 @@ a.taxonomy-tag {
   }
 
   .mobile-rss-btn .rss-icon {
-    /* 强制使用你的主题色！ */
     color: var(--accent-color, #F26522); 
-    margin-top: -1px; /* 光学对齐 */
+    margin-top: -1px;
   }
 }
 
-/* 🎯 极其重要：当菜单展开时，禁止背后的网页内容滚动！ */
 body.menu-open {
   overflow: hidden;
-  /* 针对某些固执的移动端浏览器（如 iOS Safari）的深度锁定 */
   touch-action: none; 
 }

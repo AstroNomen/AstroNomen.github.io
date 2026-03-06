@@ -1,24 +1,22 @@
 /* =========================================
    单篇文章页面 (Single Post Page)
    ========================================= */
-/* 1. 整体布局：恢复普通块级，让正文自然占满它的容器 */
 .single-layout {
   display: block; 
 }
 .single-content-area {
   width: 100%;
   max-width: 760px;
-  margin: 0 auto; /* 保证正文绝对居中 */
+  margin: 0 auto;
 }
 
-/* 2. 头部呼吸感与排版 */
 .single-header {
-  padding-top: 40px; /* 增加顶部留白呼吸感 */
+  padding-top: 40px;
   margin-bottom: 60px;
 }
 
 .single-tags {
-  margin-bottom: 20px; /* 标签在标题上方留出间距 */
+  margin-bottom: 20px;
 }
 
 .single-title {
@@ -39,7 +37,7 @@
 }
 
 .single-meta {
-  margin-bottom: 0; /* 抵消主页中的 margin */
+  margin-bottom: 0;
 }
 
 .meta-separator {
@@ -47,14 +45,14 @@
   color: #ccc;
 }
 
-/* 3. 正文基础排版 (Typography) */
+/* 正文基础排版 (Typography) */
 .single-content {
   font-size: 1.05rem;
   line-height: 1.9;
   color: #333;
 }
 
-/* 🖥️ 桌面端：完美的矩形（两端对齐） */
+/* 桌面端：两端对齐 */
 .single-content p {
   margin-bottom: 1.5em;
   text-align: justify; 
@@ -63,13 +61,11 @@
   hyphens: auto; 
 }
 
-/* 📱 移动端：均匀的字间距 + 轻微参差的呼吸感右边缘 */
+/* 移动端：左对齐*/
 @media (max-width: 768px) {
   .single-content p,
   .post-entry p {
-    text-align: left !important; /* 强制左对齐，消灭恶心的白洞 */
-    
-    /* 强化连字符断词，让右边缘尽可能整齐，但绝不拉扯单词内部间距 */
+    text-align: left !important; /* 强制左对齐 */
     overflow-wrap: break-word;
   }
 }
@@ -85,24 +81,21 @@
   line-height: 1.3;
 }
 
-/* H2：作为章节主节点，给予巨大的顶部呼吸感和极细的底边框分割 */
 .single-content h2 {
   font-size: 1.8rem;
-  margin-top: 3.5rem; /* 极其夸张的顶部留白，形成自然的视觉分块 */
+  margin-top: 3.5rem; 
   margin-bottom: 1.5rem;
   padding-bottom: 0.5rem;
-  border-bottom: 1px solid #eaeaea; /* 极细的分割线，比伪元素高级得多 */
+  border-bottom: 1px solid #eaeaea;
   letter-spacing: -0.5px;
 }
 
-/* H3：次级节点，紧凑有力 */
 .single-content h3 {
   font-size: 1.4rem;
   margin-top: 2.5rem;
   margin-bottom: 1rem;
 }
 
-/* H4：强调节点，使用深灰和稍微小的字号 */
 .single-content h4 {
   font-size: 1.15rem;
   color: #333;
@@ -110,53 +103,44 @@
   margin-bottom: 0.8rem;
 }
 
-/* --- 正文内部超链接专属样式 (In-text Links) --- */
+/* --- 正文内部超链接 (In-text Links) --- */
 
-/* 只选中 .single-content 内部的 a 标签，排除目录 #TableOfContents 里的 a */
+/* 排除目录 #TableOfContents 里的 a */
 .single-content a:not(#TableOfContents a) {
-  color: var(--primary-color); /* 默认状态：蓝绿色主题色 */
-  text-decoration: none; /* 默认无下划线，保持纯净 */
-  font-weight: 500; /* 稍微加粗一点点，从普通文本中跳脱出来 */
-  /* 为颜色和下划线添加过渡动画 */
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
   transition: color 0.3s ease, text-decoration-color 0.3s ease;
-  /* 预设一条透明的下划线，防止 hover 时产生排版抖动 */
+  
   text-decoration: underline;
   text-decoration-color: transparent;
-  text-underline-offset: 4px; /* 让下划线离文字远一点，更有现代呼吸感 */
+  text-underline-offset: 4px;
   text-decoration-thickness: 2px;
 }
 
-/* 鼠标悬浮：转为深秋橘，并显现下划线 */
 .single-content a:not(#TableOfContents a):hover {
-  color: var(--accent-color); /* 辅助色：深秋橘 */
-  text-decoration-color: var(--accent-color); /* 下划线也变成橘色 */
+  color: var(--accent-color);
+  text-decoration-color: var(--accent-color);
 }
 
-/* =========================================
-   学术引用排版 (Blockquotes)
-   ========================================= */
+/* 引用 (Blockquotes) */
 .single-content blockquote {
-  margin: 3rem 0; /* 上下留出巨大呼吸感 */
-  padding: 1.2rem 1.5rem 1.2rem 2rem; /* 左侧留出更多空间 */
+  margin: 3rem 0;
+  padding: 1.2rem 1.5rem 1.2rem 2rem;
   
-  /* 🎯 核心 Metro 基因：极其硬朗的左侧标识线 */
   border-left: 4px solid var(--primary-color, #26a69a);
-  
-  /* 极其克制的背景底色 (水鸭绿的 5% 透明度) */
   background-color: rgba(38, 166, 154, 0.04); 
-  border-radius: 0 4px 4px 0; /* 左边纯直角，右边极其轻微的圆角化解锋芒 */
+  border-radius: 0 4px 4px 0;
 }
 
-/* 引用内容的文字质感 */
 .single-content blockquote p {
   margin: 0;
-  font-size: 1.15rem; /* 字号稍微放大，彰显分量 */
-  font-style: italic; /* 学术引用标准的斜体 */
-  color: #555; /* 颜色稍微压暗，与正文拉开层次 */
+  font-size: 1.15rem;
+  font-style: italic;
+  color: #555;
   line-height: 1.7;
 }
 
-/* 如果引用有多段，段落之间保留间距 */
 .single-content blockquote p + p {
   margin-top: 1rem;
 }
@@ -164,50 +148,46 @@
 /* =========================================
    行内代码 (Inline Code)
    ========================================= */
-/* 仅针对段落、列表和表格里的代码，不影响独立的代码块 */
 .single-content p code,
 .single-content li code,
 .single-content table code {
   font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
-  font-size: 0.85em; /* 稍微缩小一点，匹配正文视觉大小 */
-  color: #d63200; /* 🎯 极客暗橙红色，在阅读时一眼就能看到变量名 */
-  background-color: rgba(0, 0, 0, 0.05); /* 极淡的灰底，代替边框 */
+  font-size: 0.85em;
+  color: #d63200;
+  background-color: rgba(0, 0, 0, 0.05);
   padding: 0.2em 0.4em;
   border-radius: 3px;
-  word-break: break-word; /* 防止长变量名撑爆屏幕 */
+  word-break: break-word;
 }
 
 /* =========================================
-   学术级表格 (Tables) - Booktabs 风格
+   表格 (Tables)
    ========================================= */
 .single-content table {
   width: 100%;
-  border-collapse: collapse; /* 合并边框 */
-  margin: 3rem 0; /* 巨大的上下呼吸感 */
+  border-collapse: collapse;
+  margin: 3rem 0;
   font-size: 0.95rem;
 }
 
-/* Metro 风格拒绝竖线，只用极简的横向分割线 */
 .single-content th, 
 .single-content td {
   padding: 14px 16px;
   text-align: left;
-  border-bottom: 1px solid #eaeaea; /* 数据行之间用极细的淡灰线 */
+  border-bottom: 1px solid #eaeaea;
 }
 
 .single-content th {
   font-weight: 700;
   color: #111;
-  /* 🎯 顶刊常用的三线表风格：表头下面是一根有分量的黑线 */
   border-bottom: 2px solid #111; 
-  background-color: rgba(0, 0, 0, 0.02); /* 表头极淡的区分底色 */
+  background-color: rgba(0, 0, 0, 0.02);
 }
 
 /* =========================================
-   列表 (Lists: ul, ol) - 终极扎实版
+   列表 (Lists: ul, ol)
    ========================================= */
 
-/* 共同的基础设置：整体左侧缩进，给符号留足安全区 */
 .single-content ul, 
 .single-content ol {
   padding-left: 28px; 
@@ -215,16 +195,13 @@
 }
 
 .single-content li {
-  margin-bottom: 0.8rem; /* 稍微拉大行与行之间的距离 */
+  margin-bottom: 0.8rem;
   line-height: 1.7;
-  color: #333; /* 字体颜色稍微加深，配合列表的重量感 */
+  color: #333;
 }
 
-/* -----------------------------------------
-   1. 无序列表 (ul)：有分量的深灰方块
-   ----------------------------------------- */
 .single-content ul {
-  list-style: none; /* 关掉默认圆点 */
+  list-style: none;
 }
 
 .single-content ul li {
@@ -238,60 +215,50 @@
   top: 0.55em; 
   width: 12px;
   height: 12px;
-  /* 🎯 核心魔法：去掉背景色，改用 2px 的粗边框打造空心感 */
   border: 3px solid #555; 
   background-color: transparent; 
-  box-sizing: border-box; /* 确保边框计算在尺寸内 */
+  box-sizing: border-box;
 }
 
-/* -----------------------------------------
-   2. 有序列表 (ol)：原生数字 + 呼吸间距
-   ----------------------------------------- */
 .single-content ol {
-  list-style: decimal outside; /* 恢复原生数字，挂在外部 */
+  list-style: decimal outside;
 }
 
 .single-content ol li {
-  /* 🎯 核心魔法：利用 padding-left 把文字往右推，强行在数字和文字之间撑开呼吸感！ */
   padding-left: 8px; 
 }
 
-/* 针对有序列表里的嵌套无序列表，微调一下间距 */
 .single-content ol ul {
   margin: 0.5rem 0;
 }
 
 /* =========================================
-   正文图片排版系统 (Image Typography)
+   图片排版 (Image Typography)
    ========================================= */
 
-/* 1. 外层图注容器：重置浏览器默认边距 */
 .metro-figure {
-  margin: 2.5rem 0; /* 保持你原来的上下呼吸感 */
-  text-align: center; /* 默认图注和图片居中 */
+  margin: 2.5rem 0;
+  text-align: center;
   display: block;
 }
 
-/* 2. 单张图片的优雅约束与悬浮质感 */
 .metro-figure img {
-  max-width: 90%; /* 解决太宽：左右留出优美的呼吸感 */
-  max-height: 55vh; /* 解决太高：最高只占屏幕高度的 55% */
-  width: auto; /* 保证等比缩放 */
+  max-width: 90%;
+  max-height: 55vh;
+  width: auto;
   display: block;
   margin: 0 auto; 
-  border-radius: 4px; /* 极轻微圆角 */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04); /* 灯箱暗示阴影 */
-  cursor: zoom-in; /* 提示可点击放大 */
+  border-radius: 4px; 
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+  cursor: zoom-in;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* 图片悬停时微微上浮反馈 */
 .metro-figure img:hover {
   transform: translateY(-2px);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
 }
 
-/* 3. 图注文字：学术文献级的层级弱化 */
 .metro-caption {
   margin-top: 1rem;
   font-size: 0.85rem;
@@ -305,13 +272,7 @@
   color: #555;
 }
 
-/* =========================================
-   4. 多图并排画廊 (相邻兄弟元素识别魔法)
-   ========================================= */
-/* 🎯 核心逻辑：
-   如果一个 figure 后面紧跟着另一个 figure，或者它自己就是跟着别人的 figure，
-   说明它们是连续发出的图片，自动组成网格！
-*/
+/* 多图并排画廊 */
 .metro-figure:has(+ .metro-figure),
 .metro-figure + .metro-figure {
   display: inline-flex;
@@ -321,21 +282,19 @@
   /* 给每张图分配大约 48% 的宽度，留出中间的缝隙 */
   width: calc(48% - 10px); 
   margin: 1.5rem 1%; 
-  vertical-align: top; /* 确保顶部绝对对齐 */
+  vertical-align: top;
 }
 
-/* 在并排画廊中，限制图片最大高度，防止因为比例不同显得突兀 */
 .metro-figure:has(+ .metro-figure) img,
 .metro-figure + .metro-figure img {
   max-width: 100%;
-  max-height: 40vh; /* 并排时图片矮一点更精致 */
+  max-height: 40vh;
 }
 
 /* =========================================
-   5. 移动端画廊保护
+   5. 移动端画廊
    ========================================= */
 @media (max-width: 600px) {
-  /* 屏幕太窄时，强制取消并排，恢复单列显示 */
   .metro-figure:has(+ .metro-figure),
   .metro-figure + .metro-figure {
     display: block;
@@ -344,21 +303,16 @@
   }
 }
 
-/* 侧边悬浮目录 (TOC) - 智能悬浮版 */
 .single-sidebar {
-  position: fixed; /* 保持脱离文档流的霸道定位 */
-  
-  /* 起始高度对齐你的 metadata */
+  position: fixed; 
   top: 280px; 
   
-  /* 精确的右侧定位 */
   left: calc(50% + 380px + 80px); 
   width: 260px; 
   max-height: calc(100vh - 320px); 
   overflow-y: auto;
   scrollbar-width: none; 
   
-  /* 【新增核心】为后续的智能淡出添加丝滑动画 */
   transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s ease;
   opacity: 1;
   visibility: visible;
@@ -368,26 +322,20 @@
 
 .single-sidebar::-webkit-scrollbar { display: none; }
 
-/* 智能隐藏状态的 Class（由 JS 控制） */
-/* 🎯 仅在桌面端(>1350px) 目录常驻时，才允许 Footer 触发淡出效果。
-   防止污染移动端和平板端的飞入动画。 */
 @media (min-width: 1351px) {
   .single-sidebar.fade-out {
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-20px); /* 消失时微微向上浮动，更有高级感 */
-    pointer-events: none; /* 消失后鼠标无法点击，防止遮挡底层文字 */
+    transform: translateY(-20px);
+    pointer-events: none;
   }
 }
 
 /* =========================================
-   响应式目录 (TOC) 桌面两段式架构
+   Responsiv TOC
    ========================================= */
 
-/* -----------------------------------------
-   [阶段 1] 1351px - 1440px: 右侧弹性贴边
-   空间足够，放弃居中，死死贴住屏幕右边缘
-   ----------------------------------------- */
+/* -----  1351px - 1440px 桌面 ----- */
 
 .close-toc-btn {
   display: none;
@@ -396,50 +344,41 @@
 @media (max-width: 1440px) and (min-width: 1351px) {
   .single-sidebar {
     left: auto !important;
-    right: 20px !important; /* 留一点安全距离 */
+    right: 20px !important;
   }
 }
 
-/* -----------------------------------------
-   [阶段 2] 1001px - 1350px: Metro 右侧飞入面板
-   小屏幕笔记本/横屏平板：空间不够，收起进右下角按钮，点击后从右侧滑出
-   ----------------------------------------- */
+/*  ----- 1001px - 1350px: 右侧飞入面板 ----- */
 @media (max-width: 1350px) and (min-width: 1001px) {
   .single-sidebar {
-    display: block !important; /* 取消原来的隐藏 */
+    display: block !important;
     position: fixed;
     top: 0; 
     right: 0; 
-    left: auto !important; /* 覆盖原本的 left 定位 */
-    width: 320px; /* 给一个固定的舒适阅读宽度 */
-    height: 100vh; /* 撑满整个屏幕高度 */
+    left: auto !important;
+    width: 320px;
+    height: 100vh;
     max-height: 100vh; 
     background: #ffffff;
     z-index: 999;
-    padding: 60px 30px 40px; /* 内部呼吸感，顶部留出空间 */
+    padding: 60px 30px 40px;
     
-    /* 🎯 极其硬核的 Metro 左侧压边线，代替原来的顶部压边线 */
     border-top: none;
     border-left: 4px solid var(--primary-color);
-    /* 1. 默认状态下，把阴影关掉，不让影子漏进屏幕 */
     box-shadow: none; 
     
     transform: translateX(100%);
     transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), 
-                box-shadow 0.4s ease; /* 让阴影也平滑过渡 */
+                box-shadow 0.4s ease;
   }
   
   .single-sidebar.sheet-open {
     transform: translateX(0);
-    /* 2. 面板滑出时，再把左侧阴影打开 */
     box-shadow: -10px 0 30px rgba(0,0,0,0.1);
   }
 }
 
-/* -----------------------------------------
-   [阶段 3] 1000px 以下: 移动端底部抽屉
-   (保留你原本极其完美的手机端代码)
-   ----------------------------------------- */
+/* ----- 1000px 以下: 移动端底部抽屉  ----- */
 @media (max-width: 1000px) {
   .single-sidebar {
     display: block !important;
@@ -447,18 +386,17 @@
     top: auto; 
     bottom: 0; 
     left: 0;
-    width: 100%; /* 防止 100vw + padding 导致宽度溢出右侧屏幕边缘 */
-    box-sizing: border-box; /* 确保 padding 包含在 width 之内 */
+    width: 100%;
+    box-sizing: border-box;
     max-height: 65vh; 
     background: #ffffff;
     z-index: 999;
     padding: 30px 20px 40px;
     
-    border-left: none; /* 覆盖掉中等屏幕的边线 */
+    border-left: none;
     border-top: 4px solid var(--primary-color);
     box-shadow: 0 -10px 30px rgba(0,0,0,0.1);
-    
-    /* 默认藏在屏幕下方 */
+
     transform: translateY(100%);
     transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   }
@@ -470,7 +408,7 @@
   .close-toc-btn {
     display: block;
     position: absolute;
-    top: 26px; /* 同步高度 */
+    top: 26px;
     right: 20px;
     background: none;
     border: none;
@@ -496,71 +434,63 @@
   margin-bottom: 15px;
 }
 
-/* 目录列表样式重置与折叠交互 */
 #TableOfContents > ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  /* 左侧边框作为阅读指示线 */
   border-left: 2px solid #f0f0f0; 
 }
 
 #TableOfContents li { margin-bottom: 10px; }
-/* --- 丝滑的交互动画 --- */
+
 #TableOfContents a {
   display: block;
   font-size: 0.9rem;
   color: #666;
   text-decoration: none;
   padding-left: 15px;
-  /* 为颜色和左侧指示线(内阴影)添加过渡动画 */
   transition: color 0.3s ease, box-shadow 0.3s ease; 
-  line-height: 1.6; /* 稍微增加行高，提升长标题的阅读感 */
+  line-height: 1.6;
 }
 
 #TableOfContents a:hover { color: var(--primary-color); }
 
-/* 重点：高亮当前阅读的章节 */
 #TableOfContents a.active {
   color: var(--primary-color);
   font-weight: 700;
-  /* 通过内阴影模拟左侧指示线的移动 */
   box-shadow: inset 2px 0 0 0 var(--primary-color); 
 }
 
-/* 解决第3个问题：废弃 display: none，使用 max-height 制造丝滑展开动画 */
 #TableOfContents ul ul {
   list-style: none;
-  max-height: 0; /* 默认高度为0 */
-  opacity: 0;    /* 默认透明 */
-  overflow: hidden; /* 隐藏溢出内容 */
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
   padding-left: 15px;
   margin-top: 0;
-  /* 高度、透明度和外边距一起平滑过渡 */
+  
   transition: max-height 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), 
               opacity 0.4s ease, 
               margin-top 0.4s ease;
 }
 
-/* 展开状态 */
 /* 当父级 H2 被标记为 active 时，展开它下面的次级目录 */
 #TableOfContents li.active-parent > ul {
-  max-height: 800px; /* 设一个足够大的高度以容纳子标题 */
+  max-height: 800px;
   opacity: 1;
   margin-top: 10px;
 }
 
-/* 🎯 极其硬朗的 Metro 风格分割线 */
 .single-content hr {
   border: none;
   height: 3px; 
   width: 60px; 
   background-color: #999999;
-  margin: 60px 0; /* 左对齐，上下留出巨大呼吸感 */
+  margin: 60px 0;
 }
 
 /* =========================================
-   极简灯箱系统 (Vanilla Lightbox) - 样式补回
+   极简灯箱系统 (Vanilla Lightbox)
    ========================================= */
 .metro-lightbox {
   position: fixed;
@@ -568,14 +498,12 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  /* 95% 透明度的纯白色背景，极具现代画廊的高级感 */
   background-color: rgba(255, 255, 255, 0.95); 
   z-index: 9999;
   display: flex;
   justify-content: center;
   align-items: center;
   
-  /* 默认隐藏与淡入动画 */
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
@@ -584,7 +512,7 @@
 .metro-lightbox.active {
   opacity: 1;
   pointer-events: auto;
-  cursor: zoom-out; /* 提示点击缩小 */
+  cursor: zoom-out;
 }
 
 .metro-lightbox img {
@@ -593,7 +521,6 @@
   border-radius: 4px;
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15); 
   
-  /* 缩放阻尼动画 */
   transform: scale(0.9); 
   transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
@@ -603,21 +530,18 @@
 }
 
 /* =========================================
-   💻 Lucid Void 极简代码块 (绝对防御版)
-   针对 Hugo Chroma Table 进行极其暴力的样式重置
+   极简代码块
    ========================================= */
 
 .highlight {
-  background-color: #f6f8fa; /* 极简灰底 */
+  background-color: #f6f8fa;
   border: 1px solid #e1e4e8;
   border-radius: 6px; 
   margin: 1.8em 0;
   overflow: hidden; 
-  /* 🎯 强力切断文字颜色污染 */
   color: #24292e !important; 
 }
 
-/* 🎯 强力接管所有后代元素的字体，确保等宽 */
 .highlight,
 .highlight pre,
 .highlight code,
@@ -630,7 +554,6 @@
   line-height: 1.6 !important;
 }
 
-/* --- 🎯 绝对重置表格：阻断你之前写的全局 Table 样式 --- */
 .highlight table {
   border: none !important;
   margin: 0 !important;
@@ -647,7 +570,6 @@
   margin: 0 !important;
 }
 
-/* 🎯 强力切断行内代码对代码块内部标签的样式背景、颜色污染 */
 .highlight code {
   color: inherit !important;
   background-color: transparent !important;
@@ -660,7 +582,7 @@
    场景 A：无行号的普通状态
    ================================ */
 .highlight > pre,
-.highlight > div > pre { /* 兼容部分 Hugo 版本多包一层 div 的情况 */
+.highlight > div > pre { 
   padding: 16px 20px !important;
   margin: 0 !important;
   overflow-x: auto !important;
@@ -669,42 +591,36 @@
 /* ================================
    场景 B：有行号的 Table 状态
    ================================ */
-
-/* 左侧：行号列 (强制锁死宽度、背景色、文字颜色) */
 .highlight td:first-child {
   width: 45px !important;
   min-width: 45px !important;
   background-color: #eff3f6 !important;
   border-right: 1px solid #e1e4e8 !important;
-  vertical-align: top !important; /* 确保长代码时行号在顶部，不居中 */
-  user-select: none !important; /* 防止拖拽复制时把行号带上 */
+  vertical-align: top !important;
+  user-select: none !important;
 }
 
-/* 行号内部的 pre：找回上下对齐感，切断橘色污染 */
 .highlight td:first-child pre {
   padding: 16px 10px 16px 0 !important;
   margin: 0 !important;
   text-align: right !important;
-  color: #babbbd !important; /* 强制行号为浅灰色 */
+  color: #babbbd !important;
 }
 
-/* 右侧：代码列 */
 .highlight td:last-child {
   vertical-align: top !important;
   width: calc(100% - 45px) !important;
 }
 
-/* 代码内部的 pre：允许横向滚动，确保安全内边距 */
 .highlight td:last-child pre {
   padding: 16px 20px !important;
   margin: 0 !important;
-  color: #24292e !important; /* 兜底基础代码颜色 */
+  color: #24292e !important;
   overflow-x: auto !important;
   word-break: normal !important;
   white-space: pre !important;
 }
 
-/* 去除 Chroma 自带的底层高亮背景干扰 */
 .highlight .chroma {
   background-color: transparent !important;
 }
