@@ -61,6 +61,7 @@ a {
   max-width: 1200px; 
   margin: 0 auto;
   padding: 20px 40px; 
+  position: relative;
 }
 
 .site-title {
@@ -83,6 +84,9 @@ a {
   display: flex;
   gap: 10px; 
   align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .nav-link {
