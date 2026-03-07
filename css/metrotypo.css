@@ -624,3 +624,32 @@
 .highlight .chroma {
   background-color: transparent !important;
 }
+
+/* =========================================
+   移动端排版保护
+   ========================================= */
+
+/* 1. 代码块与预格式化文本 */
+.single-content pre {
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* iOS 的弹性滚动 */
+  padding-bottom: 10px;
+}
+
+/* 2. 表格容器 (块级元素以支持局部滚动) */
+.single-content table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  white-space: nowrap;
+}
+
+/* 3. KaTeX 数学公式*/
+.single-content .katex-display {
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: hidden;
+}

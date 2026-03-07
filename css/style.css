@@ -689,7 +689,7 @@ a.taxonomy-tag {
   display: flex;
   justify-content: space-between;
   gap: 80px;
-  margin-bottom: 120px; 
+  margin-bottom: 80px; 
 }
 
 /* ================= 左侧：品牌与简介区 ================= */
@@ -778,18 +778,35 @@ a.taxonomy-tag {
   padding-top: 25px; 
 }
 
-.copyright-info {
+.copyright-info,
+.theme-declaration {
   font-size: 0.85rem; 
   color: #666666;
 }
 
-.copyright-info a {
+.theme-declaration {
+  margin-bottom: 25px;
+}
+
+.copyright-info a,
+.theme-declaration a {
   color: inherit;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
-.copyright-info a:hover {
+.copyright-info a:hover,
+.theme-declaration a:hover {
+  color: #ffffff;
+}
+
+.theme-declaration strong {
+  font-weight: 600;
+  color: #777777;
+  transition: color 0.2s ease;
+}
+
+.theme-declaration a:hover strong {
   color: #ffffff;
 }
 
